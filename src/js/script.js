@@ -26,95 +26,101 @@ const global = {
 };
 
 // ========== { fetch data from gnews.io} ========== \\
-// async function fetchAPIData(endpoint) {
-//   const API_KEY = global.api.apiKey_8;
-//   const API_URL = global.api.apiUrl;
+async function fetchAPIData(endpoint) {
+  const API_KEY = global.api.apiKey_8;
+  const API_URL = global.api.apiUrl;
 
-//   showSpinner();
+  showSpinner();
 
-//   const response = await fetch(
-//     `${API_URL}${endpoint}&lang=en&country=us&apikey=${API_KEY}`
-//   );
+  const response = await fetch(
+    `${API_URL}${endpoint}&lang=en&country=us&apikey=${API_KEY}`
+  );
 
-//   const data = await response.json();
-//   console.log(data);
+  const data = await response.json();
+  console.log(data);
 
-//   hideSpinner();
+  hideSpinner();
 
-//   return data;
-// }
+  return data;
+}
 
 // ========== { display top headlines from gnews.io} ========== \\
 // function displayCarouselNews() {
-//   fetchAPIData("general")
-//     // .then(data => {
-//     //   const articles = data.articles;
+//   fetchAPIData("general");
+// .then(data => {
+//   const articles = data.articles;
 
-//     //   // Create HTML code for each article
-//     //   articles.forEach((article) => {
-//     //     const articleElement = document.createElement('div');
-//     //     articleElement.classList.add('overlay', 'duration-700', 'ease-in-out', 'hidden');
-//     //     articleElement.setAttribute('data-carousel-item', "active");
+//   // Create HTML code for each article
+//   articles.forEach((article) => {
+//     const articleElement = document.createElement('div');
+//     articleElement.classList.add('overlay', 'duration-700', 'ease-in-out', 'hidden');
+//     articleElement.setAttribute('data-carousel-item', "active");
 
-//     //     articleElement.innerHTML = `
-//     //       <a href="${article.url}">
-//     //         <img class="max-w-full w-full h-auto" src="${article.urlToImage}" alt="">
-//     //       </a>
-//     //       <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
-//     //         <a href="${article.url}">
-//     //           <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">${article.title}</h2>
-//     //         </a>
-//     //         <p class="text-gray-200 hidden sm:inline-block">${article.description}</p>
-//     //         <p class="text-gray-200 hidden sm:inline-block">${article.publishedAt.slice(0, 10)}</p>
-//     //         <div class="pt-2">
-//     //           <div class="text-gray-200">
-//     //             <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
-//     //             <span class="text-xl">${article.source.name}</span>
-//     //           </div>
-//     //         </div>
-//     //       </div>
-//     //     `;
+//     articleElement.innerHTML = `
+//       <a href="${article.url}">
+//         <img class="max-w-full w-full h-auto" src="${article.urlToImage}" alt="">
+//       </a>
+//       <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
+//         <a href="${article.url}">
+//           <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">${article.title}</h2>
+//         </a>
+//         <p class="text-gray-200 hidden sm:inline-block">${article.description}</p>
+//         <p class="text-gray-200 hidden sm:inline-block">${article.publishedAt.slice(0, 10)}</p>
+//         <div class="pt-2">
+//           <div class="text-gray-200">
+//             <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
+//             <span class="text-xl">${article.source.name}</span>
+//           </div>
+//         </div>
+//       </div>
+//     `;
 
-//     //     document.querySelector("#headline-carousel .relative").appendChild(articleElement);
-//     //   });
-//     // })
+//     document.querySelector("#headline-carousel .relative").appendChild(articleElement);
+//   });
+// })
 
-//     .then(function (data) {
-//       trendarticles = data.articles;
-//       console.log(trendarticles);
+// .then(function (data) {
+//   trendarticles = data.articles;
+//   console.log(trendarticles);
 
-//       const div = document.createElement('div');
-//       div.classList.add('overlay', 'duration-700', 'ease-in-out');
-//       div.setAttribute('data-carousel-item', 'active');
+//   const div = document.createElement("div");
+//   div.classList.add("overlay", "duration-700", "ease-in-out");
+//   div.setAttribute("data-carousel-item", "active");
 
+//   for (let i = 0; i < trendarticles.length; i++) {
+//     const article = trendarticles[i];
 
-
-//       for (let i = 0; i < trendarticles.length; i++) {
-//         const article = trendarticles[i];
-
-
-//         div.innerHTML += `
-//                   <a href="${article.url}">
-//                   <img class="max-w-full w-full h-auto" src="${article.image}" alt="">
-//                   </a>
-//                   <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
-//                     <a href="${article.url}">
-//                       <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">${article.title}</h2>
-//                     </a>
-//                     <p class="text-gray-200 hidden sm:inline-block">${article.description}</p>
-//                     <p class="text-gray-200 hidden sm:inline-block">${article.publishedAt.slice(0, 10)}</p>
-//                     <div class="pt-2">
-//                       <div class="text-gray-200">
-//                         <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
-//                         <span class="text-xl">Category</span>
-//                       </div>
-//                     </div>
+//     div.innerHTML += `
+//               <a href="${article.url}">
+//               <img class="max-w-full w-full h-auto" src="${
+//                 article.image
+//               }" alt="">
+//               </a>
+//               <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
+//                 <a href="${article.url}">
+//                   <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">${
+//                     article.title
+//                   }</h2>
+//                 </a>
+//                 <p class="text-gray-200 hidden sm:inline-block">${
+//                   article.description
+//                 }</p>
+//                 <p class="text-gray-200 hidden sm:inline-block">${article.publishedAt.slice(
+//                   0,
+//                   10
+//                 )}</p>
+//                 <div class="pt-2">
+//                   <div class="text-gray-200">
+//                     <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
+//                     <span class="text-xl">Category</span>
 //                   </div>
-//         `;
-//       }
+//                 </div>
+//               </div>
+//     `;
+//   }
 
-//       document.querySelector('#headline-carousel .relative').appendChild(div);
-//     });
+//   document.querySelector("#headline-carousel .relative").appendChild(div);
+// });
 // }
 // displayCarouselNews();
 
@@ -129,11 +135,8 @@ const global = {
 //       const div = document.createElement('div');
 //       div.classList.add('overlay', 'relative', 'hover-img', 'max-h-48', 'overflow-hidden');
 
-
-
 //       for (let i = 0; i < trendarticles.length; i++) {
 //         const article = trendarticles[i];
-
 
 //         div.innerHTML += `
 //         <a href="${article.url}">
@@ -158,48 +161,42 @@ const global = {
 // }
 // displayBusinessNews();
 
-
 // // ========== { display Business from gnews.io} ========== \\
-// function displayTrendingNews() {
-//   fetchAPIData("any")
+async function displayTrendingNews() {
+  try {
+    fetchAPIData("general").then(function (data) {
+      trendarticles = data.articles;
+      console.log(trendarticles);
 
-//     .then(function (data) {
-//       trendarticles = data.articles;
-//       console.log(trendarticles);
+      trendarticles.forEach((articles) => {
+        const div = document.createElement("div");
+        div.classList =
+          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100";
 
-//       const div = document.createElement('div');
-//       div.classList.add('card');
-
-
-
-//       for (let i = 0; i < trendarticles.length; i++) {
-//         const article = trendarticles[i];
-
-
-//         div.innerHTML += `
-//         <div class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
-//                     <div class="flex flex-row sm:block hover-img">
-//         <a href="${article.url}">
-//         <img class="max-w-full w-full mx-auto h-auto" src="${article.image}"
-//           alt="Image description">
-//       </a>
-//       <div class="py-0 sm:py-3 pl-3 sm:pl-0">
-//         <a href="${article.url}">
-//           <h3 class="text-lg font-bold leading-tight text-white mb-2">${article.title}</h3>
-//         </a>
-//         <p class="hidden md:block text-gray-600 leading-tight mb-1">${article.description}</p>
-//       </div>
-//       </div>
-//       </div>
-//         `;
-//       }
-
-//       document.querySelector('#trend-news .flex').appendChild(div);
-//     });
-// }
-// displayTrendingNews();
-
-
+        div.innerHTML = `
+                        <div class="flex-row sm:block hover-img">
+                          <a href="${articles.url}">
+                            <img class="max-w-full w-full mx-auto" src="${articles.image}" alt="alt title">
+                          </a>
+                          <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                            <h3 class="text-lg font-bold leading-tight mb-2">
+                              <a href="${articles.url}">${articles.title}</a>
+                            </h3>
+                            <p class="hidden md:block text-gray-600 leading-tight mb-1">${articles.description}</p>
+                            <a class="text-gray-500" href="#"><span
+                                class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Category</span></a>
+                          </div>
+                          </div>
+                        
+            `;
+        document.querySelector("#trend-news").appendChild(div);
+      });
+    });
+  } catch (error) {
+    console.error("An error occurred:", error.message);
+  }
+}
+displayTrendingNews();
 
 // ========== { back to top button } ========== \\
 let btn = document.getElementById("back-to-top");
@@ -280,18 +277,16 @@ function getDateTime() {
 }
 setInterval(getDateTime, 1000);
 
-
-
 // ========== { sample weather } ========== \\
 let weather = {
   apiKey: "5c2780f0e27163175249dc2144f8ca64",
   fetchWeather: function (city) {
     fetch(
       "https://api.openweathermap.org/data/2.5/weather?q=" +
-      city +
-      "&units=metric&appid=" +
-      this.apiKey
-      )
+        city +
+        "&units=metric&appid=" +
+        this.apiKey
+    )
       .then((response) => {
         if (!response.ok) {
           alert("No weather found.");
@@ -300,71 +295,67 @@ let weather = {
         return response.json();
       })
       .then((data) => this.displayWeather(data));
-    },
-    displayWeather: function (data) {
-      const { name } = data;
-      const { icon, description } = data.weather[0];
-      const { temp, humidity } = data.main;
-      const { speed } = data.wind;
-      document.querySelector(".city").innerText = "Weather in " + name;
-      document.querySelector(".icon").src =
+  },
+  displayWeather: function (data) {
+    const { name } = data;
+    const { icon, description } = data.weather[0];
+    const { temp, humidity } = data.main;
+    const { speed } = data.wind;
+    document.querySelector(".city").innerText = "Weather in " + name;
+    document.querySelector(".icon").src =
       "https://openweathermap.org/img/wn/" + icon + ".png";
-      document.querySelector(".description").innerText = description;
-      document.querySelector(".temp").innerText = temp + "°C";
-      document.querySelector(".humidity").innerText =
+    document.querySelector(".description").innerText = description;
+    document.querySelector(".temp").innerText = temp + "°C";
+    document.querySelector(".humidity").innerText =
       "Humidity: " + humidity + "%";
-      document.querySelector(".wind").innerText =
+    document.querySelector(".wind").innerText =
       "Wind speed: " + speed + " km/h";
-      document.querySelector(".weather").classList.remove("loading");
-      document.body.style.backgroundImage =
+    document.querySelector(".weather").classList.remove("loading");
+    document.body.style.backgroundImage =
       "url('https://source.unsplash.com/1600x900/?" + name + "')";
-    },
-    search: function () {
-      this.fetchWeather(document.querySelector(".search-bar").value);
-    },
-  };
+  },
+  search: function () {
+    this.fetchWeather(document.querySelector(".search-bar").value);
+  },
+};
 
-  document.querySelector(".search button").addEventListener("click", function () {
-    weather.search();
-  });
-  
-  document
+document.querySelector(".search button").addEventListener("click", function () {
+  weather.search();
+});
+
+document
   .querySelector(".search-bar")
   .addEventListener("keyup", function (event) {
     if (event.key == "Enter") {
       weather.search();
     }
   });
-  
-  weather.fetchWeather("Manila");
 
+weather.fetchWeather("Manila");
 
-  // ========== { utilities } ========== \\
-  function showSpinner() {
-    document.querySelector(".spinner").classList.add("show");
-  }
-  
-  function hideSpinner() {
-    document.querySelector(".spinner").classList.remove("show");
-  }
+// ========== { utilities } ========== \\
+function showSpinner() {
+  document.querySelector(".spinner").classList.add("show");
+}
 
+function hideSpinner() {
+  document.querySelector(".spinner").classList.remove("show");
+}
 
+// const apiKey1 = "9167dae881545d7d1ebf42ac1186d6ae";
+// const apiKey2 = "e701311bc9b2249184c539cd496d8466";
+// const apiKey3 = "bd6c2317d02803fb4cf4fa5deaff149c";
+// const apiKey4 = "26fd80a7289d79b300b99af28392c8c7";
+// const apiKey5 = "d7dfd99147ac538715d80f39a0277163";
 
-  // const apiKey1 = "9167dae881545d7d1ebf42ac1186d6ae";
-  // const apiKey2 = "e701311bc9b2249184c539cd496d8466";
-  // const apiKey3 = "bd6c2317d02803fb4cf4fa5deaff149c";
-  // const apiKey4 = "26fd80a7289d79b300b99af28392c8c7";
-  // const apiKey5 = "d7dfd99147ac538715d80f39a0277163";
-  
-  
-  // // ========== { fetch and display data for local} ========== \\
-  // function displayLocalNews() {
-    //   url =
-    //     "https://gnews.io/api/v4/category=nation?country=ph&lang=en&max=5&apikey=" +
-    //     apiKey4;
-    
-    //   fetch(url)
-    //     .then(function (response) {
+// // ========== { fetch and display data for local} ========== \\
+// function displayLocalNews() {
+//   url =
+//     "https://gnews.io/api/v4/category=nation?country=ph&lang=en&max=5&apikey=" +
+//     apiKey4;
+
+//   fetch(url)
+//     .then(function (response) {
 //       return response.json();
 //     })
 //     .then(function (data) {
@@ -393,7 +384,6 @@ let weather = {
 //       document.querySelector("local-news").appendChild(div);
 //     });
 // }
-
 
 // async function displayDataInCarousel() {
 //   const endpoint = 'your-endpoint-here';
