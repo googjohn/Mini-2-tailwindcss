@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    "start": "node script.js"
   },
   "devDependencies": {
     "tailwindcss": "^3.3.2"
