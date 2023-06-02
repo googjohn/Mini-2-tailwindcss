@@ -26,23 +26,23 @@ const global = {
 };
 
 // ========== { fetch data from gnews.io} ========== \\
-// async function fetchAPIData(endpoint) {
-//   const API_KEY = global.api.apiKey_8;
-//   const API_URL = global.api.apiUrl;
+async function fetchAPIData(endpoint) {
+  const API_KEY = global.api.apiKey_8;
+  const API_URL = global.api.apiUrl;
 
-//   showSpinner();
+  showSpinner();
 
-//   const response = await fetch(
-//     `${API_URL}${endpoint}&lang=en&country=us&apikey=${API_KEY}`
-//   );
+  const response = await fetch(
+    `${API_URL}${endpoint}&lang=en&country=us&apikey=${API_KEY}`
+  );
 
-//   const data = await response.json();
-//   console.log(data);
+  const data = await response.json();
+  console.log(data);
 
-//   hideSpinner();
+  hideSpinner();
 
-//   return data;
-// }
+  return data;
+}
 
 // ========== { display top headlines from gnews.io} ========== \\
 // function displayCarouselNews() {
@@ -159,45 +159,45 @@ const global = {
 // displayBusinessNews();
 
 
-// // ========== { display Business from gnews.io} ========== \\
-// function displayTrendingNews() {
-//   fetchAPIData("any")
+// // ========== { display trending news from gnews.io} ========== \\
+function displayTrendingNews() {
+  fetchAPIData("general")
 
-//     .then(function (data) {
-//       trendarticles = data.articles;
-//       console.log(trendarticles);
+    .then(function (data) {
+      trendarticles = data.articles;
+      console.log(trendarticles);
 
-//       const div = document.createElement('div');
-//       div.classList.add('card');
-
-
-
-//       for (let i = 0; i < trendarticles.length; i++) {
-//         const article = trendarticles[i];
+      const div = document.createElement('div');
+      div.classList.add('card');
 
 
-//         div.innerHTML += `
-//         <div class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
-//                     <div class="flex flex-row sm:block hover-img">
-//         <a href="${article.url}">
-//         <img class="max-w-full w-full mx-auto h-auto" src="${article.image}"
-//           alt="Image description">
-//       </a>
-//       <div class="py-0 sm:py-3 pl-3 sm:pl-0">
-//         <a href="${article.url}">
-//           <h3 class="text-lg font-bold leading-tight text-white mb-2">${article.title}</h3>
-//         </a>
-//         <p class="hidden md:block text-gray-600 leading-tight mb-1">${article.description}</p>
-//       </div>
-//       </div>
-//       </div>
-//         `;
-//       }
 
-//       document.querySelector('#trend-news .flex').appendChild(div);
-//     });
-// }
-// displayTrendingNews();
+      for (let i = 0; i < trendarticles.length; i++) {
+        const article = trendarticles[i];
+
+
+        div.innerHTML += `
+        <div class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex flex-row sm:block hover-img">
+        <a href="${article.url}">
+        <img class="max-w-full w-full mx-auto h-auto" src="${article.image}"
+          alt="Image description">
+      </a>
+      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+        <a href="${article.url}">
+          <h3 class="text-lg font-bold leading-tight text-white mb-2">${article.title}</h3>
+        </a>
+        <p class="hidden md:block text-gray-600 leading-tight mb-1">${article.description}</p>
+      </div>
+      </div>
+      </div>
+        `;
+      }
+
+      document.querySelector('#trend-news .flex').appendChild(div);
+    });
+}
+displayTrendingNews();
 
 
 
@@ -277,6 +277,19 @@ function getDateTime() {
   let ampm = hours >= 12 ? "pm" : "am";
   let timeNow = hours + ":" + minutes + ":" + seconds + " " + ampm;
   document.getElementById("time-now").innerHTML = timeNow;
+
+  function formatAMPM(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
+  }
+  
+  console.log(formatAMPM(new Date));
 }
 setInterval(getDateTime, 1000);
 
@@ -463,3 +476,5 @@ let weather = {
 //     },
 //   });
 // }
+
+
