@@ -1,0 +1,172 @@
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --cat-busy-clr: red;
+  --cat-entmnt-clr: orange;
+  --cat-health-clr: yellow;
+  --cat-sports-clr: green;
+  --cat-science-clr: blue;
+  --cat-techno-clr: indigo;
+  --cat-local-clr: violet;
+  --cat-world-clr: gray;
+}
+
+.overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.3) 27%,
+    rgba(0, 0, 0, 0.1) 90%
+  );
+}
+
+.overlay * {
+  z-index: 5;
+}
+
+#back-to-top {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  display: none;
+  z-index: 1000;
+}
+
+div.border-b2m {
+  border-bottom: 1px solid black;
+}
+
+div.border-b2m-white {
+  border-bottom: 1px solid white;
+}
+
+.category-1 {
+  padding: 2px 4px;
+  border-radius: 8px;
+  background-color: var(--cat-busy-clr)
+}
+.category-2 {
+  padding: 2px 4px;
+  border-radius: 8px;
+  background-color: var(--cat-entmnt-clr)
+}
+.category-3 {
+  padding: 2px 4px;
+  border-radius: 8px;
+  background-color: var(--cat-health-clr)
+}
+.category-4 {
+  padding: 2px 4px;
+  border-radius: 8px;
+  background-color: var(--cat-science-clr)
+}
+.category-5 {
+  padding: 2px 4px;
+  border-radius: 8px;
+  background-color: var(--cat-sports-clr)
+}
+.category-6 {
+  padding: 2px 4px;
+  border-radius: 8px;
+  background-color: var(--cat-techno-clr)
+}
+.category-7 {
+  padding: 2px 4px;
+  border-radius: 8px;
+  background-color: var(--cat-local-clr)
+}
+.category-8 {
+  padding: 2px 4px;
+  border-radius: 8px;
+  background-color: var(--cat-world-clr)
+}
+
+.card {
+  background: #000000d0;
+  color: white;
+  padding: 2em;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 420px;
+  margin: 1em;
+  height: 390px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+
+.search-weather button {
+  margin: 0.5em;
+  border-radius: 50%;
+  border: none;
+  height: 44px;
+  width: 44px;
+  outline: none;
+  background: #7c7c7c2b;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+input.search-bar {
+  border: none;
+  outline: none;
+  padding: 0.4em 1em;
+  border-radius: 24px;
+  background: #7c7c7c2b;
+  color: white;
+  font-family: inherit;
+  font-size: 105%;
+  width: calc(100% - 100px);
+}
+
+.search button:hover {
+  background: #7c7c7c6b;
+}
+
+h1.temp {
+  margin: 0;
+  margin-bottom: 0.4em;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.description {
+  text-transform: capitalize;
+  margin-left: 8px;
+}
+
+.weather.loading {
+  visibility: hidden;
+  max-height: 20px;
+  position: relative;
+}
+
+.weather.loading:after {
+  visibility: visible;
+  content: "Loading...";
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
