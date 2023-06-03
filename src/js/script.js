@@ -29,11 +29,12 @@ const global = {
 async function fetchAPIData(endpoint) {
   const API_KEY = global.api.apiKey_8;
   const API_URL = global.api.apiUrl;
+  const MAX_FETCH = global.api.maxfetch;
 
   showSpinner();
 
   const response = await fetch(
-    `${API_URL}${endpoint}&lang=en&country=us&apikey=${API_KEY}`
+    `${API_URL}${endpoint}&lang=en&country=us&max=${MAX_FETCH}&apikey=${API_KEY}`
   );
 
   const data = await response.json();
@@ -159,11 +160,11 @@ async function fetchAPIData(endpoint) {
 //       document.querySelector('.business-news').appendChild(div);
 //     });
 // }
-// displayBusinessNews();
 
-// // ========== { display Business from gnews.io} ========== \\
+// // ========== { display TrendNews from gnews.io} ========== \\
 async function displayTrendingNews() {
   try {
+    global.api.maxfetch = "6";
     fetchAPIData("general").then(function (data) {
       trendarticles = data.articles;
       console.log(trendarticles);
@@ -196,7 +197,7 @@ async function displayTrendingNews() {
     console.error("An error occurred:", error.message);
   }
 }
-displayTrendingNews();
+// displayTrendingNews();
 
 // ========== { back to top button } ========== \\
 let btn = document.getElementById("back-to-top");
@@ -453,3 +454,38 @@ function hideSpinner() {
 //     },
 //   });
 // }
+
+function init() {
+  switch (global.currentPage) {
+    case "/":
+    case "/index.html":
+      // displayBusinessNews();
+      // category1();
+      // category2();
+      // category3();
+      break;
+    case "/business.html":
+      // businesspage();
+      break;
+    case "/technology.html":
+      // technologypage();
+      break;
+    case "/science.html":
+      // sciencepage();
+      break;
+    case "/entertainment.html":
+      // entertainmentpage();
+      break;
+    case "/sports.html":
+      // sportspage();
+      break;
+    case "/health.html":
+      // healthpage();
+      break;
+    case "/search.html":
+      // searchpage();
+      break;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", init);
