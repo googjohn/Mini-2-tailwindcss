@@ -170,6 +170,83 @@ async function fetchAPIData(endpoint) {
 //     });
 // }
 
+async function carouselNews() {
+  try {
+    global.api.apiKeys = global.apiKey_7;
+    global.maxfetch = "5";
+    fetchAPIData("general").then(function (data) {
+      carouselarticles = data.articles;
+      console.log(carouselarticles);
+
+      // carouselarticles.forEach((articles) => {
+      const div = document.createElement("div");
+      div.classList = "relative h-56 overflow-hidden md:h-96";
+
+      div.innerHTML = `
+                        <div class="overlay hidden duration-700 ease-linear" data-carousel-item="active">
+                    <a href="#"><img class="max-w-full w-full h-auto" src="${carouselarticles[0].image}" alt=""></a>
+                    <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
+                      <a href="#">
+                        <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">1Amazon Shoppers Are Ditching
+                          Designer Belts for This Best-Selling</h2>
+                      </a>
+                      <p class="text-gray-200 hidden sm:inline-block">This is a wider card with supporting text below as
+                        a natural lead-in to additional content.This very helpfull for generate default content..</p>
+                      <div class="pt-2">
+                        <div class="text-gray-200">
+                          <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
+                          <span class="text-xl">Category</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                 
+                  <div class="overlay hidden duration-700 ease-linear" data-carousel-item>
+                    <a href="#"><img class="max-w-full w-full h-auto" src="${carouselarticles[1].image}" alt=""></a>
+                    <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
+                      <a href="#">
+                        <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">2Amazon Shoppers Are Ditching
+                          Designer Belts for This Best-Selling</h2>
+                      </a>
+                      <p class="text-gray-200 hidden sm:inline-block">This is a wider card with supporting text below as
+                        a natural lead-in to additional content.This very helpfull for generate default content..</p>
+                      <div class="pt-2">
+                        <div class="text-gray-200">
+                          <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
+                          <span class="text-xl">Category</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  
+                  <div class="overlay hidden duration-700 ease-linear" data-carousel-item>
+                    <a href="#"><img class="max-w-full w-full h-auto" src="${carouselarticles[2].image}" alt=""></a>
+                    <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
+                      <a href="#">
+                        <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">3Amazon Shoppers Are Ditching
+                          Designer Belts for This Best-Selling</h2>
+                      </a>
+                      <p class="text-gray-200 hidden sm:inline-block">This is a wider card with supporting text below as
+                        a natural lead-in to additional content.This very helpfull for generate default content..</p>
+                      <div class="pt-2">
+                        <div class="text-gray-200">
+                          <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
+                          <span class="text-xl">Category</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            `;
+      document.querySelector("#headline-carousel").appendChild(div);
+      // });
+    });
+  } catch (error) {
+    console.error("An error occurred:", error.message);
+  }
+}
+
 // // ========== { display TrendNews from gnews.io} ========== \\
 async function displayTrendingNews() {
   try {
@@ -659,6 +736,7 @@ function init() {
   switch (global.currentPage) {
     case "/":
     case "/src/index.html":
+      // carouselNews();
       // displayTrendingNews();
       // displayBusinessNews();
       // displayEntertainmentNews();
