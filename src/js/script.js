@@ -171,82 +171,80 @@ async function fetchAPIData(endpoint) {
 // }
 
 // // ========== { display carousel from gnews.io} ========== \\
-async function carouselNews() {
-  try {
-    global.api.apiKeys = global.apiKey_7;
-    global.maxfetch = "5";
-    fetchAPIData("general").then(function (data) {
-      carouselarticles = data.articles;
-      console.log(carouselarticles);
+// async function carouselNews() {
+//   try {
+//     global.api.apiKeys = global.apiKey_7;
+//     global.maxfetch = "5";
+//     fetchAPIData("general").then(function (data) {
+//       carouselarticles = data.articles;
+//       console.log(carouselarticles);
 
-      // carouselarticles.forEach((articles) => {
-      const div = document.createElement("div");
-      div.classList = "relative h-56 overflow-hidden md:h-96";
+//       // carouselarticles.forEach((articles) => {
+//       const div = document.createElement("div");
+//       div.classList = "relative h-56 overflow-hidden md:h-96";
 
-      div.innerHTML = `
-                        <div class="overlay hidden duration-700 ease-linear" data-carousel-item="active">
-                    <a href="#"><img class="max-w-full w-full h-auto" src="${carouselarticles[0].image}" alt=""></a>
-                    <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
-                      <a href="#">
-                        <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">1Amazon Shoppers Are Ditching
-                          Designer Belts for This Best-Selling</h2>
-                      </a>
-                      <p class="text-gray-200 hidden sm:inline-block">This is a wider card with supporting text below as
-                        a natural lead-in to additional content.This very helpfull for generate default content..</p>
-                      <div class="pt-2">
-                        <div class="text-gray-200">
-                          <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
-                          <span class="text-xl">Category</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+//       div.innerHTML = `
+//                         <div class="overlay hidden duration-700 ease-linear" data-carousel-item="active">
+//                     <a href="#"><img class="max-w-full w-full h-auto" src="${carouselarticles[0].image}" alt=""></a>
+//                     <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
+//                       <a href="#">
+//                         <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">1Amazon Shoppers Are Ditching
+//                           Designer Belts for This Best-Selling</h2>
+//                       </a>
+//                       <p class="text-gray-200 hidden sm:inline-block">This is a wider card with supporting text below as
+//                         a natural lead-in to additional content.This very helpfull for generate default content..</p>
+//                       <div class="pt-2">
+//                         <div class="text-gray-200">
+//                           <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
+//                           <span class="text-xl">Category</span>
+//                         </div>
+//                       </div>
+//                     </div>
+//                   </div>
 
-                 
-                  <div class="overlay hidden duration-700 ease-linear" data-carousel-item>
-                    <a href="#"><img class="max-w-full w-full h-auto" src="${carouselarticles[1].image}" alt=""></a>
-                    <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
-                      <a href="#">
-                        <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">2Amazon Shoppers Are Ditching
-                          Designer Belts for This Best-Selling</h2>
-                      </a>
-                      <p class="text-gray-200 hidden sm:inline-block">This is a wider card with supporting text below as
-                        a natural lead-in to additional content.This very helpfull for generate default content..</p>
-                      <div class="pt-2">
-                        <div class="text-gray-200">
-                          <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
-                          <span class="text-xl">Category</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+//                   <div class="overlay hidden duration-700 ease-linear" data-carousel-item>
+//                     <a href="#"><img class="max-w-full w-full h-auto" src="${carouselarticles[1].image}" alt=""></a>
+//                     <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
+//                       <a href="#">
+//                         <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">2Amazon Shoppers Are Ditching
+//                           Designer Belts for This Best-Selling</h2>
+//                       </a>
+//                       <p class="text-gray-200 hidden sm:inline-block">This is a wider card with supporting text below as
+//                         a natural lead-in to additional content.This very helpfull for generate default content..</p>
+//                       <div class="pt-2">
+//                         <div class="text-gray-200">
+//                           <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
+//                           <span class="text-xl">Category</span>
+//                         </div>
+//                       </div>
+//                     </div>
+//                   </div>
 
-                  
-                  <div class="overlay hidden duration-700 ease-linear" data-carousel-item>
-                    <a href="#"><img class="max-w-full w-full h-auto" src="${carouselarticles[2].image}" alt=""></a>
-                    <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
-                      <a href="#">
-                        <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">3Amazon Shoppers Are Ditching
-                          Designer Belts for This Best-Selling</h2>
-                      </a>
-                      <p class="text-gray-200 hidden sm:inline-block">This is a wider card with supporting text below as
-                        a natural lead-in to additional content.This very helpfull for generate default content..</p>
-                      <div class="pt-2">
-                        <div class="text-gray-200">
-                          <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
-                          <span class="text-xl">Category</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-            `;
-      document.querySelector("#headline-carousel").appendChild(div);
-      // });
-    });
-  } catch (error) {
-    console.error("An error occurred:", error.message);
-  }
-}
+//                   <div class="overlay hidden duration-700 ease-linear" data-carousel-item>
+//                     <a href="#"><img class="max-w-full w-full h-auto" src="${carouselarticles[2].image}" alt=""></a>
+//                     <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
+//                       <a href="#">
+//                         <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">3Amazon Shoppers Are Ditching
+//                           Designer Belts for This Best-Selling</h2>
+//                       </a>
+//                       <p class="text-gray-200 hidden sm:inline-block">This is a wider card with supporting text below as
+//                         a natural lead-in to additional content.This very helpfull for generate default content..</p>
+//                       <div class="pt-2">
+//                         <div class="text-gray-200">
+//                           <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
+//                           <span class="text-xl">Category</span>
+//                         </div>
+//                       </div>
+//                     </div>
+//                   </div>
+//             `;
+//       document.querySelector("#headline-carousel").appendChild(div);
+//       // });
+//     });
+//   } catch (error) {
+//     console.error("An error occurred:", error.message);
+//   }
+// }
 
 // // ========== { display TrendNews from gnews.io} ========== \\
 async function displayTrendingNews() {
@@ -470,6 +468,137 @@ async function displayTechnologyNews() {
         document.querySelector("#technology-news").appendChild(div);
       });
     });
+  } catch (error) {
+    console.error("An error occurred:", error.message);
+  }
+}
+
+// // ========== { display FOREX from FastForex} ========== \\
+async function displayForex() {
+  try {
+    //getting the date -1 ====================================================
+    const currentDate = new Date();
+    currentDate.setDate(currentDate.getDate() - 1);
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, "0");
+    const day = String(currentDate.getDate()).padStart(2, "0");
+    const formattedDate = `${year}-${month}-${day}`;
+    console.log(formattedDate);
+    //==========================================================================
+    const url =
+      "https://api.fastforex.io/fetch-multi?api_key=8194ba7ae9-2d79e8ed0d-rvpsqg&from=USD&to=PHP,EUR,AUD,AED,NZD,CNY,HKD,JPY,KRW,CAD";
+    const url2 =
+      "https://api.fastforex.io/historical?date=" +
+      formattedDate +
+      "&api_key=8194ba7ae9-2d79e8ed0d-rvpsqg&from=USD&to=PHP,EUR,AUD,AED,NZD,CNY,HKD,JPY,KRW,CAD";
+    // current exchange ======================================================
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data);
+
+    // yesterday exchange
+    const response2 = await fetch(url2);
+    const data2 = await response2.json();
+    console.log(data2);
+
+    //condition if rise or fel
+    //PHP
+    if (data.results.PHP >= data2.results.PHP) {
+      PHP = "text-up";
+    } else {
+      PHP = "text-down";
+    }
+    //EUR
+    if (data.results.EUR >= data2.results.EUR) {
+      EUR = "text-up";
+    } else {
+      EUR = "text-down";
+    }
+    //AUD
+    if (data.results.AUD >= data2.results.AUD) {
+      AUD = "text-up";
+    } else {
+      AUD = "text-down";
+    }
+    //AED
+    if (data.results.AED >= data2.results.AED) {
+      AED = "text-up";
+    } else {
+      AED = "text-down";
+    }
+    //NZD
+    if (data.results.NZD >= data2.results.NZD) {
+      NZD = "text-up";
+    } else {
+      NZD = "text-down";
+    }
+    //CNY
+    if (data.results.CNY >= data2.results.CNY) {
+      CNY = "text-up";
+    } else {
+      CNY = "text-down";
+    }
+    //HKD
+    if (data.results.HKD >= data2.results.HKD) {
+      HKD = "text-up";
+    } else {
+      HKD = "text-down";
+    }
+    //JPY
+    if (data.results.JPY >= data2.results.JPY) {
+      JPY = "text-up";
+    } else {
+      JPY = "text-down";
+    }
+    //KRW
+    if (data.results.KRW >= data2.results.KRW) {
+      KRW = "text-up";
+    } else {
+      KRW = "text-down";
+    }
+    //CAD
+    if (data.results.CAD >= data2.results.CAD) {
+      CAD = "text-up";
+    } else {
+      CAD = "text-down";
+    }
+
+    const div = document.createElement("div");
+    div.classList = "bg-black rounded-lg shadow-lg";
+
+    div.innerHTML = `
+    <div class="p-6">
+          <h5 class="text-xl ${PHP} mb-2"><span class="fi fi-ph"></span><span class="colored-colon"> : </span> ${data.results.PHP} PHP </h5>
+        </div>
+        <div class="p-6">
+          <h5 class="text-xl ${EUR} mb-2"><span class="fi fi-eu"></span><span class="colored-colon"> : </span> ${data.results.EUR} EUR </h5>
+        </div>
+        <div class="p-6">
+          <h5 class="text-xl ${AUD} mb-2"><span class="fi fi-au"></span><span class="colored-colon"> : </span> ${data.results.AUD} AUD </h5>
+        </div>
+        <div class="p-6">
+          <h5 class="text-xl ${AED} mb-2"><span class="fi fi-ae"></span><span class="colored-colon"> : </span> ${data.results.AED} AED </h5>
+        </div>
+        <div class="p-6">
+          <h5 class="text-xl ${NZD} mb-2"><span class="fi fi-nz"></span><span class="colored-colon"> : </span> ${data.results.NZD} NZD </h5>
+        </div>
+        <div class="p-6">
+          <h5 class="text-xl ${CNY} mb-2"><span class="fi fi-cn"></span><span class="colored-colon"> : </span> ${data.results.CNY} CNY </h5>
+        </div>
+        <div class="p-6">
+          <h5 class="text-xl ${HKD} mb-2"><span class="fi fi-hk"></span><span class="colored-colon"> : </span> ${data.results.HKD} HKD </h5>
+        </div>
+        <div class="p-6">
+          <h5 class="text-xl ${JPY} mb-2"><span class="fi fi-jp"></span><span class="colored-colon"> : </span> ${data.results.JPY} JPY </h5>
+        </div>
+        <div class="p-6">
+          <h5 class="text-xl ${KRW} mb-2"><span class="fi fi-kr"></span><span class="colored-colon"> : </span> ${data.results.KRW} KRW </h5>
+        </div>
+        <div class="p-6">
+          <h5 class="text-xl ${CAD} mb-2"><span class="fi fi-ca"></span><span class="colored-colon"> : </span> ${data.results.CAD} CAD </h5>
+        </div>
+    `;
+    document.querySelector("#forex").appendChild(div);
   } catch (error) {
     console.error("An error occurred:", error.message);
   }
@@ -744,6 +873,7 @@ function init() {
       // displaySportsNews();
       // displayScienceNews();
       // displayTechnologyNews();
+      displayForex();
       break;
     case "/business.html":
       // businesspage();

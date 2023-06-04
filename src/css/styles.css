@@ -56,42 +56,42 @@ div.border-b2m-white {
 .category-1 {
   padding: 2px 4px;
   border-radius: 8px;
-  background-color: var(--cat-busy-clr)
+  background-color: var(--cat-busy-clr);
 }
 .category-2 {
   padding: 2px 4px;
   border-radius: 8px;
-  background-color: var(--cat-entmnt-clr)
+  background-color: var(--cat-entmnt-clr);
 }
 .category-3 {
   padding: 2px 4px;
   border-radius: 8px;
-  background-color: var(--cat-health-clr)
+  background-color: var(--cat-health-clr);
 }
 .category-4 {
   padding: 2px 4px;
   border-radius: 8px;
-  background-color: var(--cat-science-clr)
+  background-color: var(--cat-science-clr);
 }
 .category-5 {
   padding: 2px 4px;
   border-radius: 8px;
-  background-color: var(--cat-sports-clr)
+  background-color: var(--cat-sports-clr);
 }
 .category-6 {
   padding: 2px 4px;
   border-radius: 8px;
-  background-color: var(--cat-techno-clr)
+  background-color: var(--cat-techno-clr);
 }
 .category-7 {
   padding: 2px 4px;
   border-radius: 8px;
-  background-color: var(--cat-local-clr)
+  background-color: var(--cat-local-clr);
 }
 .category-8 {
   padding: 2px 4px;
   border-radius: 8px;
-  background-color: var(--cat-world-clr)
+  background-color: var(--cat-world-clr);
 }
 
 .card {
@@ -169,4 +169,16 @@ h1.temp {
   position: absolute;
   top: 0;
   left: 20px;
+}
+
+.colored-colon {
+  color: rgb(12, 241, 31);
+}
+
+.text-up {
+  color: #24ee24d0;
+}
+
+.text-down {
+  color: #f30d0dd0;
 }
