@@ -173,3 +173,14 @@ h1.temp {
   top: 0;
   left: 20px;
 }
+.colored-colon {
+  color: rgb(255, 255, 255);
+}
+
+.text-up {
+  color: #24ee24d0;
+}
+
+.text-down {
+  color: #f30d0dd0;
+}
