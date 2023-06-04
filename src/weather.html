@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- Country Flag -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.7.0/css/flag-icons.min.css"
+    integrity="sha512-s/Nra58/et4CDKSnhUiPrce+8M5tdK1Ps0+9dKe4I9JH/g0QGzsPAdf1fLeBsMTMG1zWMBsnzxvPgTOAFUHwLQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../src/css/spinner.css">
+  <link rel="stylesheet" href="./css/weather.css">
+</head>
+
+<body class="block">
+  <header
+    class="h-24 px-8 rounded-lg border-b-2 text-white bg-transparent w-full md:w-fit flex flex-row items-center mb-8">
+    <nav class="w-full">
+      <div>
+        <ul class="flex flex-wrap text-xl md:text-2xl">
+          <li><a class="active px-8 py-6 hover:bg-blue-700 cusor-pointer rounded-lg hover:text-white hover:opacity-90"
+              href="weather.html">Weather</a>
+          </li>
+          <li><a class=" px-8 py-6 hover:bg-blue-700 cursor-pointer rounded-lg hover:opacity-90"
+              href="weather.html">Maps</a>
+          </li>
+          <li><a class=" px-8 py-6 hover:bg-blue-700 cursor-pointer rounded-lg hover:opacity-90"
+              href="weather.html">Hourly
+              Forecast</a></li>
+          <li><a class=" px-8 py-6 hover:bg-blue-700 cursor-pointer rounded-lg hover:opacity-90"
+              href="weather.html">Monthly
+              Forecast</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main id="main" class="flex gap-4">
+    <!-- sidebar temperature and condition display -->
+    <div class="wrapper">
+      <div class="sidebar text-white">
+        <div>
+          <form class="search" id="search">
+            <input type="text" id="query" placeholder="Search..." />
+            <button><i class="fas fa-search"></i></button>
+          </form>
+          <div class="weather-icon">
+            <img id="icon" src="/src/images/icons/sun/sunny.png" alt="" />
+          </div>
+          <div class="temperature">
+            <h1 id="temp" class>0</h1>
+            <span class="temp-unit">°C</span>
+          </div>
+          <div class="date-time">
+            <p id="date-time">Monday, 12:00</p>
+          </div>
+          <div class="divider"></div>
+          <div class="condition-rain">
+            <div class="condition">
+              <i class="fas fa-cloud"></i>
+              <p id="condition">condition</p>
+            </div>
+            <div class="rain">
+              <i class="fas fa-tint"></i>
+              <p id="rain">perc - 0%</p>
+            </div>
+          </div>
+        </div>
+        <div class="location">
+          <div class="location-icon">
+            <i class="fas fa-map-marker-alt"></i>
+
+          </div>
+          <div class="location-text">
+            <p id="location">location</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- main weather forecast -->
+      <div class="main">
+        <nav>
+          <ul class="options text-gray-200">
+            <button class="hourly">today</button>
+            <button class="week active">week</button>
+          </ul>
+          <ul class="options units">
+            <button class="celcius active">°C</button>
+            <button class="fahrenheit">°F</button>
+          </ul>
+        </nav>
+        <div class="cards" id="weather-cards"></div>
+        <div class="highlights">
+          <h2 class="heading">today's highlights</h2>
+          <div class="cards">
+            <div class="card2">
+              <h4 class="card-heading">Wind Status</h4>
+              <div class="content">
+                <p class="wind-speed">0</p>
+                <p>km/h</p>
+              </div>
+            </div>
+            <div class="card2">
+              <h4 class="card-heading">Sunrise & Sunset</h4>
+              <div class="content">
+                <p class="sun-rise">0</p>
+                <p class="sun-set">0</p>
+              </div>
+            </div>
+            <div class="card2">
+              <h4 class="card-heading">Humidity</i></h4>
+              <div class="content">
+                <p class="humidity">0</p>
+                <p class="humidity-status"></i>Normal</i></p>
+              </div>
+            </div>
+            <div class="card2">
+              <h4 class="card-heading">Visibility</h4>
+              <div class="content">
+                <p class="visibilty">0</p>
+                <p class="visibilty-status"></i> Normal</p>
+              </div>
+            </div>
+            <div class="card2">
+              <h4 class="card-heading">Pressure</h4>
+              <div class="content">
+                <p class="pressure">0</p>
+                <p class="pressure-status">Normal</p>
+              </div>
+            </div>
+            <div class="card2">
+              <h4 class="card-heading">Air Quality</h4>
+              <div class="content">
+                <p class="air-quality">0</p>
+                <p class="air-quality-status">Normal</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- right sidebar for news - needs to find news articles api specific for weather-->
+    <div class="sidebar-right text-white">
+      <div>
+        <h2 class="text-2xl border-b-2 pb-3">Weather News Updates</h2>
+      </div>
+      <div id="weather-news">
+        <!-- <ul class="weather-news-list">
+          <li>
+
+          </li>
+        </ul> -->
+      </div>
+    </div>
+  </main>
+
+  <!-- =============== spinner =============== -->
+  <div class="spinner-overlay">
+    <div class="spinner"></div>
+    <img src="./images/spinner.png" alt="">
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+  <script src="./js/weather.js"></script>
+</body>
+
+</html>

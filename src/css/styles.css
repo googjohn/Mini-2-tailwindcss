@@ -16,6 +16,7 @@
   --cat-techno-clr: indigo;
   --cat-local-clr: violet;
   --cat-world-clr: gray;
+  --dark-clr: #000000;
 }
 
 .overlay::after {
@@ -94,7 +95,9 @@ div.border-b2m-white {
   background-color: var(--cat-world-clr)
 }
 
-.card {
+
+/* weather */
+.card-weather {
   background: #000000d0;
   color: white;
   padding: 2em;
@@ -105,7 +108,7 @@ div.border-b2m-white {
   height: 390px;
 }
 
-.search {
+.search-weather {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -137,7 +140,7 @@ input.search-bar {
   width: calc(100% - 100px);
 }
 
-.search button:hover {
+.search-weather button:hover {
   background: #7c7c7c6b;
 }
 
@@ -169,4 +172,16 @@ h1.temp {
   position: absolute;
   top: 0;
   left: 20px;
+}
+
+.colored-colon {
+  color: rgb(255, 255, 255);
+}
+
+.text-up {
+  color: #24ee24d0;
+}
+
+.text-down {
+  color: #f30d0dd0;
 }
