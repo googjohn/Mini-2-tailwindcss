@@ -170,6 +170,7 @@ async function fetchAPIData(endpoint) {
 //     });
 // }
 
+// // ========== { display carousel from gnews.io} ========== \\
 async function carouselNews() {
   try {
     global.api.apiKeys = global.apiKey_7;
