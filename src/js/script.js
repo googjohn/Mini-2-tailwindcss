@@ -867,12 +867,12 @@ function init() {
     case "/":
     case "/src/index.html":
       // carouselNews();
-      // displayTrendingNews();
-      // displayBusinessNews();
-      // displayEntertainmentNews();
-      // displaySportsNews();
-      // displayScienceNews();
-      // displayTechnologyNews();
+      displayTrendingNews();
+      displayBusinessNews();
+      displayEntertainmentNews();
+      displaySportsNews();
+      displayScienceNews();
+      displayTechnologyNews();
       displayForex();
       break;
     case "/business.html":
