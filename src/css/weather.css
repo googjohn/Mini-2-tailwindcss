@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
 :root {
   --primary-color: #0575e6;
 }
@@ -56,18 +56,18 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 30px;
-  margin-top: 10px;
+  /* margin-bottom: 30px; */
+  margin: 10px;
   position: relative;
 }
 .search input {
   width: 100%;
-  height: 60px;
+  height: 40px;
   border: 1px solid #ced4da;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
   padding: 0 15px;
-  font-size: 20px;
+  font-size: 16px;
   color: #495057;
 }
 .search input:focus {
@@ -75,14 +75,14 @@ img {
   border: 1px solid var(--primary-color);
 }
 .search button {
-  min-width: 60px;
-  height: 60px;
+  min-width: 40px;
+  height: 40px;
   border: none;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
   background: var(--primary-color);
   color: #fff;
-  font-size: 24px;
+  font-size: 16px;
   cursor: pointer;
 }
 .search ul {
@@ -112,11 +112,11 @@ img {
   background-color: #f1f1f1;
 }
 .weather-icon {
-  width: 100%;
-  max-width: 300px;
-  height: 150px;
+  width: 70%;
+  max-width: 200px;
+  height: 100px;
   text-align: center;
-  margin: 20px auto 70px ;
+  margin: 10px auto 40px ;
 }
 .weather-icon #icon {
   max-width: 80%;
@@ -126,17 +126,17 @@ img {
   display: flex;
 }
 .temperature #temp {
-  font-size: 100px;
+  font-size: 50px;
   font-weight: 100;
   line-height: 1;
 }
 .temperature span {
-  font-size: 40px;
+  font-size: 20px;
   margin-top: -10px;
   display: block;
 }
 .date-time {
-  font-size: 18px;
+  font-size: 16px;
 }
 .divider {
   width: 100%;
@@ -145,7 +145,7 @@ img {
   margin: 20px 0;
 }
 .condition-rain {
-  font-size: 18px;
+  font-size: 16px;
   text-transform: capitalize;
 }
 .condition-rain div {
@@ -160,7 +160,7 @@ img {
 .location {
   display: flex;
   align-items: center;
-  font-size: 18px;
+  font-size: 16px;
   gap: 10px;
   margin-top: 10px;
 }
@@ -188,7 +188,7 @@ img {
 .main nav .options button {
   border: none;
   background: none;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   color: #fff;
   cursor: pointer;
@@ -199,8 +199,8 @@ img {
 }
 
 .main nav .units button {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   /* color: #1a1a1a; */
   color: var(--primary-color);
@@ -247,18 +247,19 @@ img {
 .highlights {
   display: flex;
   flex-wrap: wrap;
+  gap: 20px;
   margin-top: 50px;
 }
 .highlights .heading {
   width: 100%;
-  font-size: 24px;
+  font-size: 20px;
   color: #fff;
   font-weight: 600;
   text-transform: capitalize;
 }
 
 .card2 {
-  width: 250px;
+  width: 200px;
   height: 150px;
   border-radius: 20px;
   color: #fff;
@@ -271,7 +272,6 @@ img {
 }
 .card2 .card-heading {
   color: #ffffff;
-  font-size: 18px;
 }
 
 .card2 .content {
@@ -279,10 +279,10 @@ img {
 }
 .card2 .content p:first-child {
   text-align: center;
-  font-size: 40px;
+  font-size: 30px;
 }
 .card2 .content p:nth-child(2) {
-  font-size: 18px;
+  font-size: 16px;
   margin-top: 10px;
   text-align: left;
 }

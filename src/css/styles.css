@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 *,
 ::after,
 ::before {
@@ -17,6 +18,7 @@
   --cat-local-clr: violet;
   --cat-world-clr: gray;
   --dark-clr: #000000;
+  --weather-card-clr: #0575e6;
 }
 
 .overlay::after {
@@ -97,81 +99,133 @@ div.border-b2m-white {
 
 
 /* weather */
-.card-weather {
-  background: #000000d0;
-  color: white;
-  padding: 2em;
-  border-radius: 30px;
+.weather {
+  /* min-height: 100vh; */
+  /* min-width: 1000px; */
+  /* padding: 50px; */
+  /* background: var(--primary-color);
+  background-image: linear-gradient(to right, #2193b0, #2f80ed); */
   width: 100%;
-  max-width: 420px;
-  margin: 1em;
-  height: 390px;
+  /* max-width: 300px; */
+  height: 100%;
+  background: #0575e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0575e6, #021b79);
+  background: linear-gradient(to right, #0575e6, #021b79);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  border-radius: 20px;
+
+}
+.sidebar {
+  width: 100%;
+  /* max-width: 300px; */
+  min-width: 250px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.315);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.search-weather {
+.search {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding-bottom: 50px;
-}
-
-.search-weather button {
-  margin: 0.5em;
-  border-radius: 50%;
-  border: none;
-  height: 44px;
-  width: 44px;
-  outline: none;
-  background: #7c7c7c2b;
-  color: white;
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
-}
-
-input.search-bar {
-  border: none;
-  outline: none;
-  padding: 0.4em 1em;
-  border-radius: 24px;
-  background: #7c7c7c2b;
-  color: white;
-  font-family: inherit;
-  font-size: 105%;
-  width: calc(100% - 100px);
-}
-
-.search-weather button:hover {
-  background: #7c7c7c6b;
-}
-
-h1.temp {
-  margin: 0;
-  margin-bottom: 0.4em;
-}
-
-.flex {
-  display: flex;
-  align-items: center;
-}
-
-.description {
-  text-transform: capitalize;
-  margin-left: 8px;
-}
-
-.weather.loading {
-  visibility: hidden;
-  max-height: 20px;
+  justify-content: space-between;
+  /* margin-bottom: 30px; */
+  margin: 10px 0;
   position: relative;
 }
+.search input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #ced4da;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  padding: 0 15px;
+  font-size: 16px;
+  color: #495057;
+}
+.search input:focus {
+  outline: none;
+  border: 1px solid var(--weather-card-clr);
+}
+.search #weather-search-btn {
+  min-width: 40px;
+  height: 40px;
+  border: none;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background: var(--weather-card-clr);
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+.weather-icon {
+  width: 70%;
+  max-width: 200px;
+  height: 100px;
+  text-align: center;
+  margin: 10px auto 40px ;
+}
+.weather-icon #icon {
+  max-width: 80%;
+  object-fit: cover;
+}
+.temperature {
+  display: flex;
+}
+.temperature #temp {
+  font-size: 50px;
+  font-weight: 100;
+  line-height: 1;
+}
+.temperature span {
+  font-size: 20px;
+  margin-top: -10px;
+  display: block;
+}
+.date-time {
+  font-size: 16px;
+}
+.divider {
+  width: 100%;
+  height: 1px;
+  background: #e9ecef;
+  margin: 10px 0;
+}
+.condition-rain {
+  font-size: 16px;
+  text-transform: capitalize;
+}
+.condition-rain div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.condition-rain div i {
+  width: 20px;
+}
+.location {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  gap: 10px;
+  margin-top: 10px;
+}
 
-.weather.loading:after {
-  visibility: visible;
-  content: "Loading...";
-  color: white;
-  position: absolute;
-  top: 0;
-  left: 20px;
+nav ul li .active {
+  font-weight: 800;
+  font-size: 30px;
+  transition: 250ms all ease;
+}
+
+li:hover{
+  opacity: .8;
+  color: #ffffff;
 }
 .colored-colon {
   color: rgb(255, 255, 255);

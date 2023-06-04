@@ -67,18 +67,18 @@ setInterval(() => {
 
 // ================ { function to get public ip using ipinfo.io } ================== //
 function getPublicIp() {
-  // fetch("https://ipinfo.io/json?token=6fb133d2b718e1", {
-  method: "GET",
-    headers: { },
-})
-    .then((response) => response.json())
-  .then((data) => {
-    currentCity = data.city;
-    getWeatherData(data.city, currentUnit, hourlyorWeek);
+  fetch("https://ipinfo.io/json?token=6fb133d2b718e1", {
+    method: "GET",
+    headers: {},
   })
-  .catch((err) => {
-    console.error(err);
-  });
+    .then((response) => response.json())
+    .then((data) => {
+      currentCity = data.city;
+      getWeatherData(data.city, currentUnit, hourlyorWeek);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
 }
 getPublicIp();
 
@@ -87,7 +87,7 @@ function getWeatherData(city, unit, hourlyorWeek) {
   // const apiKey = "3UX7T3ZEVQE5URAYQUM7WP8ZH";
   const apiKey_2 = "V2BL52V2FPR7ZVLVGNRH3VVSP";
   fetch(
-    // `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=${apiKey_2}&contentType=json`,
+    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=${apiKey_2}&contentType=json`,
     {
       method: "GET",
       headers: {},
@@ -124,9 +124,8 @@ function getWeatherData(city, unit, hourlyorWeek) {
       sunRise.innerText = covertTimeTo12HourFormat(today.sunrise);
       sunSet.innerText = covertTimeTo12HourFormat(today.sunset);
     })
-    .catch((err) => {
-      console.log("error", err);
-    });
+    .catch((error) =>
+      console.error("An error occurred:", error.message));
 }
 
 // ================ { function to update weather forecast } ================== //
@@ -192,15 +191,15 @@ async function fetchAPIData(endpoint) {
 
 // ========== { utilities } ========== \\
 function showSpinner() {
-  document.querySelector(".spinner").classList.add("show");
+  document.querySelector(".spinner-overlay").classList.add("show");
 }
 
 function hideSpinner() {
-  document.querySelector(".spinner").classList.remove("show");
+  document.querySelector(".spinner-overlay").classList.remove("show");
 }
 
 // ================ { function to change weather icons } ================== //
-async function getWeatherData() {
+async function getWeatherNews() {
   // const apiKey = "https://newsapi.org/v2/top-headlines?country=us&apiKey=ecbfd1725be34758b06c79adaf8a85ef"
   // const apiKey = "sMayN3GIT80P9piiu8hsCbKViMmuNrQIDpknv5m5";
   try {
@@ -224,7 +223,7 @@ async function getWeatherData() {
 
   }
 }
-getWeatherData();
+// getWeatherNews();
 
 // ================ { function to change weather icons } ================== //
 function getIcon(condition) {

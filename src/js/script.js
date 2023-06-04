@@ -170,84 +170,6 @@ async function fetchAPIData(endpoint) {
 //     });
 // }
 
-<<<<<<< HEAD
-async function carouselNews() {
-  try {
-    global.api.apiKeys = global.apiKey_7;
-    global.maxfetch = "5";
-    fetchAPIData("general").then(function (data) {
-      carouselarticles = data.articles;
-      console.log(carouselarticles);
-
-      // carouselarticles.forEach((articles) => {
-      const div = document.createElement("div");
-      div.classList = "relative h-56 overflow-hidden md:h-96";
-
-      div.innerHTML = `
-                        <div class="overlay hidden duration-700 ease-linear" data-carousel-item="active">
-                    <a href="#"><img class="max-w-full w-full h-auto" src="${carouselarticles[0].image}" alt=""></a>
-                    <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
-                      <a href="#">
-                        <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">1Amazon Shoppers Are Ditching
-                          Designer Belts for This Best-Selling</h2>
-                      </a>
-                      <p class="text-gray-200 hidden sm:inline-block">This is a wider card with supporting text below as
-                        a natural lead-in to additional content.This very helpfull for generate default content..</p>
-                      <div class="pt-2">
-                        <div class="text-gray-200">
-                          <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
-                          <span class="text-xl">Category</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                 
-                  <div class="overlay hidden duration-700 ease-linear" data-carousel-item>
-                    <a href="#"><img class="max-w-full w-full h-auto" src="${carouselarticles[1].image}" alt=""></a>
-                    <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
-                      <a href="#">
-                        <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">2Amazon Shoppers Are Ditching
-                          Designer Belts for This Best-Selling</h2>
-                      </a>
-                      <p class="text-gray-200 hidden sm:inline-block">This is a wider card with supporting text below as
-                        a natural lead-in to additional content.This very helpfull for generate default content..</p>
-                      <div class="pt-2">
-                        <div class="text-gray-200">
-                          <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
-                          <span class="text-xl">Category</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  
-                  <div class="overlay hidden duration-700 ease-linear" data-carousel-item>
-                    <a href="#"><img class="max-w-full w-full h-auto" src="${carouselarticles[2].image}" alt=""></a>
-                    <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
-                      <a href="#">
-                        <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">3Amazon Shoppers Are Ditching
-                          Designer Belts for This Best-Selling</h2>
-                      </a>
-                      <p class="text-gray-200 hidden sm:inline-block">This is a wider card with supporting text below as
-                        a natural lead-in to additional content.This very helpfull for generate default content..</p>
-                      <div class="pt-2">
-                        <div class="text-gray-200">
-                          <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
-                          <span class="text-xl">Category</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-            `;
-      document.querySelector("#headline-carousel").appendChild(div);
-      // });
-    });
-  } catch (error) {
-    console.error("An error occurred:", error.message);
-  }
-}
-=======
 // // ========== { display carousel from gnews.io} ========== \\
 // async function carouselNews() {
 //   try {
@@ -323,7 +245,6 @@ async function carouselNews() {
 //     console.error("An error occurred:", error.message);
 //   }
 // }
->>>>>>> ae3826a8aa6dfde01f3890c2077e7de8cc7f4c7e
 
 // // ========== { display TrendNews from gnews.io} ========== \\
 async function displayTrendingNews() {
@@ -438,11 +359,7 @@ async function displayEntertainmentNews() {
   }
 }
 
-<<<<<<< HEAD
-// ========== { display EntertainmentNews from gnews.io} ========== \\
-=======
 // // ========== { display EntertainmentNews from gnews.io} ========== \\
->>>>>>> ae3826a8aa6dfde01f3890c2077e7de8cc7f4c7e
 async function displaySportsNews() {
   try {
     global.api.apiKeys = global.apiKey_4;
@@ -709,7 +626,7 @@ function backToTop() {
 }
 
 // ========== { to display dynamic date } ========== \\
-function getDateTime() {
+function getDayTime() {
   let now = new Date();
   let hours = now.getHours();
   let minutes = now.getMinutes();
@@ -764,73 +681,73 @@ function getDateTime() {
   let timeNow = hours + ":" + minutes + ":" + seconds + " " + ampm;
   document.getElementById("time-now").innerHTML = timeNow;
 }
-setInterval(getDateTime, 1000);
+setInterval(getDayTime, 1000);
 // ========== { END display dynamic date } ========== \\
 
-// ========== { sample weather } ========== \\
-let weather = {
-  apiKey: "5c2780f0e27163175249dc2144f8ca64",
-  fetchWeather: function (city) {
-    fetch(
-      "https://api.openweathermap.org/data/2.5/weather?q=" +
-      city +
-      "&units=metric&appid=" +
-      this.apiKey
-    )
-      .then((response) => {
-        if (!response.ok) {
-          alert("No weather found.");
-          throw new Error("No weather found.");
-        }
-        return response.json();
-      })
-      .then((data) => this.displayWeather(data));
-  },
-  displayWeather: function (data) {
-    const { name } = data;
-    const { icon, description } = data.weather[0];
-    const { temp, humidity } = data.main;
-    const { speed } = data.wind;
-    document.querySelector(".city").innerText = "Weather in " + name;
-    document.querySelector(".icon").src =
-      "https://openweathermap.org/img/wn/" + icon + ".png";
-    document.querySelector(".description").innerText = description;
-    document.querySelector(".temp").innerText = temp + "°C";
-    document.querySelector(".humidity").innerText =
-      "Humidity: " + humidity + "%";
-    document.querySelector(".wind").innerText =
-      "Wind speed: " + speed + " km/h";
-    document.querySelector(".weather").classList.remove("loading");
-    document.body.style.backgroundImage =
-      "url('https://source.unsplash.com/1600x900/?" + name + "')";
-  },
-  search: function () {
-    this.fetchWeather(document.querySelector(".search-bar").value);
-  },
-};
+// // ========== { sample weather } ========== \\
+// let weather = {
+//   apiKey: "5c2780f0e27163175249dc2144f8ca64",
+//   fetchWeather: function (city) {
+//     fetch(
+//       "https://api.openweathermap.org/data/2.5/weather?q=" +
+//       city +
+//       "&units=metric&appid=" +
+//       this.apiKey
+//     )
+//       .then((response) => {
+//         if (!response.ok) {
+//           alert("No weather found.");
+//           throw new Error("No weather found.");
+//         }
+//         return response.json();
+//       })
+//       .then((data) => this.displayWeather(data));
+//   },
+//   displayWeather: function (data) {
+//     const { name } = data;
+//     const { icon, description } = data.weather[0];
+//     const { temp, humidity } = data.main;
+//     const { speed } = data.wind;
+//     document.querySelector(".city").innerText = "Weather in " + name;
+//     document.querySelector(".icon").src =
+//       "https://openweathermap.org/img/wn/" + icon + ".png";
+//     document.querySelector(".description").innerText = description;
+//     document.querySelector(".temp").innerText = temp + "°C";
+//     document.querySelector(".humidity").innerText =
+//       "Humidity: " + humidity + "%";
+//     document.querySelector(".wind").innerText =
+//       "Wind speed: " + speed + " km/h";
+//     document.querySelector(".weather").classList.remove("loading");
+//     document.body.style.backgroundImage =
+//       "url('https://source.unsplash.com/1600x900/?" + name + "')";
+//   },
+//   search: function () {
+//     this.fetchWeather(document.querySelector(".search-bar").value);
+//   },
+// };
 
-document.querySelector(".search button").addEventListener("click", function () {
-  weather.search();
-});
+// document.querySelector(".search button").addEventListener("click", function () {
+//   weather.search();
+// });
 
-document
-  .querySelector(".search-bar")
-  .addEventListener("keyup", function (event) {
-    if (event.key == "Enter") {
-      weather.search();
-    }
-  });
+// document
+//   .querySelector(".search-bar")
+//   .addEventListener("keyup", function (event) {
+//     if (event.key == "Enter") {
+//       weather.search();
+//     }
+//   });
 
-weather.fetchWeather("Manila");
-// ========== {  END sample weather } ========== \\
+// weather.fetchWeather("Manila");
+// // ========== {  END sample weather } ========== \\
 
 // ========== { utilities } ========== \\
 function showSpinner() {
-  document.querySelector(".spinner").classList.add("show");
+  document.querySelector(".spinner-overlay").classList.add("show");
 }
 
 function hideSpinner() {
-  document.querySelector(".spinner").classList.remove("show");
+  document.querySelector(".spinner-overlay").classList.remove("show");
 }
 
 
@@ -871,145 +788,411 @@ function init() {
   }
 }
 
-<<<<<<< HEAD
+
 document.addEventListener("DOMContentLoaded", init);
-=======
-//   fetch(url)
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (data) {
-//       console.log(data);
-//       localarticles = data.articles;
-//       const div = document.createElement("div");
-//       div.classList.add("overlay", "relative", "hover-img", "max-h-48", "overflow-hidden");
 
-//       div.slice(0, 3).innerHTML = `
+//////////////////////////////////////========== weather ========\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+// ================ { global variables for reference } ================== //
+function weather() {
+  const temp = document.getElementById("temp"),
+    date = document.getElementById("date-time"),
+    condition = document.getElementById("condition"),
+    rain = document.getElementById("rain"),
+    mainIcon = document.getElementById("icon");
+  currentLocation = document.getElementById("location"),
+    windSpeed = document.querySelector(".wind-speed"),
+    pressure = document.querySelector(".pressure"),
+    sunRise = document.querySelector(".sun-rise"),
+    sunSet = document.querySelector(".sun-set"),
+    humidity = document.querySelector(".humidity"),
+    pressureStatus = document.querySelector(".pressure-status"),
+    visibilty = document.querySelector(".visibilty"),
+    humidityStatus = document.querySelector(".humidity-status"),
+    airQuality = document.querySelector(".air-quality"),
+    airQualityStatus = document.querySelector(".air-quality-status"),
+    visibilityStatus = document.querySelector(".visibilty-status"),
+    searchForm = document.querySelector("#search"),
+    search = document.querySelector("#query"),
+    celciusBtn = document.querySelector(".celcius"),
+    fahrenheitBtn = document.querySelector(".fahrenheit"),
+    tempUnit = document.querySelectorAll(".temp-unit"),
+    hourlyBtn = document.querySelector(".hourly"),
+    weekBtn = document.querySelector(".week"),
+    weatherCards = document.querySelector("#weather-cards");
 
-//       <a href="${localarticles.url}">
-//       <img class="max-w-full w-full mx-auto h-auto" src="${localarticles.image}"
-//         alt="Image description">
-//     </a>
-//     <div class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
-//       <a href="${localarticles.url}">
-//         <h2 class="text-lg font-bold capitalize leading-tight text-white mb-1">${localarticles.description}</h2>
-//       </a>
-//       <div class="pt-1">
-//         <div class="text-gray-100">
-//           <div class="inline-block h-3 border-l-2 border-red-600 mr-2"></div>${localarticles.publishedAt.slice(0, 10)}
-//         </div>
-//       </div>
-//     </div>
-//              `;
-//       document.querySelector("local-news").appendChild(div);
-//     });
-// }
+  let currentCity = "";
+  let currentUnit = "c";
+  let hourlyorWeek = "week";
 
-// async function displayDataInCarousel() {
-//   const endpoint = 'your-endpoint-here';
-//   const data = await fetchAPIData('business');
+  // ================ { get date and time } ================== //
+  function getDateTime() {
+    let now = new Date();
+    hour = now.getHours();
+    minute = now.getMinutes();
 
-//   // Get the carousel wrapper element
-//   const carouselWrapper = document.querySelector('.swiper-wrapper')
-//   // document.querySelector('[data-carousel="slide"]');
+    let days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
 
-//   // Loop through the data
-//   for (const item of data) {
-//     // Create a new carousel item
-//     const carouselItem = document.createElement('div');
-//     // carouselItem.classList.add('duration-700', 'ease-in-out');
-//     // carouselItem.setAttribute('data-carousel-item', '');
-//     carouselItem.classList.add('.swiper-slide')
+    // ================ { dynamic day and time } ================== //
+    if (hour < 10) {
+      hour = "0" + hour;
+    }
+    if (minute < 10) {
+      minute = "0" + minute;
+    }
+    let ampm = hour >= 12 ? "pm" : "am";
+    hour = hour % 12;
+    hour = hour ? hour : 12;
+    let dayString = days[now.getDay()];
+    return `${dayString}, ${hour}:${minute} ${ampm}`;
+  }
 
-//     // Set the innerHTML of the carousel item
-//     // carouselItem.innerHTML = item.yourDesiredValue;
-//     carouselItem.innerHTML += `
-//                   <a href="${item.url}">
-//                   <img class="max-w-full w-full h-auto" src="${item.image}" alt="">
-//                   </a>
-//                   <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
-//                     <a href="${item.url}">
-//                       <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">${item.title}</h2>
-//                     </a>
-//                     <p class="text-gray-200 hidden sm:inline-block">${item.description}</p>
-//                     <p class="text-gray-200 hidden sm:inline-block">${item.publishedAt.slice(0, 10)}</p>
-//                     <div class="pt-2">
-//                       <div class="text-gray-200">
-//                         <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
-//                         <span class="text-xl">Category</span>
-//                       </div>
-//                     </div>
-//                   </div>
-//         `;
+  // ================ { dynamic date and time } ================== //
+  date.innerText = getDateTime();
+  setInterval(() => {
+    date.innerText = getDateTime();
+  }, 1000);
 
-//     // Append the carousel item to the carousel wrapper
-//     carouselWrapper.appendChild(carouselItem);
-//     initSwiper();
-//   }
-// }
-// displayDataInCarousel();
+  // ================ { function to get public ip using ipinfo.io } ================== //
+  function getPublicIp() {
+    fetch("https://ipinfo.io/json?token=6fb133d2b718e1", {
+      method: "GET",
+      headers: {},
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        currentCity = data.city;
+        getWeatherData(data.city, currentUnit, hourlyorWeek);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
+  getPublicIp();
 
-// swiper init
-// function initSwiper() {
-//   const swiper = new Swiper(".swiper", {
-//     slidesPerView: 1,
-//     spaceBetween: 30,
-//     freeMode: true,
-//     loop: true,
-//     autoplay: {
-//       delay: 4000,
-//       disableOnInteraction: false,
-//     },
-//     breakpoints: {
-//       500: {
-//         slidesPerView: 2,
-//       },
-//       700: {
-//         slidesPerView: 3,
-//       },
-//       1200: {
-//         slidesPerView: 4,
-//       },
-//     },
-//   });
-// }
+  // ================ { function to get weather } ================== //
+  function getWeatherData(city, unit, hourlyorWeek) {
+    // const apiKey = "3UX7T3ZEVQE5URAYQUM7WP8ZH";
+    const apiKey_2 = "V2BL52V2FPR7ZVLVGNRH3VVSP";
+    fetch(
+      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=${apiKey_2}&contentType=json`,
+      {
+        method: "GET",
+        headers: {},
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        let today = data.currentConditions;
+        if (unit === "c") {
+          temp.innerText = today.temp;
+        } else {
+          temp.innerText = celciusToFahrenheit(today.temp);
+        }
+        currentLocation.innerText = data.resolvedAddress;
+        condition.innerText = today.conditions;
+        rain.innerText = "Perc - " + today.precip + "%";
+        windSpeed.innerText = today.windspeed;
+        pressure.innerText = today.pressure;
+        updatePressureStatus(today.pressure);
+        mainIcon.src = getIcon(today.icon);
+        humidity.innerText = today.humidity + "%";
+        updateHumidityStatus(today.humidity);
+        visibilty.innerText = today.visibility;
+        updateVisibiltyStatus(today.visibility);
+        airQuality.innerText = today.winddir;
+        updateAirQualityStatus(today.winddir);
 
-function init() {
-  switch (global.currentPage) {
-    case "/":
-    case "/src/index.html":
-      // carouselNews();
-      // displayTrendingNews();
-      // displayBusinessNews();
-      // displayEntertainmentNews();
-      // displaySportsNews();
-      // displayScienceNews();
-      // displayTechnologyNews();
-      displayForex();
-      break;
-    case "/business.html":
-      // businesspage();
-      break;
-    case "/technology.html":
-      // technologypage();
-      break;
-    case "/science.html":
-      // sciencepage();
-      break;
-    case "/entertainment.html":
-      // entertainmentpage();
-      break;
-    case "/sports.html":
-      // sportspage();
-      break;
-    case "/health.html":
-      // healthpage();
-      break;
-    case "/search.html":
-      // searchpage();
-      break;
+        if (hourlyorWeek === "hourly") {
+          updateForecast(data.days[0].hours, unit, "day");
+        } else {
+          updateForecast(data.days, unit, "week");
+        }
+
+        sunRise.innerText = covertTimeTo12HourFormat(today.sunrise);
+        sunSet.innerText = covertTimeTo12HourFormat(today.sunset);
+      })
+      .catch((err) => {
+        console.log("error", err);
+      });
+  }
+
+  // ================ { function to update weather forecast } ================== //
+  function updateForecast(data, unit, type) {
+    weatherCards.innerHTML = "";
+    let day = 0;
+    let numCards = 0;
+    if (type === "day") {
+      numCards = 24;
+    } else {
+      numCards = 7;
+    }
+    for (let i = 0; i < numCards; i++) {
+      let card = document.createElement("div");
+      card.classList.add("card");
+      let dayName = getHour(data[day].datetime);
+      if (type === "week") {
+        dayName = getDayName(data[day].datetime);
+      }
+      let dayTemp = data[day].temp;
+      if (unit === "f") {
+        dayTemp = celciusToFahrenheit(data[day].temp);
+      }
+      let iconCondition = data[day].icon;
+      let iconSrc = getIcon(iconCondition);
+      let tempUnit = "°C";
+      if (unit === "f") {
+        tempUnit = "°F";
+      }
+      card.innerHTML = `
+                <h2 class="day-name">${dayName}</h2>
+            <div class="card-icon">
+              <img src="${iconSrc}" class="day-icon" alt="" />
+            </div>
+            <div class="day-temp">
+              <h2 class="temp">${dayTemp}</h2>
+              <span class="temp-unit">${tempUnit}</span>
+            </div>
+  `;
+      weatherCards.appendChild(card);
+      day++;
+    }
+  }
+
+  // ================ { function get data } ================== //
+  async function fetchAPIData(endpoint) {
+    // const url = "https://newsapi.org/v2/everything?q=weather&country=us&apiKey=${apiKey}";
+
+    showSpinner();
+
+    // const apiKey = "ecbfd1725be34758b06c79adaf8a85ef";
+    const response = await fetch(
+      `https://newsapi.org/v2/everything?q=weather&apiKey=ecbfd1725be34758b06c79adaf8a85ef`
+    );
+
+    const data = await response.json();
+    console.log(data);
+
+    hideSpinner();
+
+    return data;
+  }
+
+  // ================ { function to change weather icons } ================== //
+  async function getWeatherData() {
+    // const apiKey = "https://newsapi.org/v2/top-headlines?country=us&apiKey=ecbfd1725be34758b06c79adaf8a85ef"
+    // const apiKey = "sMayN3GIT80P9piiu8hsCbKViMmuNrQIDpknv5m5";
+    try {
+      fetchAPIData('weather')
+        .then((data) => {
+          const weatherNews = data.articles;
+          console.log(weatherNews);
+
+          weatherNews.forEach((article) => {
+            const ul = document.createElement('ul');
+            ul.classList = "weather-news-list";
+            ul.innerHTML = `
+        <li><a href="${article.url}">${article.title}</a>
+
+        </li>`;
+            weatherNews.querySelector('#weather-news').appendChild(ul);
+          })
+        });
+    } catch (error) {
+      console.error("An error occurred:", error.message);
+
+    }
+  }
+  getWeatherData();
+
+  // ================ { function to change weather icons } ================== //
+  function getIcon(condition) {
+    if (condition === "partly-cloudy-day") {
+      return "https://i.ibb.co/PZQXH8V/27.png";
+    } else if (condition === "partly-cloudy-night") {
+      return "https://i.ibb.co/Kzkk59k/15.png";
+    } else if (condition === "rain") {
+      return "https://i.ibb.co/kBd2NTS/39.png";
+    } else if (condition === "clear-day") {
+      return "https://i.ibb.co/rb4rrJL/26.png";
+    } else if (condition === "clear-night") {
+      return "https://i.ibb.co/1nxNGHL/10.png";
+    } else {
+      return "https://i.ibb.co/rb4rrJL/26.png";
+    }
+  }
+
+
+  // ================ { get hours from hhmmss } ================== //
+  function getHour(time) {
+    let hour = time.split(":")[0];
+    let min = time.split(":")[1];
+    if (hour > 12) {
+      hour = hour - 12;
+      return `${hour}:${min} PM`;
+    } else {
+      return `${hour}:${min} AM`;
+    }
+  }
+
+  // ================ { for 12 hour format } ================== //
+  function covertTimeTo12HourFormat(time) {
+    let hour = time.split(":")[0];
+    let minute = time.split(":")[1];
+    let ampm = hour >= 12 ? "pm" : "am";
+    hour = hour % 12;
+    hour = hour ? hour : 12; // the hour '0' should be '12'
+    hour = hour < 10 ? "0" + hour : hour;
+    minute = minute < 10 ? "0" + minute : minute;
+    let strTime = hour + ":" + minute + " " + ampm;
+    return strTime;
+  }
+
+  // ================ { get day name from date } ================== //
+  function getDayName(date) {
+    let day = new Date(date);
+    let days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    return days[day.getDay()];
+  }
+
+  // ================ { function for pressure status } ================== //
+  function updatePressureStatus(pressure) {
+    if (pressure < 1000) {
+      pressureStatus.innerText = "Low";
+    } else if (pressure <= 1013) {
+      pressureStatus.innerText = "Moderate";
+    } else {
+      pressureStatus.innerText = "High";
+    }
+  }
+
+  // ================ { function for humidity status } ================== //
+  function updateHumidityStatus(humidity) {
+    if (humidity <= 30) {
+      humidityStatus.innerText = "Low";
+    } else if (humidity <= 60) {
+      humidityStatus.innerText = "Moderate";
+    } else {
+      humidityStatus.innerText = "High";
+    }
+  }
+
+  // ================ { function for visibility status } ================== //
+  function updateVisibiltyStatus(visibility) {
+    if (visibility <= 0.03) {
+      visibilityStatus.innerText = "Dense Fog";
+    } else if (visibility <= 0.16) {
+      visibilityStatus.innerText = "Moderate Fog";
+    } else if (visibility <= 0.35) {
+      visibilityStatus.innerText = "Light Fog";
+    } else if (visibility <= 1.13) {
+      visibilityStatus.innerText = "Very Light Fog";
+    } else if (visibility <= 2.16) {
+      visibilityStatus.innerText = "Light Mist";
+    } else if (visibility <= 5.4) {
+      visibilityStatus.innerText = "Very Light Mist";
+    } else if (visibility <= 10.8) {
+      visibilityStatus.innerText = "Clear Air";
+    } else {
+      visibilityStatus.innerText = "Very Clear Air";
+    }
+  }
+
+  // ================ { function for airquality status } ================== //
+  function updateAirQualityStatus(airquality) {
+    if (airquality <= 50) {
+      airQualityStatus.innerText = "Good👌";
+    } else if (airquality <= 100) {
+      airQualityStatus.innerText = "Moderate😐";
+    } else if (airquality <= 150) {
+      airQualityStatus.innerText = "Unhealthy for Sensitive Groups😷";
+    } else if (airquality <= 200) {
+      airQualityStatus.innerText = "Unhealthy😷";
+    } else if (airquality <= 250) {
+      airQualityStatus.innerText = "Very Unhealthy😨";
+    } else {
+      airQualityStatus.innerText = "Hazardous😱";
+    }
+  }
+
+  // ================ { function for search form } ================== //
+  searchForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let location = search.value;
+    if (location) {
+      currentCity = location;
+      getWeatherData(location, currentUnit, hourlyorWeek);
+    }
+    search.value = "";
+  });
+
+  // ================ { convert to fahrenheit } ================== //
+  function celciusToFahrenheit(temp) {
+    return ((temp * 9) / 5 + 32).toFixed(1);
+  }
+
+  // ================ { event listener for changing unit } ================== //
+  fahrenheitBtn.addEventListener("click", () => {
+    changeUnit("f");
+  });
+  celciusBtn.addEventListener("click", () => {
+    changeUnit("c");
+  });
+
+  // ================ { function to change unit } ================== //
+  function changeUnit(unit) {
+    if (currentUnit !== unit) {
+      currentUnit = unit;
+      tempUnit.forEach((elem) => {
+        elem.innerText = `°${unit.toUpperCase()}`;
+      });
+      if (unit === "c") {
+        celciusBtn.classList.add("active");
+        fahrenheitBtn.classList.remove("active");
+      } else {
+        celciusBtn.classList.remove("active");
+        fahrenheitBtn.classList.add("active");
+      }
+      getWeatherData(currentCity, currentUnit, hourlyorWeek);
+    }
+  }
+
+  hourlyBtn.addEventListener("click", () => {
+    changeTimeSpan("hourly");
+  });
+  weekBtn.addEventListener("click", () => {
+    changeTimeSpan("week");
+  });
+
+
+  // ================ { function to change hourly to weekly or vice versa } ================== //
+  function changeTimeSpan(unit) {
+    if (hourlyorWeek !== unit) {
+      hourlyorWeek = unit;
+      if (unit === "hourly") {
+        hourlyBtn.classList.add("active");
+        weekBtn.classList.remove("active");
+      } else {
+        hourlyBtn.classList.remove("active");
+        weekBtn.classList.add("active");
+      }
+      getWeatherData(currentCity, currentUnit, hourlyorWeek);
+    }
   }
 }
-
-document.addEventListener("DOMContentLoaded", init);
->>>>>>> ae3826a8aa6dfde01f3890c2077e7de8cc7f4c7e
+// weather();
