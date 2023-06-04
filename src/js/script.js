@@ -170,6 +170,7 @@ async function fetchAPIData(endpoint) {
 //     });
 // }
 
+<<<<<<< HEAD
 async function carouselNews() {
   try {
     global.api.apiKeys = global.apiKey_7;
@@ -246,6 +247,83 @@ async function carouselNews() {
     console.error("An error occurred:", error.message);
   }
 }
+=======
+// // ========== { display carousel from gnews.io} ========== \\
+// async function carouselNews() {
+//   try {
+//     global.api.apiKeys = global.apiKey_7;
+//     global.maxfetch = "5";
+//     fetchAPIData("general").then(function (data) {
+//       carouselarticles = data.articles;
+//       console.log(carouselarticles);
+
+//       // carouselarticles.forEach((articles) => {
+//       const div = document.createElement("div");
+//       div.classList = "relative h-56 overflow-hidden md:h-96";
+
+//       div.innerHTML = `
+//                         <div class="overlay hidden duration-700 ease-linear" data-carousel-item="active">
+//                     <a href="#"><img class="max-w-full w-full h-auto" src="${carouselarticles[0].image}" alt=""></a>
+//                     <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
+//                       <a href="#">
+//                         <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">1Amazon Shoppers Are Ditching
+//                           Designer Belts for This Best-Selling</h2>
+//                       </a>
+//                       <p class="text-gray-200 hidden sm:inline-block">This is a wider card with supporting text below as
+//                         a natural lead-in to additional content.This very helpfull for generate default content..</p>
+//                       <div class="pt-2">
+//                         <div class="text-gray-200">
+//                           <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
+//                           <span class="text-xl">Category</span>
+//                         </div>
+//                       </div>
+//                     </div>
+//                   </div>
+
+//                   <div class="overlay hidden duration-700 ease-linear" data-carousel-item>
+//                     <a href="#"><img class="max-w-full w-full h-auto" src="${carouselarticles[1].image}" alt=""></a>
+//                     <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
+//                       <a href="#">
+//                         <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">2Amazon Shoppers Are Ditching
+//                           Designer Belts for This Best-Selling</h2>
+//                       </a>
+//                       <p class="text-gray-200 hidden sm:inline-block">This is a wider card with supporting text below as
+//                         a natural lead-in to additional content.This very helpfull for generate default content..</p>
+//                       <div class="pt-2">
+//                         <div class="text-gray-200">
+//                           <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
+//                           <span class="text-xl">Category</span>
+//                         </div>
+//                       </div>
+//                     </div>
+//                   </div>
+
+//                   <div class="overlay hidden duration-700 ease-linear" data-carousel-item>
+//                     <a href="#"><img class="max-w-full w-full h-auto" src="${carouselarticles[2].image}" alt=""></a>
+//                     <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
+//                       <a href="#">
+//                         <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">3Amazon Shoppers Are Ditching
+//                           Designer Belts for This Best-Selling</h2>
+//                       </a>
+//                       <p class="text-gray-200 hidden sm:inline-block">This is a wider card with supporting text below as
+//                         a natural lead-in to additional content.This very helpfull for generate default content..</p>
+//                       <div class="pt-2">
+//                         <div class="text-gray-200">
+//                           <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
+//                           <span class="text-xl">Category</span>
+//                         </div>
+//                       </div>
+//                     </div>
+//                   </div>
+//             `;
+//       document.querySelector("#headline-carousel").appendChild(div);
+//       // });
+//     });
+//   } catch (error) {
+//     console.error("An error occurred:", error.message);
+//   }
+// }
+>>>>>>> ae3826a8aa6dfde01f3890c2077e7de8cc7f4c7e
 
 // // ========== { display TrendNews from gnews.io} ========== \\
 async function displayTrendingNews() {
@@ -360,7 +438,11 @@ async function displayEntertainmentNews() {
   }
 }
 
+<<<<<<< HEAD
 // ========== { display EntertainmentNews from gnews.io} ========== \\
+=======
+// // ========== { display EntertainmentNews from gnews.io} ========== \\
+>>>>>>> ae3826a8aa6dfde01f3890c2077e7de8cc7f4c7e
 async function displaySportsNews() {
   try {
     global.api.apiKeys = global.apiKey_4;
@@ -789,4 +871,145 @@ function init() {
   }
 }
 
+<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", init);
+=======
+//   fetch(url)
+//     .then(function (response) {
+//       return response.json();
+//     })
+//     .then(function (data) {
+//       console.log(data);
+//       localarticles = data.articles;
+//       const div = document.createElement("div");
+//       div.classList.add("overlay", "relative", "hover-img", "max-h-48", "overflow-hidden");
+
+//       div.slice(0, 3).innerHTML = `
+
+//       <a href="${localarticles.url}">
+//       <img class="max-w-full w-full mx-auto h-auto" src="${localarticles.image}"
+//         alt="Image description">
+//     </a>
+//     <div class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
+//       <a href="${localarticles.url}">
+//         <h2 class="text-lg font-bold capitalize leading-tight text-white mb-1">${localarticles.description}</h2>
+//       </a>
+//       <div class="pt-1">
+//         <div class="text-gray-100">
+//           <div class="inline-block h-3 border-l-2 border-red-600 mr-2"></div>${localarticles.publishedAt.slice(0, 10)}
+//         </div>
+//       </div>
+//     </div>
+//              `;
+//       document.querySelector("local-news").appendChild(div);
+//     });
+// }
+
+// async function displayDataInCarousel() {
+//   const endpoint = 'your-endpoint-here';
+//   const data = await fetchAPIData('business');
+
+//   // Get the carousel wrapper element
+//   const carouselWrapper = document.querySelector('.swiper-wrapper')
+//   // document.querySelector('[data-carousel="slide"]');
+
+//   // Loop through the data
+//   for (const item of data) {
+//     // Create a new carousel item
+//     const carouselItem = document.createElement('div');
+//     // carouselItem.classList.add('duration-700', 'ease-in-out');
+//     // carouselItem.setAttribute('data-carousel-item', '');
+//     carouselItem.classList.add('.swiper-slide')
+
+//     // Set the innerHTML of the carousel item
+//     // carouselItem.innerHTML = item.yourDesiredValue;
+//     carouselItem.innerHTML += `
+//                   <a href="${item.url}">
+//                   <img class="max-w-full w-full h-auto" src="${item.image}" alt="">
+//                   </a>
+//                   <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
+//                     <a href="${item.url}">
+//                       <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">${item.title}</h2>
+//                     </a>
+//                     <p class="text-gray-200 hidden sm:inline-block">${item.description}</p>
+//                     <p class="text-gray-200 hidden sm:inline-block">${item.publishedAt.slice(0, 10)}</p>
+//                     <div class="pt-2">
+//                       <div class="text-gray-200">
+//                         <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
+//                         <span class="text-xl">Category</span>
+//                       </div>
+//                     </div>
+//                   </div>
+//         `;
+
+//     // Append the carousel item to the carousel wrapper
+//     carouselWrapper.appendChild(carouselItem);
+//     initSwiper();
+//   }
+// }
+// displayDataInCarousel();
+
+// swiper init
+// function initSwiper() {
+//   const swiper = new Swiper(".swiper", {
+//     slidesPerView: 1,
+//     spaceBetween: 30,
+//     freeMode: true,
+//     loop: true,
+//     autoplay: {
+//       delay: 4000,
+//       disableOnInteraction: false,
+//     },
+//     breakpoints: {
+//       500: {
+//         slidesPerView: 2,
+//       },
+//       700: {
+//         slidesPerView: 3,
+//       },
+//       1200: {
+//         slidesPerView: 4,
+//       },
+//     },
+//   });
+// }
+
+function init() {
+  switch (global.currentPage) {
+    case "/":
+    case "/src/index.html":
+      // carouselNews();
+      // displayTrendingNews();
+      // displayBusinessNews();
+      // displayEntertainmentNews();
+      // displaySportsNews();
+      // displayScienceNews();
+      // displayTechnologyNews();
+      displayForex();
+      break;
+    case "/business.html":
+      // businesspage();
+      break;
+    case "/technology.html":
+      // technologypage();
+      break;
+    case "/science.html":
+      // sciencepage();
+      break;
+    case "/entertainment.html":
+      // entertainmentpage();
+      break;
+    case "/sports.html":
+      // sportspage();
+      break;
+    case "/health.html":
+      // healthpage();
+      break;
+    case "/search.html":
+      // searchpage();
+      break;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", init);
+>>>>>>> ae3826a8aa6dfde01f3890c2077e7de8cc7f4c7e
