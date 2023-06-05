@@ -255,3 +255,19 @@ li:hover{
 .text-down {
   color: #f30d0dd0;
 }
+
+#trend-news img, #business-news img, #entertainment-news img, #sports-news img, #technology-news img, #science-news img, #local-news img {
+  /* min-height: 200px; */
+ height: 200px;
+  /* border-radius: 5px; */
+}
+
+
+
+/* local news fix */
+#local-news article {
+margin-bottom: 2px;
+}
+#local-news article > div {
+  margin-left: 2px;
+}

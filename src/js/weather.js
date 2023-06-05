@@ -52,7 +52,7 @@ function getDateTime() {
   if (minute < 10) {
     minute = "0" + minute;
   }
-  let ampm = hour >= 12 ? "pm" : "am";
+  let ampm = hour >= 12 ? "PM" : "AM";
   hour = hour % 12;
   hour = hour ? hour : 12;
   let dayString = days[now.getDay()];
@@ -87,7 +87,7 @@ function getWeatherData(city, unit, hourlyorWeek) {
   // const apiKey = "3UX7T3ZEVQE5URAYQUM7WP8ZH";
   const apiKey_2 = "V2BL52V2FPR7ZVLVGNRH3VVSP";
   fetch(
-    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=${apiKey_2}&contentType=json`,
+    // `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=${apiKey_2}&contentType=json`,
     {
       method: "GET",
       headers: {},
@@ -178,7 +178,7 @@ async function fetchAPIData(endpoint) {
 
   // const apiKey = "ecbfd1725be34758b06c79adaf8a85ef";
   const response = await fetch(
-    // `https://newsapi.org/v2/everything?q=weather&apiKey=ecbfd1725be34758b06c79adaf8a85ef`
+    `https://newsapi.org/v2/${endpoint}?q=weather&apiKey=ecbfd1725be34758b06c79adaf8a85ef`
   );
 
   const data = await response.json();
@@ -198,32 +198,31 @@ function hideSpinner() {
   document.querySelector(".spinner-overlay").classList.remove("show");
 }
 
-// ================ { function to change weather icons } ================== //
+// ================ { function get news weather } ================== //
 async function getWeatherNews() {
   // const apiKey = "https://newsapi.org/v2/top-headlines?country=us&apiKey=ecbfd1725be34758b06c79adaf8a85ef"
   // const apiKey = "sMayN3GIT80P9piiu8hsCbKViMmuNrQIDpknv5m5";
   try {
-    fetchAPIData('weather')
-      .then((data) => {
-        const weatherNews = data.articles;
-        console.log(weatherNews);
+    fetchAPIData('everything').then((data) => {
+      weatherNews = data.articles;
+      console.log(weatherNews);
 
-        weatherNews.forEach((article) => {
-          const ul = document.createElement('ul');
-          ul.classList = "weather-news-list";
-          ul.innerHTML = `
+      weatherNews.forEach((article) => {
+        const ul = document.createElement('ul');
+        ul.classList = "weather-news-list";
+        ul.innerHTML = `
         <li><a href="${article.url}">${article.title}</a>
 
         </li>`;
-          weatherNews.querySelector('#weather-news').appendChild(ul);
-        })
-      });
+        weatherNews.querySelector('#weather-news').appendChild(ul);
+      })
+    });
   } catch (error) {
     console.error("An error occurred:", error.message);
 
   }
 }
-// getWeatherNews();
+getWeatherNews();
 
 // ================ { function to change weather icons } ================== //
 function getIcon(condition) {
@@ -259,7 +258,7 @@ function getHour(time) {
 function covertTimeTo12HourFormat(time) {
   let hour = time.split(":")[0];
   let minute = time.split(":")[1];
-  let ampm = hour >= 12 ? "pm" : "am";
+  let ampm = hour >= 12 ? "PM" : "AM";
   hour = hour % 12;
   hour = hour ? hour : 12; // the hour '0' should be '12'
   hour = hour < 10 ? "0" + hour : hour;
@@ -351,6 +350,7 @@ searchForm.addEventListener("submit", (e) => {
     currentCity = location;
     getWeatherData(location, currentUnit, hourlyorWeek);
   }
+  search.value = "";
 });
 
 // ================ { convert to fahrenheit } ================== //
