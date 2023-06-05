@@ -788,6 +788,30 @@ function init() {
   }
 }
 
+// ================ { function button to see weather full forecast  } ================== //
+
+// // Get a reference to the button element
+// const seeForecast = document.getElementById("forecast-full-btn");
+
+// // Add a click event listener to the button
+// seeForecast.addEventListener("click", function () {
+//   // Redirect to the weather page
+//   // window.location.href = "weather.html";
+//   window.open("weather.html", "_blank");
+// });
+const seeForecast = document.getElementById("forecast-full-btn");
+
+seeForecast.addEventListener("click", function () {
+  // Open the weather page in a new tab or window
+  const newWindow = window.open("weather.html");
+  if (newWindow) {
+    newWindow.focus();
+  } else {
+    // Pop-up blocked, fallback to opening in the current tab
+    window.location.href = "weather.html";
+  }
+});
+
 
 document.addEventListener("DOMContentLoaded", init);
 
@@ -1196,3 +1220,4 @@ function weather() {
   }
 }
 // weather();
+

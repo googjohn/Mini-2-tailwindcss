@@ -227,6 +227,23 @@ li:hover{
   opacity: .8;
   color: #ffffff;
 }
+
+#forecast-full-btn {
+  display: block;
+  padding: 5px 10px;
+  /* background: rgba(255, 255, 255, 0.1); */
+  background-color: transparent;
+  border-radius: 50px ;
+  text-align: center;
+  border: 1px solid #fff;
+  margin: auto;
+}
+
+#forecast-full-btn:hover{
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ================ { forex } ================== */
 .colored-colon {
   color: rgb(255, 255, 255);
 }
