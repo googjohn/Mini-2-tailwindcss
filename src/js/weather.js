@@ -181,7 +181,7 @@ async function fetchAPIData() {
   const response = await fetch(
     // `https://newsapi.org/v2/${endpoint}?q=weather&apiKey=ecbfd1725be34758b06c79adaf8a85ef`
     // `https://newsdata.io/api/1/news?apikey=pub_2405886988ac0363340bc1fb9e7cfdbb89493&q=weather`
-    "https://gnews.io/api/v4/search?q=forecast&lang=en&country=us&max=10&apikey=9167dae881545d7d1ebf42ac1186d6ae"
+    "https://gnews.io/api/v4/search?q=forecast&lang=en&country=us&max=10&apikey=1321923f82f3680d72f02d2147d154b6"
   );
 
   const data = await response.json();
