@@ -84,10 +84,10 @@ getPublicIp();
 
 // ================ { function to get weather } ================== //
 function getWeatherData(city, unit, hourlyorWeek) {
-  // const apiKey = "3UX7T3ZEVQE5URAYQUM7WP8ZH";
-  const apiKey_2 = "V2BL52V2FPR7ZVLVGNRH3VVSP";
+  const apiKey = "3UX7T3ZEVQE5URAYQUM7WP8ZH";
+  // const apiKey_2 = "V2BL52V2FPR7ZVLVGNRH3VVSP";
   fetch(
-    // `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=${apiKey_2}&contentType=json`,
+    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=${apiKey}&contentType=json`,
     {
       method: "GET",
       headers: {},
@@ -125,7 +125,7 @@ function getWeatherData(city, unit, hourlyorWeek) {
       sunSet.innerText = covertTimeTo12HourFormat(today.sunset);
     })
     .catch((error) =>
-      console.error("An error occurred:", error.message));
+      console.error("An error occurred:", error));
 }
 
 // ================ { function to update weather forecast } ================== //
@@ -171,14 +171,17 @@ function updateForecast(data, unit, type) {
 }
 
 // ================ { function get data } ================== //
-async function fetchAPIData(endpoint) {
+async function fetchAPIData() {
   // const url = "https://newsapi.org/v2/everything?q=weather&country=us&apiKey=${apiKey}";
 
   showSpinner();
 
   // const apiKey = "ecbfd1725be34758b06c79adaf8a85ef";
+  // const apiKey = "2d27b969040914f83bf30e7959ad9349";
   const response = await fetch(
-    `https://newsapi.org/v2/${endpoint}?q=weather&apiKey=ecbfd1725be34758b06c79adaf8a85ef`
+    // `https://newsapi.org/v2/${endpoint}?q=weather&apiKey=ecbfd1725be34758b06c79adaf8a85ef`
+    // `https://newsdata.io/api/1/news?apikey=pub_2405886988ac0363340bc1fb9e7cfdbb89493&q=weather`
+    "https://gnews.io/api/v4/search?q=forecast&lang=en&country=us&max=10&apikey=9167dae881545d7d1ebf42ac1186d6ae"
   );
 
   const data = await response.json();
@@ -199,31 +202,74 @@ function hideSpinner() {
 }
 
 // ================ { function get news weather } ================== //
-async function getWeatherNews() {
-  // const apiKey = "https://newsapi.org/v2/top-headlines?country=us&apiKey=ecbfd1725be34758b06c79adaf8a85ef"
-  // const apiKey = "sMayN3GIT80P9piiu8hsCbKViMmuNrQIDpknv5m5";
+// async function getWeatherNews() {
+//   // const apiKey = "https://newsapi.org/v2/top-headlines?country=us&apiKey=ecbfd1725be34758b06c79adaf8a85ef"
+//   // const apiKey = "sMayN3GIT80P9piiu8hsCbKViMmuNrQIDpknv5m5";
+//   try {
+//     fetch('https://gnews.io/api/v4/top-headlines?category=science&lang=en&country=us&max=10&apikey=2d27b969040914f83bf30e7959ad9349').then((response) => {
+//       return response.json();
+
+//     }).then((data) => {
+//       const weatherNews = data.articles;
+//       console.log(weatherNews);
+
+//       weatherNews.forEach((article) => {
+//         const ul = document.createElement('ul');
+//         ul.classList = "weather-news-list";
+//         ul.innerHTML = `
+//         <li>
+//         <img src="${article.image_url}">
+//         <a href="${article.link}">${article.title}</a>
+
+//         </li>`;
+//         weatherNews.querySelector('#weather-news').appendChild(ul);
+//       })
+//     });
+//   } catch (error) {
+//     console.error("An error occurred:", error.message);
+
+//   }
+// }
+// getWeatherNews();
+
+async function displayWeather() {
   try {
-    fetchAPIData('everything').then((data) => {
-      weatherNews = data.articles;
-      console.log(weatherNews);
+    // global.api.apiKeys = global.apiKey_8;
+    // global.maxfetch = "10";
+    fetchAPIData().then(function (data) {
+      localarticles = data.articles;
+      console.log(localarticles);
 
-      weatherNews.forEach((article) => {
-        const ul = document.createElement('ul');
-        ul.classList = "weather-news-list";
-        ul.innerHTML = `
-        <li><a href="${article.url}">${article.title}</a>
+      localarticles.forEach((articles) => {
+        const div = document.createElement("div");
+        div.classList =
+          "weather-card";
 
-        </li>`;
-        weatherNews.querySelector('#weather-news').appendChild(ul);
-      })
+        div.innerHTML = `
+        <div class="overlay rounded-lg relative hover-img max-h-48 overflow-hidden">
+                          <a href="${articles.url}">
+                            <img class="max-w-full w-full mx-auto" src="${articles.image}" alt="alt title">
+                          </a>
+                            
+                          <div class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
+                            <h3 class="text-lg text-gray-800 font-bold leading-tight mb-2">
+                              <a href="${articles.url}">${articles.title}</a>
+                            </h3>     
+                            <p class="text-base underline text-gray-800 font-bold leading-tight mb-2">
+                              <a href="${articles.source.url}">${articles.source.name}</a>
+                            </p>                         
+                          </div>
+                          </div>
+                        
+            `;
+        document.querySelector(".weather-news-card").appendChild(div);
+      });
     });
   } catch (error) {
     console.error("An error occurred:", error.message);
-
   }
 }
-getWeatherNews();
-
+displayWeather();
 // ================ { function to change weather icons } ================== //
 function getIcon(condition) {
   if (condition === "partly-cloudy-day") {

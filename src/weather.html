@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="./css/weather.css">
 </head>
 
-<body class="block">
+<body class="block pb-6">
   <header class="h-24 rounded-lg border-b-2 text-white bg-transparent w-full md:w-fit flex flex-row items-center mb-8">
     <nav class="w-full">
       <div>
@@ -150,34 +150,27 @@
       <div>
         <h2 class="text-xl">Weather News Latest Updates</h2>
       </div>
-
-    </div>
-  </main>
-  <div id="weather-news">
-    <div class="weather-news-card">
-      <div class="weather-heading">
-        <h2 class="text-white text-xl pb-6">Weather News</h2>
-      </div>
-      <div class="weather-news-wrapper h-46 border border-black grid grid-rows-3">
-        <div class="col-span-2 rounded-3xl"></div>
-        <div class=""></div>
-        <div class=""></div>
-
-
-
-
-
-
-
-
-
-      </div>
-    </div>
-    <!-- <ul class="weather-news-list">
+      <div id="weather-news-list">
+        <!-- <ul class="weather-list">
       <li>
 
       </li>
     </ul> -->
+      </div>
+    </div>
+  </main>
+  <div id="weather-news">
+    <div class="weather-news-wrapper">
+      <div class="weather-heading">
+        <h2 class="text-white text-xl pb-6">Weather News</h2>
+      </div>
+      <div class="weather-news-card h-46 w-full grid grid-cols-4 gap-4">
+        <!-- <div class="weather-card weather-card-overlay">
+
+        </div> -->
+
+      </div>
+    </div>
   </div>
 
   <!-- =============== spinner =============== -->

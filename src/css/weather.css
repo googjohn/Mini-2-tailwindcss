@@ -297,3 +297,34 @@ li:hover{
   opacity: .8;
   color: #ffffff;
 }
+
+/* weathe-news */
+.weather-news-wrapper {
+  position: relative;
+}
+.weather-card img{
+  height: 300px;
+  width: 100%;
+}
+.weather-card {
+  position: relative;
+  height: 300px;
+}
+.overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.7) 27%,
+    rgba(0, 0, 0, 0.1) 90%
+  );
+}
+
+.overlay * {
+  z-index: 5;
+}

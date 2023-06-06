@@ -287,7 +287,7 @@ async function displayLocalNews() {
                   </a>
                   <div class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
                     <a href="${articles.url}">
-                      <h2 class="text-lg font-bold capitalize leading-tight text-white mb-1">${articles.title}</h2>
+                      <h2 class="text-lg font-medium capitalize leading-tight text-white mb-1">${articles.title}</h2>
                     </a>
                   </div>
                 </div>
