@@ -583,6 +583,11 @@ async function displayMovie() {
     const div3 = document.createElement("div");
     const div4 = document.createElement("div");
     const div5 = document.createElement("div");
+    const div6 = document.createElement("div");
+    const div7 = document.createElement("div");
+    const div8 = document.createElement("div");
+    const div9 = document.createElement("div");
+    const div10 = document.createElement("div");
     div1.innerHTML = `
     <div class="flex-row justify-center mb-16">
       <div class="flex justify-center w-full">
@@ -648,13 +653,114 @@ async function displayMovie() {
       </div>
     </div>
     `;
+    div6.innerHTML = `
+    <div class="flex-row justify-center mb-16">
+      <div class="flex justify-center w-full">
+      <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[5].poster_path}" alt="" />
+      </div>
+      <div class="flex-col">
+        <h4 class="text-base mt-1">Title: ${data.results[5].title}</h4>
+        <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[5].vote_average} / 10</h4>
+        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[5].popularity}</h4>
+        <h4 class="text-base mt-1">Release date: ${data.results[5].release_date}</h4> 
+      </div>
+    </div>
+    `;
+    div7.innerHTML = `
+    <div class="flex-row justify-center mb-16">
+      <div class="flex justify-center w-full">
+      <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[6].poster_path}" alt="" />
+      </div>
+      <div class="flex-col">
+        <h4 class="text-base mt-1">Title: ${data.results[6].title}</h4>
+        <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[6].vote_average} / 10</h4>
+        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[6].popularity}</h4>
+        <h4 class="text-base mt-1">Release date: ${data.results[6].release_date}</h4> 
+      </div>
+    </div>
+    `;
+    div8.innerHTML = `
+    <div class="flex-row justify-center mb-16">
+      <div class="flex justify-center w-full">
+      <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[7].poster_path}" alt="" />
+      </div>
+      <div class="flex-col">
+        <h4 class="text-base mt-1">Title: ${data.results[7].title}</h4>
+        <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[7].vote_average} / 10</h4>
+        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[7].popularity}</h4>
+        <h4 class="text-base mt-1">Release date: ${data.results[7].release_date}</h4> 
+      </div>
+    </div>
+    `;
+    div9.innerHTML = `
+    <div class="flex-row justify-center mb-16">
+      <div class="flex justify-center w-full">
+      <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[8].poster_path}" alt="" />
+      </div>
+      <div class="flex-col">
+        <h4 class="text-base mt-1">Title: ${data.results[8].title}</h4>
+        <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[8].vote_average} / 10</h4>
+        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[8].popularity}</h4>
+        <h4 class="text-base mt-1">Release date: ${data.results[8].release_date}</h4> 
+      </div>
+    </div>
+    `;
+    div10.innerHTML = `
+    <div class="flex-row justify-center mb-16">
+      <div class="flex justify-center w-full">
+      <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[9].poster_path}" alt="" />
+      </div>
+      <div class="flex-col">
+        <h4 class="text-base mt-1">Title: ${data.results[9].title}</h4>
+        <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[9].vote_average} / 10</h4>
+        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[9].popularity}</h4>
+        <h4 class="text-base mt-1">Release date: ${data.results[9].release_date}</h4> 
+      </div>
+    </div>
+    `;
     document.querySelector("#slide1").appendChild(div1);
     document.querySelector("#slide2").appendChild(div2);
     document.querySelector("#slide3").appendChild(div3);
     document.querySelector("#slide4").appendChild(div4);
     document.querySelector("#slide5").appendChild(div5);
+    document.querySelector("#slide6").appendChild(div6);
+    document.querySelector("#slide7").appendChild(div7);
+    document.querySelector("#slide8").appendChild(div8);
+    document.querySelector("#slide9").appendChild(div9);
+    document.querySelector("#slide10").appendChild(div10);
   } catch (error) {
     console.error("An error occurred:", error.message);
+  }
+}
+
+async function displayFacts() {
+  try {
+    const response = await fetch(
+      `https://api.api-ninjas.com/v1/facts?limit=1`,
+      {
+        method: "GET",
+        headers: { "X-Api-Key": "C1Nh+zDoiwjU1GLVoF7ewg==WuJ4Erl8GSwmENqu" },
+        contentType: "application/json",
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Request failed");
+    }
+    const result = await response.json();
+    console.log(result);
+    const div = document.createElement("div");
+    div.classList = "w-full text-center";
+
+    div.innerHTML = `
+      <a href="#">
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Did you know?</h5>
+      </a>
+      <p class="mb-3 text-xl font-normal text-gray-700 dark:text-gray-400">${result[0].fact}</p>
+    `;
+    document.querySelector("#facts").appendChild(div);
+  } catch (error) {
+    console.error("Error:", error.message);
   }
 }
 
@@ -761,8 +867,9 @@ function init() {
       // displaySportsNews();
       // displayScienceNews();
       // displayTechnologyNews();
-      // displayForex();
+      displayForex();
       displayMovie();
+      displayFacts();
       break;
     case "/business.html":
       // businesspage();
