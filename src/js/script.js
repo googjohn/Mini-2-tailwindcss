@@ -77,7 +77,7 @@ async function fetchAPIDataForLocal(endpoint) {
 async function carouselNews() {
   try {
     global.api.apiKeys = global.apiKey_1;
-    global.maxfetch = "10";
+    global.maxfetch = "5";
     fetchAPIData("general").then(function (data) {
       carouselarticles = data.articles;
       console.log(carouselarticles);
@@ -85,132 +85,42 @@ async function carouselNews() {
       const div2 = document.createElement("div");
       const div3 = document.createElement("div");
       // const div4 = document.createElement("div");
+      // const div5 = document.createElement("div");
+
       div1.innerHTML = `
-                  <a href="${carouselarticles[0].url}"><img class="max-w-full w-full h-full" src="${carouselarticles[0].image}" alt=""></a>
-                    <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
-                      <a href="${carouselarticles[0].url}">
-                        <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">${carouselarticles[0].title}</h2>
-                      </a>
-                      <p class="text-gray-200 hidden sm:inline-block">${carouselarticles[0].description}</p>
-                      <div class="pt-2">
-                        <div class="text-gray-200">
-                          <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
-                          <span class="text-xl">${carouselarticles[0].publishedAt}</span>
-                        </div>
+                      <a href="${carouselarticles[0].url}"><img class="max-w-full w-full h-auto" src="${carouselarticles[0].image}" alt=""></a>
+                      <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
+                        <div>
+                          <a href="${carouselarticles[0].url}">
+                            <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">${carouselarticles[0].title}</h2>
+                          </a>
+                          <p class="text-gray-200 hidden sm:inline-block">${carouselarticles[0].description}</p>
                       </div>
-                    </div>
                   `;
       div2.innerHTML = `
                   <a href="${carouselarticles[1].url}"><img class="max-w-full w-full h-auto" src="${carouselarticles[1].image}" alt=""></a>
-                    <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
-                      <a href="${carouselarticles[1].url}">
-                        <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">${carouselarticles[1].title}</h2>
-                      </a>
-                      <p class="text-gray-200 hidden sm:inline-block">${carouselarticles[1].description}</p>
-                      <div class="pt-2">
-                        <div class="text-gray-200">
-                          <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
-                          <span class="text-xl">${carouselarticles[0].publishedAt}</span>
-                        </div>
+                      <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
+                        <div>
+                          <a href="${carouselarticles[1].url}">
+                            <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">${carouselarticles[1].title}</h2>
+                          </a>
+                          <p class="text-gray-200 hidden sm:inline-block">${carouselarticles[1].description}</p>
                       </div>
-                    </div>
                   `;
       div3.innerHTML = `
-                  <a href="${carouselarticles[2].url}"><img class="max-w-full w-full h-auto" src="${carouselarticles[2].image}" alt=""></a>
-                    <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
-                      <a href="${carouselarticles[2].url}">
-                        <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">${carouselarticles[2].title}</h2>
-                      </a>
-                      <p class="text-gray-200 hidden sm:inline-block">${carouselarticles[2].description}</p>
-                      <div class="pt-2">
-                        <div class="text-gray-200">
-                          <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
-                          <span class="text-xl">Category</span>
-                        </div>
+                 <a href="${carouselarticles[2].url}"><img class="max-w-full w-full h-auto" src="${carouselarticles[2].image}" alt=""></a>
+                      <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
+                        <div>
+                          <a href="${carouselarticles[2].url}">
+                            <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">${carouselarticles[2].title}</h2>
+                          </a>
+                          <p class="text-gray-200 hidden sm:inline-block">${carouselarticles[2].description}</p>
                       </div>
-                    </div>
                   `;
 
-      // div4.classList =
-      //   "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 grid-rows-2 gap-1";
-      // div4.innerHTML = `
-      // <article class="business-news max-w-full w-full">
-      //           <div class="overlay relative hover-img max-h-48 overflow-hidden">
-      //             <a href="${carouselarticles[3].url}">
-      //               <img class="max-w-full w-full mx-auto h-auto" src="${carouselarticles[3].image}"
-      //                 alt="Image description">
-      //             </a>
-      //             <div class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
-      //               <a href="${carouselarticles[3].url}">
-      //                 <h2 class="text-lg font-bold capitalize leading-tight text-white mb-1">${carouselarticles[3].title}</h2>
-      //               </a>
-      //               <div class="pt-1">
-      //                 <div class="text-gray-100">
-      //                   <div class="inline-block h-3 border-l-2 border-red-600 mr-2"></div>Techno
-      //                 </div>
-      //               </div>
-      //             </div>
-      //           </div>
-      //         </article>
-      // <article class="business-news max-w-full w-full">
-      //           <div class="overlay relative hover-img max-h-48 overflow-hidden">
-      //             <a href="${carouselarticles[4].url}">
-      //               <img class="max-w-full w-full mx-auto h-auto" src="${carouselarticles[4].image}"
-      //                 alt="Image description">
-      //             </a>
-      //             <div class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
-      //               <a href="${carouselarticles[4].url}">
-      //                 <h2 class="text-lg font-bold capitalize leading-tight text-white mb-1">${carouselarticles[4].title}</h2>
-      //               </a>
-      //               <div class="pt-1">
-      //                 <div class="text-gray-100">
-      //                   <div class="inline-block h-3 border-l-2 border-red-600 mr-2"></div>Techno
-      //                 </div>
-      //               </div>
-      //             </div>
-      //           </div>
-      //   </article>
-      //         <article class="business-news max-w-full w-full">
-      //           <div class="overlay relative hover-img max-h-48 overflow-hidden">
-      //             <a href="${carouselarticles[5].url}">
-      //               <img class="max-w-full w-full mx-auto h-auto" src="${carouselarticles[5].image}"
-      //                 alt="Image description">
-      //             </a>
-      //             <div class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
-      //               <a href="${carouselarticles[5].url}">
-      //                 <h2 class="text-lg font-bold capitalize leading-tight text-white mb-1">${carouselarticles[5].title}</h2>
-      //               </a>
-      //               <div class="pt-1">
-      //                 <div class="text-gray-100">
-      //                   <div class="inline-block h-3 border-l-2 border-red-600 mr-2"></div>Techno
-      //                 </div>
-      //               </div>
-      //             </div>
-      //           </div>
-      //   </article>
-      //         <article class="business-news max-w-full w-full">
-      //           <div class="overlay relative hover-img max-h-48 overflow-hidden">
-      //             <a href="${carouselarticles[6].url}">
-      //               <img class="max-w-full w-full mx-auto h-auto" src="${carouselarticles[6].image}"
-      //                 alt="Image description">
-      //             </a>
-      //             <div class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
-      //               <a href="${carouselarticles[6].url}">
-      //                 <h2 class="text-lg font-bold capitalize leading-tight text-white mb-1">${carouselarticles[6].title}</h2>
-      //               </a>
-      //               <div class="pt-1">
-      //                 <div class="text-gray-100">
-      //                   <div class="inline-block h-3 border-l-2 border-red-600 mr-2"></div>Techno
-      //                 </div>
-      //               </div>
-      //             </div>
-      //           </div>
-      // </article>
-      // `;
       document.querySelector("#carousel1").appendChild(div1);
       document.querySelector("#carousel2").appendChild(div2);
       document.querySelector("#carousel3").appendChild(div3);
-      // document.querySelector("#carousel4").appendChild(div4);
     });
   } catch (error) {
     console.error("An error occurred:", error.message);
@@ -220,32 +130,30 @@ async function carouselNews() {
 // // ========== { display local from gnews.io} ========== \\
 async function displayLocalNews() {
   try {
-    global.api.apiKeys = global.apiKey_10;
+    global.api.apiKeys = global.apiKey_9;
     global.maxfetch = "4";
     fetchAPIDataForLocal("local").then(function (data) {
-      localarticles = data.articles.slice(0, 4);
+      localarticles = data.articles;
       console.log(localarticles);
 
       localarticles.forEach((articles) => {
-        const div = document.createElement("article");
-        div.classList = "max-w-full w-full";
+        const div = document.createElement("div");
 
         div.innerHTML = `
-        <div class="overlay relative hover-img max-h-48 overflow-hidden">
-                
-                  <a href="${articles.url}">
-                    <img class="max-w-full w-full mx-auto h-auto" src="${articles.image}"
-                      alt="Image description">
-                  </a>
-                  <div class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
-                    <a href="${articles.url}">
-                      <h2 class="text-lg font-medium capitalize leading-tight text-white mb-1">${articles.title}</h2>
-                    </a>
-                  </div>
-                </div>
-                        
+        <article class="business-news max-w-full w-full">
+          <div class="overlay relative hover-img max-h-48 overflow-hidden">
+            <a href="${articles.url}">
+              <img class="mx-auto h-auto" src="${articles.image}"
+                alt="Image description">
+            </a>
+            <div class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
+              <a href="${articles.url}">
+                <h2 class="text-lg font-bold capitalize leading-tight text-white mb-1">${articles.title}</h2>
+              </a>
+            </div>
+        <article>
             `;
-        document.querySelector("#local-news").appendChild(div);
+        document.querySelector("#carousel4").appendChild(div);
       });
     });
   } catch (error) {
@@ -765,7 +673,7 @@ function init() {
       // displaySportsNews();
       // displayScienceNews();
       // displayTechnologyNews();
-      displayForex();
+      // displayForex();
       break;
     case "/business.html":
       // businesspage();
