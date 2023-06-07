@@ -194,43 +194,12 @@ async function fetchAPIData() {
 
 // ========== { utilities } ========== \\
 function showSpinner() {
-  document.querySelector(".spinner-overlay").classList.add("show");
+  document.querySelector(".spinner").classList.add("show");
 }
 
 function hideSpinner() {
-  document.querySelector(".spinner-overlay").classList.remove("show");
+  document.querySelector(".spinner").classList.remove("show");
 }
-
-// ================ { function get news weather } ================== //
-// async function getWeatherNews() {
-//   // const apiKey = "https://newsapi.org/v2/top-headlines?country=us&apiKey=ecbfd1725be34758b06c79adaf8a85ef"
-//   // const apiKey = "sMayN3GIT80P9piiu8hsCbKViMmuNrQIDpknv5m5";
-//   try {
-//     fetch('https://gnews.io/api/v4/top-headlines?category=science&lang=en&country=us&max=10&apikey=2d27b969040914f83bf30e7959ad9349').then((response) => {
-//       return response.json();
-
-//     }).then((data) => {
-//       const weatherNews = data.articles;
-//       console.log(weatherNews);
-
-//       weatherNews.forEach((article) => {
-//         const ul = document.createElement('ul');
-//         ul.classList = "weather-news-list";
-//         ul.innerHTML = `
-//         <li>
-//         <img src="${article.image_url}">
-//         <a href="${article.link}">${article.title}</a>
-
-//         </li>`;
-//         weatherNews.querySelector('#weather-news').appendChild(ul);
-//       })
-//     });
-//   } catch (error) {
-//     console.error("An error occurred:", error.message);
-
-//   }
-// }
-// getWeatherNews();
 
 async function displayWeather() {
   try {
