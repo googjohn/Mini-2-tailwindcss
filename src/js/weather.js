@@ -179,9 +179,9 @@ async function fetchAPIData() {
   // const apiKey = "ecbfd1725be34758b06c79adaf8a85ef";
   // const apiKey = "2d27b969040914f83bf30e7959ad9349";
   const response = await fetch(
-    // `https://newsapi.org/v2/${endpoint}?q=weather&apiKey=ecbfd1725be34758b06c79adaf8a85ef`
-    // `https://newsdata.io/api/1/news?apikey=pub_2405886988ac0363340bc1fb9e7cfdbb89493&q=weather`
-    "https://gnews.io/api/v4/search?q=forecast&lang=en&country=us&max=10&apikey=1321923f82f3680d72f02d2147d154b6"
+    "https://newsapi.org/v2/everything?q=weather&apiKey=ecbfd1725be34758b06c79adaf8a85ef",
+    // "https://newsdata.io/api/1/news?apikey=pub_2405886988ac0363340bc1fb9e7cfdbb89493&q=weather,climate"
+    // "https://gnews.io/api/v4/search?q=forecast&lang=en&country=us&max=10&apikey=e701311bc9b2249184c539cd496d8466"
   );
 
   const data = await response.json();
@@ -246,23 +246,41 @@ async function displayWeather() {
           "weather-card";
 
         div.innerHTML = `
-        <div class="overlay rounded-lg relative hover-img max-h-48 overflow-hidden">
+        <div class="overlay rounded-lg relative max-h-48 overflow-hidden">
+                          
                           <a href="${articles.url}">
-                            <img class="max-w-full w-full mx-auto" src="${articles.image}" alt="alt title">
+                            <img class="max-w-full w-full mx-auto" src="${articles.urlToImage}">
                           </a>
-                            
+
                           <div class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
                             <h3 class="text-lg text-gray-800 font-bold leading-tight mb-2">
                               <a href="${articles.url}">${articles.title}</a>
                             </h3>     
-                            <p class="text-base underline text-gray-800 font-bold leading-tight mb-2">
+                            <p class="text-base underline italic text-gray-800 font-bold leading-tight mb-2">
                               <a href="${articles.source.url}">${articles.source.name}</a>
                             </p>                         
                           </div>
                           </div>
-                        
+
             `;
         document.querySelector(".weather-news-card").appendChild(div);
+      });
+
+      localarticles.slice(0, 10).forEach((articles) => {
+        const ul = document.createElement("ul");
+        ul.classList =
+          "weather-list";
+
+        ul.innerHTML = `
+        <li class="my-2 rounded-2xl border">
+                          <a class="px-4 py-3 text-base block text-gray-100 hover hover:text-gray-300" href="${articles.url}">
+                            ${articles.title}
+                          </a>
+                        
+                          </li>
+                        
+            `;
+        document.querySelector("#weather-news-list").appendChild(ul);
       });
     });
   } catch (error) {

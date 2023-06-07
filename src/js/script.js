@@ -86,7 +86,7 @@ async function carouselNews() {
       const div3 = document.createElement("div");
       // const div4 = document.createElement("div");
       div1.innerHTML = `
-      <a href="${carouselarticles[0].url}"><img class="max-w-full w-full h-full" src="${carouselarticles[0].image}" alt=""></a>
+                  <a href="${carouselarticles[0].url}"><img class="max-w-full w-full h-full" src="${carouselarticles[0].image}" alt=""></a>
                     <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
                       <a href="${carouselarticles[0].url}">
                         <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">${carouselarticles[0].title}</h2>
@@ -99,9 +99,9 @@ async function carouselNews() {
                         </div>
                       </div>
                     </div>
-      `;
+                  `;
       div2.innerHTML = `
-      <a href="${carouselarticles[1].url}"><img class="max-w-full w-full h-auto" src="${carouselarticles[1].image}" alt=""></a>
+                  <a href="${carouselarticles[1].url}"><img class="max-w-full w-full h-auto" src="${carouselarticles[1].image}" alt=""></a>
                     <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
                       <a href="${carouselarticles[1].url}">
                         <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">${carouselarticles[1].title}</h2>
@@ -114,9 +114,9 @@ async function carouselNews() {
                         </div>
                       </div>
                     </div>
-      `;
+                  `;
       div3.innerHTML = `
-      <a href="${carouselarticles[2].url}"><img class="max-w-full w-full h-auto" src="${carouselarticles[2].image}" alt=""></a>
+                  <a href="${carouselarticles[2].url}"><img class="max-w-full w-full h-auto" src="${carouselarticles[2].image}" alt=""></a>
                     <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
                       <a href="${carouselarticles[2].url}">
                         <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">${carouselarticles[2].title}</h2>
@@ -129,7 +129,7 @@ async function carouselNews() {
                         </div>
                       </div>
                     </div>
-      `;
+                  `;
 
       // div4.classList =
       //   "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 grid-rows-2 gap-1";
@@ -771,8 +771,8 @@ function init() {
   switch (global.currentPage) {
     case "/":
     case "/src/index.html":
-      carouselNews();
-      displayLocalNews();
+      // carouselNews();
+      // displayLocalNews();
       // displayTrendingNews();
       // displayBusinessNews();
       // displayEntertainmentNews();
