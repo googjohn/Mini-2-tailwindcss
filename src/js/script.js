@@ -570,6 +570,94 @@ async function displayForex() {
   }
 }
 
+async function displayMovie() {
+  try {
+    const url =
+      "https://api.themoviedb.org/3/movie/now_playing?api_key=2c950c2121faffbc9bb47be098bca4b7";
+    const response = await fetch(url);
+    const data = await response.json();
+    // console.log(data);
+
+    const div1 = document.createElement("div");
+    const div2 = document.createElement("div");
+    const div3 = document.createElement("div");
+    const div4 = document.createElement("div");
+    const div5 = document.createElement("div");
+    div1.innerHTML = `
+    <div class="flex-row justify-center mb-16">
+      <div class="flex justify-center w-full">
+      <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[0].poster_path}" alt="" />
+      </div>
+      <div class="flex-col">
+        <h4 class="text-base mt-1">Title: ${data.results[0].title}</h4>
+        <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[0].vote_average} / 10</h4>
+        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[0].popularity}</h4>
+        <h4 class="text-base mt-1">Release date: ${data.results[0].release_date}</h4> 
+      </div>
+    </div>
+    `;
+    div2.innerHTML = `
+    <div class="flex-row justify-center mb-16">
+      <div class="flex justify-center w-full">
+      <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[1].poster_path}" alt="" />
+      </div>
+      <div class="flex-col">
+        <h4 class="text-base mt-1">Title: ${data.results[1].title}</h4>
+        <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[1].vote_average} / 10</h4>
+        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[1].popularity}</h4>
+        <h4 class="text-base mt-1">Release date: ${data.results[1].release_date}</h4> 
+      </div>
+    </div>
+    `;
+    div3.innerHTML = `
+    <div class="flex-row justify-center mb-16">
+      <div class="flex justify-center w-full">
+      <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[2].poster_path}" alt="" />
+      </div>
+      <div class="flex-col">
+        <h4 class="text-base mt-1">Title: ${data.results[2].title}</h4>
+        <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[2].vote_average} / 10</h4>
+        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[2].popularity}</h4>
+        <h4 class="text-base mt-1">Release date: ${data.results[2].release_date}</h4> 
+      </div>
+    </div>
+    `;
+    div4.innerHTML = `
+    <div class="flex-row justify-center mb-16">
+      <div class="flex justify-center w-full">
+      <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[3].poster_path}" alt="" />
+      </div>
+      <div class="flex-col">
+        <h4 class="text-base mt-1">Title: ${data.results[3].title}</h4>
+        <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[3].vote_average} / 10</h4>
+        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[3].popularity}</h4>
+        <h4 class="text-base mt-1">Release date: ${data.results[3].release_date}</h4> 
+      </div>
+    </div>
+    `;
+    div5.innerHTML = `
+    <div class="flex-row justify-center mb-16">
+      <div class="flex justify-center w-full">
+      <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[4].poster_path}" alt="" />
+      </div>
+      <div class="flex-col">
+        <h4 class="text-base mt-1">Title: ${data.results[4].title}</h4>
+        <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[4].vote_average} / 10</h4>
+        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[4].popularity}</h4>
+        <h4 class="text-base mt-1">Release date: ${data.results[4].release_date}</h4> 
+      </div>
+    </div>
+    `;
+    document.querySelector("#slide1").appendChild(div1);
+    document.querySelector("#slide2").appendChild(div2);
+    document.querySelector("#slide3").appendChild(div3);
+    document.querySelector("#slide4").appendChild(div4);
+    document.querySelector("#slide5").appendChild(div5);
+  } catch (error) {
+    console.error("An error occurred:", error.message);
+  }
+}
+
 // ========== { back to top button } ========== \\
 let btn = document.getElementById("back-to-top");
 window.onscroll = () => {
@@ -674,6 +762,7 @@ function init() {
       // displayScienceNews();
       // displayTechnologyNews();
       // displayForex();
+      displayMovie();
       break;
     case "/business.html":
       // businesspage();
