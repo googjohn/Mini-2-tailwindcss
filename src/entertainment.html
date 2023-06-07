@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini 2 News API</title>
+  <!-- favicon -->
+  <link rel="icon" href="./images/favicon.ico" />
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&amp;display=swap" rel="stylesheet" />
+  <!-- Country Flag -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.7.0/css/flag-icons.min.css"
+    integrity="sha512-s/Nra58/et4CDKSnhUiPrce+8M5tdK1Ps0+9dKe4I9JH/g0QGzsPAdf1fLeBsMTMG1zWMBsnzxvPgTOAFUHwLQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- css -->
+  <link href="../dist/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/spinner.css">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body class="text-gray-700">
+  <!-- =============== { HEADER } =============== -->
+  <header id="navbar" class="bg-black sticky top-0 z-50 h-20">
+    <nav>
+      <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
+        <!-- navbar menu -->
+        <div class="flex justify-between">
+          <a href="#" class="flex"><img class="h-20" src="./images/tdg-logo-2.png" alt="The Daily Gazette" /></a>
+          <div class="flex flex-row">
+            <ul class="navbar hidden lg:flex lg:flex-row overflow-hidden text-white text-base items-center">
+              <li class="relative border-l border-gray-600 px-6 active">
+                <a class="block text-white font-medium py-3 hover:border-red-700 border-b-2 border-transparent"
+                  href="index.html">Home</a>
+              </li>
+              <li class="relative border-l-0 border-gray-600 px-6">
+                <a class="block text-white font-medium py-3 hover:border-red-700 border-b-2 border-transparent"
+                  href="business.html">Business</a>
+              </li>
+              <li class="relative border-l-0 border-gray-600 px-6">
+                <a class="block text-white font-medium py-3 hover:border-red-700 border-b-2 border-transparent"
+                  href="sports.html">Sports</a>
+              </li>
+              <li class="relative border-l-0 border-gray-600 px-6">
+                <a class="block text-white font-medium py-3 hover:border-red-700 border-b-2 border-transparent"
+                  href="scitech.html">Sci&Tech</a>
+              </li>
+              <li class="relative border-l-0 border-gray-600 px-6">
+                <a class="block text-white font-medium py-3 hover:border-red-700 border-b-2 border-transparent"
+                  href="entertainment.html">Entertainment</a>
+              </li>
+              <li class="relative border-l-0 border-gray-600 px-6">
+                <a class="block text-white font-medium py-3 hover:border-red-700 border-b-2 border-transparent"
+                  href="lifestyle.html">Lifestyle</a>
+              </li>
+
+              <li class="relative border-l-0 border-gray-600 px-6">
+                <a class="block text-white font-medium py-3 hover:border-red-700 border-b-2 border-transparent"
+                  href="contact.html">Contact</a>
+              </li>
+              <!-- search form -->
+              <form class="flex flex-row items-center">
+                <label for="simple-search" class="sr-only">Search</label>
+                <div class="relative w-full">
+                  <input type="text" id="simple-search"
+                    class="bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-red-500 focus:border-red-500 block w-full pl-4 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500"
+                    placeholder="Search" required />
+                </div>
+                <button type="submit"
+                  class="p-2 ml-2 text-sm font-medium text-white bg-red-700 rounded-full border border-red-700 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                  </svg>
+                  <span class="sr-only">Search</span>
+                </button>
+              </form>
+            </ul>
+            <!-- <button type="button" class="menu-mobile block py-3 px-6 border-b-2 border-transparent">
+              <span class="sr-only">Mobile menu</span>
+              <svg class="inline-block h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                </path>
+              </svg>
+              Menu
+            </button> -->
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header><!-- end header -->
+
+  <!-- =============== { MAIN } =============== -->
+  <main id="content">
+    <section class="py-6">
+      <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
+
+        <!-- salutation -->
+        <div class="flex justify-between">
+          <div id="salutation" class="self-center">
+            <h1 class="text-3xl font-bold">Welcome to your daily Gazette</h1>
+          </div>
+
+          <!-- date and time -->
+          <div id="day-time">
+            <h2 id="date-today" class="text-xl text-gray-500 font-medium"></h2>
+            <h2 id="time-now" class="text-xl text-end text-gray-500 font-medium"></h2>
+          </div>
+        </div>
+
+        <!-- hero news container -->
+      </div>
+
+      <!-- block trending news -->
+      <div class="bg-white">
+        <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
+          <div class="flex flex-row flex-wrap">
+            <!-- Left -->
+            <div class="flex-shrink max-w-full w-full lg:w-2/3 overflow-hidden">
+              <div class="w-full py-3 mb-4 border-b2m">
+                <h2 class="text-gray-800 text-3xl font-bold ">
+                  <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span><a href="#">Trending</a>
+                </h2>
+              </div>
+              <div id="trend-news" class="flex flex-row flex-wrap -mx-3">
+                <!-- <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img6.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Category</span></a>
+                      </div>
+                    </div> -->
+                <!-- </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img7.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Category</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img8.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Category</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img9.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Category</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img10.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Category</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img11.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Category</span></a>
+                      </div>
+                    </div>
+                  </div> -->
+              </div>
+            </div>
+            <!-- right advertisement change to local news or weather -->
+            <div class="flex-shrink max-w-full w-full lg:w-1/3 lg:pl-8 lg:pb-8 order-first lg:order-last">
+              <div class="w-full py-3 mb-4 border-b2m">
+                <h2 class="text-gray-800 text-3xl font-bold ">
+                  <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span>Weather
+                </h2>
+              </div>
+              <div class="w-full bg-gray-50">
+                <div class="weather text-white">
+                  <div class="sidebar">
+                    <form class="search" id="search">
+                      <input type="text" id="query" placeholder="Search..." />
+                      <button id="weather-search-btn"><i class="fas fa-search"></i></button>
+                    </form>
+                    <div class="weather-icon">
+                      <img id="icon" src="/src/images/icons/sun/sunny.png" alt="" />
+                    </div>
+                    <div class="temperature">
+                      <h1 id="temp" class>0</h1>
+                      <span class="temp-unit">°C</span>
+                    </div>
+                    <div class="date-time">
+                      <p id="date-time">Monday, 12:00</p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="condition-rain">
+                      <div class="condition">
+                        <i class="fas fa-cloud"></i>
+                        <p id="condition">condition</p>
+                      </div>
+                      <div class="rain">
+                        <i class="fas fa-tint"></i>
+                        <p id="rain">perc - 0%</p>
+                      </div>
+                    </div>
+                    <div class="location">
+                      <div class="location-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+
+                      </div>
+                      <div class="location-text">
+                        <p id="location">location</p>
+                      </div>
+                    </div>
+                    <div class="weather-forecast-full">
+                      <button id="forecast-full-btn">See full forecast</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="text-sm py-6 sticky">
+                    <div class="w-full text-center">
+                      <a class="uppercase" href="#">Advertisement</a>
+                      <a href="#">
+                        <img class="mx-auto" src="https://unsplash.com/s/photos/weather" alt="advertisement area">
+                      </a>
+                    </div>
+                  </div> -->
+            </div>
+            <!-- <div class="w-full py-3 mb-4 border-b2m">
+                  <h2 class="text-gray-800 text-3xl font-bold ">
+                    <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span>Tags
+                  </h2>
+                </div> -->
+            <!-- <div class="w-full py-3 mb-4 border-b2m">
+                  <h2 class="text-gray-800 text-3xl font-bold ">
+                    <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span>Newsletter
+                  </h2>
+                </div> -->
+          </div>
+        </div>
+      </div>
+      </div>
+      <!-- block sports news -->
+      <div class="bg-gray-200">
+        <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
+          <div class="flex flex-row flex-wrap">
+            <!-- Left -->
+            <div class="flex-shrink max-w-full w-full lg:w-2/3 overflow-hidden">
+              <div class="w-full py-3 mb-4 border-b2m">
+                <h2 class="text-gray-800 text-3xl font-bold ">
+                  <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span><a href="#">Sports</a>
+                </h2>
+              </div>
+              <div id="sports-news" class="flex flex-row flex-wrap -mx-3">
+                <!-- <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img6.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img7.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img8.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img9.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img10.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img11.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                      </div>
+                    </div>
+                  </div> -->
+              </div>
+            </div>
+            <!-- right advertisement change to local news or weather -->
+            <div class="flex-shrink max-w-full w-full lg:w-1/3 lg:pl-8 lg:pt-14 lg:pb-8 order-first lg:order-last">
+              <div class="w-full bg-gray-50 h-full">
+                <!-- <div class="text-sm py-6 sticky">
+                  <div class="w-full text-center">
+                    <a class="uppercase" href="#">Advertisement</a>
+                    <a href="#">
+                      <img class="mx-auto" src="./images/dummy/250.jpg" alt="advertisement area">
+                    </a>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- block business news -->
+      <div class="bg-gray-200">
+        <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
+          <div class="flex flex-row flex-wrap">
+            <!-- Left -->
+            <div class="flex-shrink max-w-full w-full lg:w-2/3 overflow-hidden">
+              <div class="w-full py-3 mb-4 border-b2m">
+                <h2 class="text-gray-800 text-3xl font-bold ">
+                  <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span><a href="#">Business</a>
+                </h2>
+              </div>
+              <div id="business-news" class="flex flex-row flex-wrap -mx-3">
+                <!-- <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img6.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2 text-gray-200">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-300 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-400" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Business</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img7.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2 text-gray-200">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-300 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-400" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Business</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img8.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2 text-gray-200">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-300 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-400" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Business</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img9.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2 text-gray-200">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-300 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-400" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Business</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img10.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2 text-gray-200">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-300 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-400" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Business</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img11.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2 text-gray-200">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-300 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-400" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                      </div>
+                    </div>
+                  </div> -->
+              </div>
+            </div>
+            <!-- right advertisement change to local news or weather -->
+            <div class="flex-shrink max-w-full w-full lg:w-1/3 lg:pl-8 lg:pb-8 order-first lg:order-last">
+              <div class="w-full py-3 mb-4 border-b2m">
+                <h2 class="text-gray-800 text-3xl font-bold ">
+                  <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span>Foreign Exchange
+                </h2>
+              </div>
+              <div class="bg-gray-100 py-8">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-gray-200">
+                  <div class="text-center">
+                    <!-- <h2 class="text-3xl font-bold text-gray-800 mb-4">Foreign Exchange Rates</h2> -->
+                    <p class="text-xl text-gray-800"><span class="fi fi-us"></span> US Dollar Base </p>
+                  </div>
+                  <div id="forex"
+                    class="w-full grid leading-3 hover:bg-gray-700 md:grid-cols-1 lg:grid-cols-4 gap-8 mt-8 justify-center">
+                    <div class="bg-black rounded-lg shadow-lg">
+                      <!-- <div class="p-6">
+          <h5 class="text-xl text-white mb-2"><span class="fi fi-ph"></span><span class="colored-colon"> : </span> 0.85 Peso </h5>
+        </div>
+        <div class="p-6">
+          <h5 class="text-xl text-white mb-2"><span class="fi fi-eu"></span><span class="colored-colon"> : </span> 0.85 EUR </h5>
+        </div>
+        <div class="p-6">
+          <h5 class="text-xl text-white mb-2"><span class="fi fi-au"></span><span class="colored-colon"> : </span> 0.85 AUD </h5>
+        </div>
+        <div class="p-6">
+          <h5 class="text-xl text-white mb-2"><span class="fi fi-ae"></span><span class="colored-colon"> : </span> 0.85 AED </h5>
+        </div>
+        <div class="p-6">
+          <h5 class="text-xl text-white mb-2"><span class="fi fi-nz"></span><span class="colored-colon"> : </span> 0.85 NZD </h5>
+        </div>
+        <div class="p-6">
+          <h5 class="text-xl text-white mb-2"><span class="fi fi-cn"></span><span class="colored-colon"> : </span> 0.85 CNY </h5>
+        </div>
+        <div class="p-6">
+          <h5 class="text-xl text-white mb-2"><span class="fi fi-hk"></span><span class="colored-colon"> : </span> 0.85 HKD </h5>
+        </div>
+        <div class="p-6">
+          <h5 class="text-xl text-white mb-2"><span class="fi fi-jp"></span><span class="colored-colon"> : </span> 0.85 JPY </h5>
+        </div>
+        <div class="p-6">
+          <h5 class="text-xl text-white mb-2"><span class="fi fi-kr"></span><span class="colored-colon"> : </span> 0.85 WON </h5>
+        </div>
+        <div class="p-6">
+          <h5 class="text-xl text-white mb-2"><span class="fi fi-ca"></span><span class="colored-colon"> : </span> 0.85 CAD </h5>
+        </div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- block entertainment news -->
+      <div class="bg-white">
+        <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
+          <div class="flex flex-row flex-wrap">
+            <!-- Left -->
+            <div class="flex-shrink max-w-full w-full lg:w-2/3 overflow-hidden">
+              <div class="w-full py-3 mb-4 border-b2m">
+                <h2 class="text-gray-800 text-3xl font-bold ">
+                  <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span><a href="#">Entertainment</a>
+                </h2>
+              </div>
+              <div id="entertainment-news" class="flex flex-row flex-wrap -mx-3">
+                <!-- <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img6.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img7.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img8.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img9.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img10.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img11.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                      </div>
+                    </div>
+                  </div> -->
+              </div>
+            </div>
+            <!-- right advertisement change to local news or weather -->
+            <div class="flex-shrink max-w-full w-full lg:w-1/3 lg:pl-8 lg:pt-14 lg:pb-8 order-first lg:order-last">
+              <div class="w-full bg-gray-50 h-full">
+                <!-- <div class="text-sm py-6 sticky">
+                  <div class="w-full text-center">
+                    <a class="uppercase" href="#">Advertisement</a>
+                    <a href="#">
+                      <img class="mx-auto" src="./images/dummy/250.jpg" alt="advertisement area">
+                    </a>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- block science news -->
+      <div class="bg-white">
+        <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
+          <div class="flex flex-row flex-wrap">
+            <!-- Left -->
+            <div class="flex-shrink max-w-full w-full lg:w-2/3 overflow-hidden">
+              <div class="w-full py-3 mb-4 border-b2m">
+                <h2 class="text-gray-800 text-3xl font-bold ">
+                  <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span><a href="#">Science</a>
+                </h2>
+              </div>
+              <div id="science-news" class="flex flex-row flex-wrap -mx-3">
+                <!-- <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img6.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img7.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img8.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img9.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img10.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img11.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                      </div>
+                    </div>
+                  </div> -->
+              </div>
+            </div>
+            <!-- right advertisement change to local news or weather -->
+            <div class="flex-shrink max-w-full w-full lg:w-1/3 lg:pl-8 lg:pt-14 lg:pb-8 order-first lg:order-last">
+              <div class="w-full bg-gray-50 h-full">
+                <!-- <div class="text-sm py-6 sticky">
+                  <div class="w-full text-center">
+                    <a class="uppercase" href="#">Advertisement</a>
+                    <a href="#">
+                      <img class="mx-auto" src="./images/dummy/250.jpg" alt="advertisement area">
+                    </a>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- block technology news -->
+      <div class="bg-white">
+        <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
+          <div class="flex flex-row flex-wrap">
+            <!-- Left -->
+            <div class="flex-shrink max-w-full w-full lg:w-2/3 overflow-hidden">
+              <div class="w-full py-3 mb-4 border-b2m">
+                <h2 class="text-gray-800 text-3xl font-bold ">
+                  <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span><a href="#">Technology</a>
+                </h2>
+              </div>
+              <div id="technology-news" class="flex flex-row flex-wrap -mx-3">
+                <!-- <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img6.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img7.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img8.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img9.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img10.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+                    <div class="flex flex-row sm:block hover-img">
+                      <a href="">
+                        <img class="max-w-full w-full mx-auto" src="./images/dummy/img11.jpg" alt="alt title">
+                      </a>
+                      <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+                        <h3 class="text-lg font-bold leading-tight mb-2">
+                          <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                        </h3>
+                        <p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting
+                          text below as a natural lead-in to additional content.</p>
+                        <a class="text-gray-500" href="#"><span
+                            class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                      </div>
+                    </div>
+                  </div> -->
+              </div>
+            </div>
+            <!-- right advertisement change to local news or weather -->
+            <div class="flex-shrink max-w-full w-full lg:w-1/3 lg:pl-8 lg:pt-14 lg:pb-8 order-first lg:order-last">
+              <div class="w-full bg-gray-50 h-full">
+                <div class="text-sm py-6 sticky">
+                  <div class="w-full text-center">
+                    <a href="#">
+                      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
+                        technology acquisitions 2021</h5>
+                    </a>
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
+                      technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                    <a href="#"
+                      class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                      Next Quotes
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- slider world news-->
+      <!-- <div class="relative bg-gray-50"
+          style="background-image: url('/src/images/dummy/img24.jpg');background-size: cover;background-position: center center;background-attachment: fixed">
+          <div class="bg-black bg-opacity-70">
+            <div class="xl:container h-56 mx-auto px-3 sm:px-4 xl:px-2">
+              <div class="flex flex-row flex-wrap">
+                <div class="flex-shrink max-w-full w-full py-12 overflow-hidden">
+                  <div class="w-full py-3">
+                    <h2 class="text-white text-2xl font-bold text-shadow-black">
+                      <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span>World News
+                    </h2>
+                  </div>
+                  <div id="post-carousel" class="splide post-carousel">
+                    <div class="splide__track">
+                      <ul class="splide__list">
+                        <li class="splide__slide">
+                          <div class="w-full pb-3">
+                            <div class="hover-img bg-white">
+                              <a href="">
+                                <img class="max-w-full w-full mx-auto" src="./images/dummy/img26.jpg" alt="alt title">
+                              </a>
+                              <div class="py-3 px-6">
+                                <h3 class="text-lg font-bold leading-tight mb-2">
+                                  <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                                </h3>
+                                <a class="text-gray-500" href="#"><span
+                                    class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="splide__slide">
+                          <div class="w-full pb-3">
+                            <div class="hover-img bg-white">
+                              <a href="">
+                                <img class="max-w-full w-full mx-auto" src="./images/dummy/img12.jpg" alt="alt title">
+                              </a>
+                              <div class="py-3 px-6">
+                                <h3 class="text-lg font-bold leading-tight mb-2">
+                                  <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                                </h3>
+                                <a class="text-gray-500" href="#"><span
+                                    class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="splide__slide">
+                          <div class="w-full pb-3">
+                            <div class="hover-img bg-white">
+                              <a href="">
+                                <img class="max-w-full w-full mx-auto" src="src/img/dummy/img16.jpg" alt="alt title">
+                              </a>
+                              <div class="py-3 px-6">
+                                <h3 class="text-lg font-bold leading-tight mb-2">
+                                  <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                                </h3>
+                                <a class="text-gray-500" href="#"><span
+                                    class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="splide__slide">
+                          <div class="w-full pb-3">
+                            <div class="hover-img bg-white">
+                              <a href="">
+                                <img class="max-w-full w-full mx-auto" src="src/img/dummy/img17.jpg" alt="alt title">
+                              </a>
+                              <div class="py-3 px-6">
+                                <h3 class="text-lg font-bold leading-tight mb-2">
+                                  <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                                </h3>
+                                <a class="text-gray-500" href="#"><span
+                                    class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="splide__slide">
+                          <div class="w-full pb-3">
+                            <div class="hover-img bg-white">
+                              <a href="">
+                                <img class="max-w-full w-full mx-auto" src="src/img/dummy/img18.jpg" alt="alt title">
+                              </a>
+                              <div class="py-3 px-6">
+                                <h3 class="text-lg font-bold leading-tight mb-2">
+                                  <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                                </h3>
+                                <a class="text-gray-500" href="#"><span
+                                    class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="splide__slide">
+                          <div class="w-full pb-3">
+                            <div class="hover-img bg-white">
+                              <a href="">
+                                <img class="max-w-full w-full mx-auto" src="src/img/dummy/img1.jpg" alt="alt title">
+                              </a>
+                              <div class="py-3 px-6">
+                                <h3 class="text-lg font-bold leading-tight mb-2">
+                                  <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                                </h3>
+                                <a class="text-gray-500" href="#"><span
+                                    class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Europe</a>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+    </section>
+  </main>
+
+  <!-- =============== back to top =============== -->
+  <div>
+    <button id="back-to-top" type="button"
+      class="btn py-4 px-4 bg-gray-200 text-gray-700 font-semibold rounded-full shadow-md hover:bg-red-600 hover:text-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-100 focus:ring-opacity-75">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+  </div>
+
+  <!-- =============== footer =============== -->
+  <footer class="bg-black text-gray-400">
+
+    <!--Footer content-->
+    <div id="footer-content" class="relative pt-8 xl:pt-16 pb-6 xl:pb-12">
+      <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2 overflow-hidden">
+        <div class="flex flex-wrap flex-row lg:justify-between -mx-3">
+          <div class="flex-shrink max-w-full w-full lg:w-2/5 px-3 lg:pr-16">
+            <div class="flex items-center mb-2">
+              <a href="#" class="flex items-center">
+                <img src="../src/images/tdg-logo-2.png" class="mr-3 h-20" alt="The Daily Gazette" />
+                <span class="self-center text-gray-300 text-4xl font-semibold whitespace-nowrap dark:text-white">The
+                  Daily Gazette</span>
+              </a>
+            </div>
+            <h4 class="text-base leading-normal mb-3 uppercase text-gray-100">
+              About Us
+            </h4>
+            <p>
+              The Daily Gazette is a leading news source that delivers
+              comprehensive and timely coverage of local, national, and
+              international events.
+            </p>
+            <ul class="space-x-3 mt-6 mb-6 Lg:mb-0">
+              <h4 class="text-base leading-normal mb-3 uppercase text-gray-100">
+                Follow Us
+              </h4>
+
+              <!--facebook-->
+              <li class="inline-block">
+                <a target="_blank" class="hover:text-gray-100" rel="noopener noreferrer" href="https://facebook.com"
+                  title="Facebook">
+                  <i class="fab fa-facebook fa-2x"></i>
+
+                </a>
+              </li>
+
+              <!--twitter-->
+              <li class="inline-block">
+                <a target="_blank" class="hover:text-gray-100" rel="noopener noreferrer" href="https://twitter.com"
+                  title="Twitter">
+                  <i class="fab fa-twitter fa-2x"></i>
+
+                </a>
+              </li>
+
+              <!--youtube-->
+              <li class="inline-block">
+                <a target="_blank" class="hover:text-gray-100" rel="noopener noreferrer" href="https://youtube.com"
+                  title="Youtube">
+                  <i class="fab fa-youtube fa-2x"></i>
+                </a>
+              </li>
+
+              <!--instagram-->
+              <li class="inline-block">
+                <a target="_blank" class="hover:text-gray-100" rel="noopener noreferrer" href="https://instagram.com"
+                  title="Instagram">
+                  <i class="fab fa-instagram fa-2x"></i>
+
+                </a>
+              </li>
+
+              <!--github-->
+              <li class="inline-block">
+                <a target="_blank" class="hover:text-gray-100" rel="noopener noreferrer" href="https://github.com"
+                  title="github">
+                  <i class="fab fa-github fa-2x"></i>
+
+                </a>
+              </li>
+
+              <!--discord-->
+              <li class="inline-block">
+                <a target="_blank" class="hover:text-gray-100" rel="noopener noreferrer" href="https://discord.com"
+                  title="discord">
+                  <i class="fab fa-discord fa-2x"></i>
+
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="flex-shrink max-w-full w-full lg:w-3/5 px-3">
+            <div class="flex flex-wrap flex-row">
+              <div class="flex-shrink max-w-full w-1/2 md:w-1/4 mb-6 lg:mb-0">
+                <h4 class="text-base leading-normal mb-3 uppercase text-gray-100">
+                  Resources
+                </h4>
+                <ul>
+                  <li class="py-1 hover:text-white">
+                    <a href="https://gnews.io/" class=""><i class="fa-solid fa-chevron-right"></i>
+                      GNews</a>
+                  </li>
+                  <li class="py-1 hover:text-white">
+                    <a href="https://tailwindcss.com/" class=""><i class="fa-solid fa-chevron-right"></i> Tailwind
+                      Css</a>
+                  </li>
+                  <li class="py-1 hover:text-white">
+                    <a href="https://www.visualcrossing.com/" class=""><i class="fa-solid fa-chevron-right"></i>
+                      Visual Crossing</a>
+                  </li>
+                  <li class="py-1 hover:text-white">
+                    <a href="https://ipinfo.io/" class="">
+                      <i class="fa-solid fa-chevron-right"></i> ipinfo.io</a>
+                  </li>
+                  <li class="py-1 hover:text-white">
+                    <a href="https://www.thenewsapi.com/" class="">
+                      <i class="fa-solid fa-chevron-right"></i> The News Api</a>
+                  </li>
+                  <li class="py-1 hover:text-white">
+                    <a href="https://www.newsapi.org/" class="">
+                      <i class="fa-solid fa-chevron-right"></i> NewsApi</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="flex-shrink max-w-full w-1/2 md:w-1/4 mb-6 lg:mb-0">
+                <h4 class="text-base leading-normal mb-3 uppercase text-gray-100">
+                  Support
+                </h4>
+                <ul>
+                  <li class="py-1 hover:text-white">
+                    <a href="#" class=""><i class="fa-solid fa-chevron-right"></i>
+                      Documentation</a>
+                  </li>
+                  <li class="py-1 hover:text-white">
+                    <a href="#" class=""><i class="fa-solid fa-chevron-right"></i> Changelog</a>
+                  </li>
+                  <li class="py-1 hover:text-white">
+                    <a href="#" class=""><i class="fa-solid fa-chevron-right"></i> Tools</a>
+                  </li>
+                  <li class="py-1 hover:text-white">
+                    <a href="https://fontawesome.com/" class=""><i class="fa-solid fa-chevron-right"></i> Icons</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="flex-shrink max-w-full w-1/2 md:w-1/4 mb-6 lg:mb-0">
+                <h4 class="text-base leading-normal mb-3 uppercase text-gray-100">
+                  Includes
+                </h4>
+                <ul>
+                  <li class="py-1 hover:text-white">
+                    <a href="#" class=""><i class="fa-solid fa-chevron-right"></i> Utilities</a>
+                  </li>
+                  <li class="py-1 hover:text-white">
+                    <a href="#" class=""><i class="fa-solid fa-chevron-right"></i> Components</a>
+                  </li>
+                  <li class="py-1 hover:text-white">
+                    <a href="#" class=""><i class="fa-solid fa-chevron-right"></i> Example
+                      code</a>
+                  </li>
+                  <li class="py-1 hover:text-white">
+                    <a href="#" class=""><i class="fa-solid fa-chevron-right"></i> Updates</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="flex-shrink max-w-full w-1/2 md:w-1/4 mb-6 lg:mb-0">
+                <h4 class="text-base leading-normal mb-3 uppercase text-gray-100">
+                  Legal
+                </h4>
+                <ul>
+                  <li class="py-1 hover:text-white">
+                    <a href="#" class=""><i class="fa-solid fa-chevron-right"></i> Privacy
+                      Policy</a>
+                  </li>
+                  <li class="py-1 hover:text-white">
+                    <a href="#" class=""><i class="fa-solid fa-chevron-right"></i> Terms of
+                      Use</a>
+                  </li>
+                  <li class="py-1 hover:text-white">
+                    <a href="#" class=""><i class="fa-solid fa-chevron-right"></i> License</a>
+                  </li>
+                  <li class="py-1 hover:text-white">
+                    <a href="#" class=""><i class="fa-solid fa-chevron-right"></i> GDPR</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="grow mx-auto flex-shrink max-w-full w-2/6 md:w-1/4 mb-6 mt-6 lg:mb-0">
+                <h4 class="mb-3 text-center text-base leading-normal uppercase text-gray-100">
+                  Subscribe to News Letter
+                </h4>
+                <form action="" class="mx-auto w-96">
+                  <label for="email-address-icon"
+                    class="block mb-2 text-sm font-medium text-gray-100 dark:text-white">Your Email</label>
+                  <div class="relative">
+                    <!-- <div
+                      class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+                    > -->
+                    <!-- <i
+                      class="fa-solid fa-envelope text-gray-500 dark:text-gray-400"
+                    ></i> -->
+                    <!-- <svg
+                        aria-hidden="true"
+                        class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                        ></path>
+                        <path
+                          d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                        ></path>
+                      </svg> -->
+                    <!-- </div> -->
+                    <input type="text" id="email-address-icon"
+                      class="mx-auto bg-gray-50 border border-gray-300 text-black text-sm rounded-full focus:ring-red-500 focus:border-red-500 block w-full py-2.5 pl-96 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500"
+                      placeholder="youremailadd@here.com" />
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!--Start footer copyright-->
+    <div class="footer-dark">
+      <div class="container mx-auto py-4 border-t border-gray-200 border-opacity-10">
+        <div class="row">
+          <div class="col-12 col-md text-center">
+            <p class="d-block my-3">
+            <p class="hover:underline hover:decoration-red-700">Copyright © COGY™
+              | All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End footer copyright-->
+  </footer>
+
+  <!-- spinner -->
+  <!-- <div class="spinner-overlay">
+    <div class="spinner"></div>
+    <img src="./images/spinner.png" alt="">
+  </div> -->
+
+  <div class="spinner"></div>
+
+  <!-- end footer -->
+  <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
+  <script src="./js/weather.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
