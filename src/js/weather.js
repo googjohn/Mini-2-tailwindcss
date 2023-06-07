@@ -209,13 +209,13 @@ async function displayWeather() {
       localarticles = data.articles;
       console.log(localarticles);
 
-      localarticles.forEach((articles) => {
+      localarticles.slice(20, 30).forEach((articles) => {
         const div = document.createElement("div");
         div.classList =
           "weather-card";
 
         div.innerHTML = `
-        <div class="overlay rounded-lg relative max-h-48 overflow-hidden">
+                          <div class="overlay rounded-lg relative max-h-48 overflow-hidden">
                           
                           <a href="${articles.url}">
                             <img class="max-w-full w-full mx-auto" src="${articles.urlToImage}">
@@ -235,21 +235,20 @@ async function displayWeather() {
         document.querySelector(".weather-news-card").appendChild(div);
       });
 
-      localarticles.slice(0, 10).forEach((articles) => {
-        const ul = document.createElement("ul");
-        ul.classList =
-          "weather-list";
+      localarticles.slice(0, 12).forEach((articles) => {
+        const p = document.createElement("p");
+        p.classList =
+          "weather-list my-2 rounded-2xl border";
 
-        ul.innerHTML = `
-        <li class="my-2 rounded-2xl border">
-                          <a class="px-4 py-3 text-base block text-gray-100 hover hover:text-gray-300" href="${articles.url}">
+        p.innerHTML = `
+                        
+                          <a class="px-4 py-3 text-base block text-gray-100 hover hover:underline hover:text-gray-300" href="${articles.url}">
                             ${articles.title}
                           </a>
                         
-                          </li>
                         
-            `;
-        document.querySelector("#weather-news-list").appendChild(ul);
+                        `;
+        document.querySelector("#weather-news-list").appendChild(p);
       });
     });
   } catch (error) {
