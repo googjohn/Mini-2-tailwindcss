@@ -842,10 +842,10 @@ function getDayTime() {
   document.getElementById("date-today").innerHTML = dateToday;
 
   // display time now
-  let ampm = hour >= 12 ? "PM" : "AM";
-  hour = hour % 12;
-  hour = hour ? hour : 12;
-  let timeNow = hours + ":" + minutes + ":" + seconds + " " + ampm;
+  let ampm = hours >= 12 ? "PM" : "AM";
+  hours = hours % 12;
+  hours = hours ? hours : 12;
+  let timeNow = hours + ":" + minutes + " " + ampm;
   document.getElementById("time-now").innerHTML = timeNow;
 }
 setInterval(getDayTime, 1000);

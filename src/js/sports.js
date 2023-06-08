@@ -708,12 +708,12 @@ function generateTabContent(data, tabIndex) {
     // Format the game information
     const gameInfo = `
   <div class="game text-5xl">
-    <div class="team">${game1.HomeTeam}</div>
+    <div class="team">${game1.HomeTeam}</div> <span>VS</span>
     <div class="team">${game1.AwayTeam}</div>
     <div class="time">${game1.DateTime}</div>
   </div>
   <div class="game text-5xl">
-    <div class="team">${game2.HomeTeam}</div>
+    <div class="team">${game2.HomeTeam}</div> <span>VS</span>
     <div class="team">${game2.AwayTeam}</div>
     <div class="time">${game2.DateTime}</div>
   </div>
@@ -733,3 +733,21 @@ function generateTabContent(data, tabIndex) {
 
 // Initialize the tab content for the first tab
 updateTabContent(0);
+
+
+
+
+
+// ================ { function button to see weather full forecast  } ================== //
+const seeMoreGames = document.getElementById("see-more-games-btn");
+
+seeMoreGames.addEventListener("click", function () {
+  // Open the weather page in a new tab or window
+  const newWindow = window.open("sports.html");
+  if (newWindow) {
+    newWindow.focus();
+  } else {
+    // Pop-up blocked, fallback to opening in the current tab
+    window.location.href = "sports.html";
+  }
+});
