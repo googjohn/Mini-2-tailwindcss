@@ -780,6 +780,7 @@ async function searchpage() {
         div.classList =
           "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100";
         div.innerHTML = `
+        <div class="flex-row sm:block hover-img">
           <a href="${results.url}">
             <img class="max-w-full w-full mx-auto" src="${results.image}" alt="alt title">
           </a>
@@ -789,6 +790,7 @@ async function searchpage() {
           </h3>
             <p class="hidden md:block text-gray-600 leading-tight mb-1">${results.description}</p>
             <a class="text-gray-500" href="${results.url}"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${results.publishedAt}</span></a>
+        </div>
         </div>
         `;
 
