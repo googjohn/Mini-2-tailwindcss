@@ -867,9 +867,9 @@ function init() {
       // displaySportsNews();
       // displayScienceNews();
       // displayTechnologyNews();
-      displayForex();
-      displayMovie();
-      displayFacts();
+      // displayForex();
+      // displayMovie();
+      // displayFacts();
       break;
     case "/business.html":
       // businesspage();
