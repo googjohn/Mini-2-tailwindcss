@@ -73,6 +73,38 @@ async function fetchAPIDataForLocal(endpoint) {
   return data;
 }
 
+// NavBar
+document.addEventListener('DOMContentLoaded', function() {
+  const currentPageUrl = window.location.href;
+
+  const pageColors = {
+    'index.html': 'red',
+    'business.html': 'yellow',
+    'sports.html': 'blue',
+    'scitech.html': 'green',
+    'entertainment.html': 'purple',
+    'lifestyle.html': 'orange',
+    'contact.html': 'pink'
+  };
+
+  const listItems = document.querySelectorAll('.navbar li');
+
+  for (let i = 0; i < listItems.length; i++) {
+    const listItem = listItems[i];
+    const link = listItem.querySelector('a');
+    const href = link.getAttribute('href');
+
+    if (currentPageUrl.indexOf(href) !== -1) {
+      const pageColor = pageColors[href];
+      listItem.classList.add('active-' + pageColor);
+    }
+  }
+});
+
+
+
+
+
 // ========== { carousel news} ========== \\
 async function carouselNews() {
   try {
