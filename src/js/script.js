@@ -35,6 +35,17 @@ global.apiKey_8 = "26fd80a7289d79b300b99af28392c8c7";
 global.apiKey_9 = "d7dfd99147ac538715d80f39a0277163";
 global.apiKey_10 = "1321923f82f3680d72f02d2147d154b6";
 
+global.apiKey_11 = "36b7d60e3aa710516f138835973345e5";
+global.apiKey_12 = "1382e204787b970f3b304a0a0e7a3cd1";
+global.apiKey_13 = "00699591f08ddb241b7952693e0a09e4";
+global.apiKey_14 = "eef7eda04c20226e8230017f41d9bd0b";
+global.apiKey_15 = "0bc2dbb5459b76180ca5ce9eda5c06d6";
+global.apiKey_16 = "60d69a4c8da5a75c4e5f61a40b689562";
+global.apiKey_17 = "36637b64a142c041f31b44f7d6ed948a";
+global.apiKey_18 = "938eb01487792b76892a22a07cb25b4b";
+global.apiKey_19 = "1a6bba83f9ccf329e711dd1c0de6ff0a";
+global.apiKey_20 = "053a3fcc1281cccf0c88f55d60373e34";
+
 // ========== { fetch data from gnews.io} ========== \\
 async function fetchAPIData(endpoint) {
   const API_KEY = global.api.apiKeys;
@@ -76,7 +87,7 @@ async function fetchAPIDataForLocal(endpoint) {
 // ========== { carousel news} ========== \\
 async function carouselNews() {
   try {
-    global.api.apiKeys = global.apiKey_1;
+    global.api.apiKeys = global.apiKey_11;
     global.maxfetch = "10";
     fetchAPIData("general").then(function (data) {
       carouselarticles = data.articles;
@@ -253,7 +264,7 @@ async function carouselNews() {
 // ========== { display local from gnews.io} ========== \\
 async function displayLocalNews() {
   try {
-    global.api.apiKeys = global.apiKey_2;
+    global.api.apiKeys = global.apiKey_12;
     global.maxfetch = "4";
     fetchAPIDataForLocal("local").then(function (data) {
       localarticles = data.articles.slice(0, 4);
@@ -289,7 +300,7 @@ async function displayLocalNews() {
 // ========== { display TrendNews from gnews.io} ========== \\
 async function displayTrendingNews() {
   try {
-    global.api.apiKeys = global.apiKey_3;
+    global.api.apiKeys = global.apiKey_13;
     global.maxfetch = "3";
     fetchAPIData("general").then(function (data) {
       trendarticles = data.articles;
@@ -334,7 +345,7 @@ async function displayTrendingNews() {
 // ========== { display BusinessNews from gnews.io} ========== \\
 async function displayBusinessNews() {
   try {
-    global.api.apiKeys = global.apiKey_4;
+    global.api.apiKeys = global.apiKey_14;
     global.api.maxfetch = "3";
     fetchAPIData("business").then(function (data) {
       businessarticles = data.articles;
@@ -380,7 +391,7 @@ async function displayBusinessNews() {
 // ========== { display EntertainmentNews from gnews.io} ========== \\
 async function displayEntertainmentNews() {
   try {
-    global.api.apiKeys = global.apiKey_5;
+    global.api.apiKeys = global.apiKey_15;
     global.api.maxfetch = "3";
     fetchAPIData("entertainment").then(function (data) {
       entertainmentarticles = data.articles;
@@ -426,7 +437,7 @@ async function displayEntertainmentNews() {
 // ========== { display EntertainmentNews from gnews.io} ========== \\
 async function displaySportsNews() {
   try {
-    global.api.apiKeys = global.apiKey_6;
+    global.api.apiKeys = global.apiKey_16;
     global.api.maxfetch = "3";
     fetchAPIData("sports").then(function (data) {
       sportsarticles = data.articles;
@@ -472,7 +483,7 @@ async function displaySportsNews() {
 // ========== { display EntertainmentNews from gnews.io} ========== \\
 async function displayScienceNews() {
   try {
-    global.api.apiKeys = global.apiKey_7;
+    global.api.apiKeys = global.apiKey_17;
     global.api.maxfetch = "3";
     fetchAPIData("science").then(function (data) {
       sciencearticles = data.articles;
@@ -518,7 +529,7 @@ async function displayScienceNews() {
 // ========== { display EntertainmentNews from gnews.io} ========== \\
 async function displayTechnologyNews() {
   try {
-    global.api.apiKeys = global.apiKey_8;
+    global.api.apiKeys = global.apiKey_18;
     global.api.maxfetch = "3";
     fetchAPIData("technology").then(function (data) {
       technologyarticles = data.articles;
@@ -943,32 +954,29 @@ function init() {
   switch (global.currentPage) {
     case "/":
     case "/src/index.html":
-      // carouselNews();
-      // displayLocalNews();
-      // displayTrendingNews();
-      // displayBusinessNews();
-      // displayEntertainmentNews();
-      // displaySportsNews();
-      // displayScienceNews();
-      // displayTechnologyNews();
+      carouselNews();
+      displayLocalNews();
+      displayTrendingNews();
+      displayBusinessNews();
+      displayEntertainmentNews();
+      displaySportsNews();
+      displayScienceNews();
+      displayTechnologyNews();
       displayMovie();
       displayForex();
       // setInterval(displayForex, 5000);
       break;
-    case "/business.html":
-      // businesspage();
+    case "/src/business.html":
+      businessCategoryPage();
       break;
-    case "/technology.html":
-      // technologypage();
+    case "/src/scitech.html":
+      scitechCategoryPage();
       break;
-    case "/science.html":
-      // sciencepage();
+    case "/src/entertainment.html":
+      entertainmentCategoryPage();
       break;
-    case "/entertainment.html":
-      // entertainmentpage();
-      break;
-    case "/sports.html":
-      // sportspage();
+    case "/src/sports.html":
+      sportsCategoryPage();
       break;
     case "/health.html":
       // healthpage();
@@ -1035,7 +1043,7 @@ async function searchpage() {
 }
 
 async function searchAPIData() {
-  const apiKey6 = "d7dfd99147ac538715d80f39a0277163";
+  const apiKey6 = "053a3fcc1281cccf0c88f55d60373e34";
 
   showSpinner();
 
@@ -1050,5 +1058,145 @@ async function searchAPIData() {
   return data;
 }
 //==================={ END SEARCH }=========================\\
+
+// // ========== { display BusinessCategoryPage from gnews.io} ========== \\
+async function businessCategoryPage() {
+  try {
+    global.api.apiKeys = global.apiKey_20;
+    global.api.maxfetch = "10";
+    fetchAPIData("business").then(function (data) {
+      businessarticles = data.articles;
+      console.log(businessarticles);
+
+      businessarticles.forEach((articles) => {
+        const div = document.createElement("div");
+        div.classList =
+          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100 bg-white dark:bg-gray-800 text-black dark:text-white";
+        div.innerHTML = `
+        <div class="flex-row sm:block hover-img">
+          <a href="${articles.url}">
+            <img class="max-w-full w-full mx-auto" src="${articles.image}" alt="alt title">
+          </a>
+        <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+          <h3 class="text-lg font-bold leading-tight mb-2">
+            <a href="${articles.url}">${articles.title}</a>
+          </h3>
+            <p class="hidden md:block leading-tight mb-1">${articles.description}</p>
+            <a class="text-gray-500" href="${articles.url}"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt}</span></a>
+        </div>
+        </div>
+        `;
+        document.querySelector("#business-news").appendChild(div);
+      });
+    });
+  } catch (error) {
+    console.error("An error occurred:", error.message);
+  }
+}
+
+// // ========== { display EntertainmentCategoryPage from gnews.io} ========== \\
+async function entertainmentCategoryPage() {
+  try {
+    global.api.apiKeys = global.apiKey_19;
+    global.api.maxfetch = "10";
+    fetchAPIData("entertainment").then(function (data) {
+      entertainmentarticles = data.articles;
+      console.log(entertainmentarticles);
+
+      entertainmentarticles.forEach((articles) => {
+        const div = document.createElement("div");
+        div.classList =
+          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100 bg-white dark:bg-gray-800 text-black dark:text-white";
+        div.innerHTML = `
+        <div class="flex-row sm:block hover-img">
+          <a href="${articles.url}">
+            <img class="max-w-full w-full mx-auto" src="${articles.image}" alt="alt title">
+          </a>
+        <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+          <h3 class="text-lg font-bold leading-tight mb-2">
+            <a href="${articles.url}">${articles.title}</a>
+          </h3>
+            <p class="hidden md:block leading-tight mb-1">${articles.description}</p>
+            <a class="text-gray-500" href="${articles.url}"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt}</span></a>
+        </div>
+        </div>
+        `;
+        document.querySelector("#entertainment-news").appendChild(div);
+      });
+    });
+  } catch (error) {
+    console.error("An error occurred:", error.message);
+  }
+}
+
+// // ========== { display sciTechCategoryPage from gnews.io} ========== \\
+async function scitechCategoryPage() {
+  try {
+    global.api.apiKeys = global.apiKey_18;
+    global.api.maxfetch = "10";
+    fetchAPIData("technology").then(function (data) {
+      scitecharticles = data.articles;
+      console.log(scitecharticles);
+
+      scitecharticles.forEach((articles) => {
+        const div = document.createElement("div");
+        div.classList =
+          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100 bg-white dark:bg-gray-800 text-black dark:text-white";
+        div.innerHTML = `
+        <div class="flex-row sm:block hover-img">
+          <a href="${articles.url}">
+            <img class="max-w-full w-full mx-auto" src="${articles.image}" alt="alt title">
+          </a>
+        <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+          <h3 class="text-lg font-bold leading-tight mb-2">
+            <a href="${articles.url}">${articles.title}</a>
+          </h3>
+            <p class="hidden md:block leading-tight mb-1">${articles.description}</p>
+            <a class="text-gray-500" href="${articles.url}"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt}</span></a>
+        </div>
+        </div>
+        `;
+        document.querySelector("#scitech-news").appendChild(div);
+      });
+    });
+  } catch (error) {
+    console.error("An error occurred:", error.message);
+  }
+}
+
+// // ========== { display sportsCategoryPage from gnews.io} ========== \\
+async function sportsCategoryPage() {
+  try {
+    global.api.apiKeys = global.apiKey_17;
+    global.api.maxfetch = "10";
+    fetchAPIData("sports").then(function (data) {
+      sportsarticles = data.articles;
+      console.log(sportsarticles);
+
+      sportsarticles.forEach((articles) => {
+        const div = document.createElement("div");
+        div.classList =
+          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100 bg-white dark:bg-gray-800 text-black dark:text-white";
+        div.innerHTML = `
+        <div class="flex-row sm:block hover-img">
+          <a href="${articles.url}">
+            <img class="max-w-full w-full mx-auto" src="${articles.image}" alt="alt title">
+          </a>
+        <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+          <h3 class="text-lg font-bold leading-tight mb-2">
+            <a href="${articles.url}">${articles.title}</a>
+          </h3>
+            <p class="hidden md:block leading-tight mb-1">${articles.description}</p>
+            <a class="text-gray-500" href="${articles.url}"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt}</span></a>
+        </div>
+        </div>
+        `;
+        document.querySelector("#sports-news").appendChild(div);
+      });
+    });
+  } catch (error) {
+    console.error("An error occurred:", error.message);
+  }
+}
 
 document.addEventListener("DOMContentLoaded", init);

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TDG | Home</title>
+  <title>TDG | Business</title>
   <!-- favicon -->
   <link rel="icon" href="./images/favicon.ico" />
   <!-- fontawesome -->
@@ -21,7 +21,6 @@
   <!-- css -->
   <link href="../dist/output.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/spinner.css">
-  <link rel="stylesheet" href="./css/sports.css">
   <link rel="stylesheet" href="./css/styles.css">
 </head>
 
@@ -34,7 +33,7 @@
         <div class="flex justify-between">
           <a href="#" class="flex"><img class="h-20" src="./images/tdg-logo-2.png" alt="The Daily Gazette" /></a>
           <div class="flex flex-row">
-            <ul class="navbar hidden lg:flex lg:flex-row overflow-hidden text-gray-400 text-base items-center">
+            <ul class="navbar hidden lg:flex lg:flex-row overflow-hidden text-white text-base items-center">
               <li class="relative border-l border-gray-600 px-6 active">
                 <a class="block text-white font-medium py-3 hover:border-red-700 border-b-2 border-transparent"
                   href="index.html">Home</a>
@@ -49,22 +48,26 @@
               </li>
               <li class="relative border-l-0 border-gray-600 px-6">
                 <a class="block text-white font-medium py-3 hover:border-red-700 border-b-2 border-transparent"
-                  href="scitech.html">Sci | Tech</a>
+                  href="scitech.html">Sci&Tech</a>
               </li>
               <li class="relative border-l-0 border-gray-600 px-6">
                 <a class="block text-white font-medium py-3 hover:border-red-700 border-b-2 border-transparent"
                   href="entertainment.html">Entertainment</a>
               </li>
+              <li class="relative border-l-0 border-gray-600 px-6">
+                <a class="block text-white font-medium py-3 hover:border-red-700 border-b-2 border-transparent"
+                  href="lifestyle.html">Lifestyle</a>
+              </li>
 
-              <!-- <li class="relative border-l-0 border-gray-600 px-6">
+              <li class="relative border-l-0 border-gray-600 px-6">
                 <a class="block text-white font-medium py-3 hover:border-red-700 border-b-2 border-transparent"
                   href="contact.html">Contact</a>
-              </li> -->
+              </li>
               <!-- search form -->
-             <form action="../src/search.html" class="flex flex-row items-center">
+              <form class="flex flex-row items-center">
                 <label for="simple-search" class="sr-only">Search</label>
                 <div class="relative w-full">
-                  <input type="text" name="search-term" id="search-term"
+                  <input type="text" id="simple-search"
                     class="bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-red-500 focus:border-red-500 block w-full pl-4 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500"
                     placeholder="Search" required />
                 </div>
@@ -102,7 +105,7 @@
         <!-- salutation -->
         <div class="flex justify-between">
           <div id="salutation" class="self-center">
-            <h1 class="text-3xl font-bold">Welcome to Your Daily Gazette!</h1>
+            <h1 class="text-3xl font-bold">Welcome to your daily Gazette</h1>
           </div>
 
           <!-- date and time -->
@@ -126,10 +129,10 @@
                 <div class="relative h-56 overflow-hidden md:h-96">
 
 
-                  <div id="carousel1" class="overlay hidden duration-700 ease-linear" data-carousel-item="active">
+                  <div id="#carousel1" class="overlay hidden duration-700 ease-linear" data-carousel-item="active">
                     <!-- <div> 
                     
-                    <a href="#"><img class="max-w-full w-full h-auto" src="./images/dummy/img1.jpg" alt=""></a>
+                    <!-- <a href="#"><img class="max-w-full w-full h-auto" src="./images/dummy/img1.jpg" alt=""></a>
                     <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
                       <a href="#">
                         <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">1Amazon Shoppers Are Ditching
@@ -389,7 +392,7 @@
                   </div> -->
               </div>
             </div>
-            <!-- weather forecast card -->
+            <!-- right advertisement change to local news or weather -->
             <div class="flex-shrink max-w-full w-full lg:w-1/3 lg:pl-8 lg:pb-8 order-first lg:order-last">
               <div class="w-full py-3 mb-4 border-b2m">
                 <h2 class="text-gray-800 text-3xl font-bold ">
@@ -439,7 +442,25 @@
                   </div>
                 </div>
               </div>
+              <!-- <div class="text-sm py-6 sticky">
+                    <div class="w-full text-center">
+                      <a class="uppercase" href="#">Advertisement</a>
+                      <a href="#">
+                        <img class="mx-auto" src="https://unsplash.com/s/photos/weather" alt="advertisement area">
+                      </a>
+                    </div>
+                  </div> -->
             </div>
+            <!-- <div class="w-full py-3 mb-4 border-b2m">
+                  <h2 class="text-gray-800 text-3xl font-bold ">
+                    <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span>Tags
+                  </h2>
+                </div> -->
+            <!-- <div class="w-full py-3 mb-4 border-b2m">
+                  <h2 class="text-gray-800 text-3xl font-bold ">
+                    <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span>Newsletter
+                  </h2>
+                </div> -->
           </div>
         </div>
       </div>
@@ -452,7 +473,7 @@
             <div class="flex-shrink max-w-full w-full lg:w-2/3 overflow-hidden">
               <div class="w-full py-3 mb-4 border-b2m">
                 <h2 class="text-gray-800 text-3xl font-bold ">
-                  <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span><a href="sports.html">Sports</a>
+                  <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span><a href="#">Sports</a>
                 </h2>
               </div>
               <div id="sports-news" class="flex flex-row flex-wrap -mx-3">
@@ -560,36 +581,17 @@
                   </div> -->
               </div>
             </div>
-            <!-- sports live updates card -->
-            <div class="flex-shrink max-w-full w-full lg:w-1/3 lg:pl-8 lg:pb-8 order-first lg:order-last">
-              <div class="w-full py-3 mb-4 border-b2m">
-                <h2 class="text-gray-800 text-3xl font-bold ">
-                  <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span>Sports Live Updates and Scores
-                </h2>
-              </div>
-              <div class="w-full h-full">
-                <div id="sports-c" class="mx-auto">
-                  <div id="top-sport-heading" class="relative flex flex-col justify-between">
-                    <a href="https://www.nba.com/"><img class="h-full" src="./images/nba-logo.png" alt="nba lgo"><span
-                        class="text-2xl text-white inline-block">NBA</span></a>
-                    <div id="sport-navbar">
-                      <button class="active">Games</button>
-                      <button>News</button>
-                      <button>Standings</button>
-                      <button>Stats</button>
-                      <button>Players</button>
-                    </div>
+            <!-- right advertisement change to local news or weather -->
+            <div class="flex-shrink max-w-full w-full lg:w-1/3 lg:pl-8 lg:pt-14 lg:pb-8 order-first lg:order-last">
+              <div class="w-full bg-gray-50 h-full">
+                <!-- <div class="text-sm py-6 sticky">
+                  <div class="w-full text-center">
+                    <a class="uppercase" href="#">Advertisement</a>
+                    <a href="#">
+                      <img class="mx-auto" src="./images/dummy/250.jpg" alt="advertisement area">
+                    </a>
                   </div>
-                  <div id="sport-card">
-                    <!-- <ul class="sport-card">
-                      <li>
-              
-                      </li>
-                    </ul> -->
-                    <div class="see-more-games-btn">See more games</div>
-
-                  </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -711,22 +713,23 @@
                   </div> -->
               </div>
             </div>
-            <!-- market watch card -->
+            <!-- right advertisement change to local news or weather -->
             <div class="flex-shrink max-w-full w-full lg:w-1/3 lg:pl-8 lg:pb-8 order-first lg:order-last">
               <div class="w-full py-3 mb-4 border-b2m">
                 <h2 class="text-gray-800 text-3xl font-bold ">
-                  <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span>Market Watch
+                  <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span>Foreign Exchange
                 </h2>
               </div>
-              <div>
-                <div class="max-w-7xl mx-auto bg-gray-200">
-                  <!-- <div class="text-center">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Foreign Exchange Rates</h2>
+              <div class="bg-gray-100 py-8">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-gray-200">
+                  <div class="text-center">
+                    <!-- <h2 class="text-3xl font-bold text-gray-800 mb-4">Foreign Exchange Rates</h2> -->
                     <p class="text-xl text-gray-800"><span class="fi fi-us"></span> US Dollar Base </p>
-                  </div> -->
-                  <div id="forex" class="w-full hover:bg-gray-700 hover:text-black md:hidden lg:grid-cols-4 gap-8">
-                    <!-- <div class="bg-transparent rounded-xl"> -->
-                    <!-- <div class="p-6">
+                  </div>
+                  <div id="forex"
+                    class="w-full grid leading-3 hover:bg-gray-700 md:grid-cols-1 lg:grid-cols-4 gap-8 mt-8 justify-center">
+                    <div class="bg-black rounded-lg shadow-lg">
+                      <!-- <div class="p-6">
           <h5 class="text-xl text-white mb-2"><span class="fi fi-ph"></span><span class="colored-colon"> : </span> 0.85 Peso </h5>
         </div>
         <div class="p-6">
@@ -756,8 +759,7 @@
         <div class="p-6">
           <h5 class="text-xl text-white mb-2"><span class="fi fi-ca"></span><span class="colored-colon"> : </span> 0.85 CAD </h5>
         </div> -->
-                    <!-- </div> -->
-
+                    </div>
                   </div>
                 </div>
               </div>
@@ -766,7 +768,7 @@
           </div>
         </div>
       </div>
-      <!-- block Lifestyle news -->
+      <!-- block entertainment news -->
       <div class="bg-white">
         <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
           <div class="flex flex-row flex-wrap">
@@ -883,197 +885,20 @@
               </div>
             </div>
             <!-- right advertisement change to local news or weather -->
-            <div class="flex-shrink max-w-full w-full lg:w-1/3 lg:pl-8 lg:pb-8 order-first lg:order-last">
-              <div class="w-full py-3 mb-4 border-b2m">
-                <h2 class="text-gray-800 text-3xl font-bold ">
-                  <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span>Now Playing on Cinemas
-                </h2>
-              </div>
-              <div class="w-full bg-gray-50">
-                <div class="weather text-white">
-                  <div class="sidebar">
-                    <div id="default-carousel" class="relative w-full" data-carousel="slide">
-                      <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-
-                        <div id="slide1" class="hidden duration-700 ease-in-out" data-carousel-item>
-                          <!-- <div class="flex-row justify-center mb-16 w-full">
-                                <img id="icon" src="./images/dummy/img23.jpg" alt="" />
-                                <div class="flex-col">
-                                  <h4 class="text-lg mt-2">Title:</h4>
-                                  <h4 class="text-sm mt-2"><i class="fas fa-star"></i>  Ratings: / 10</h4>
-                                  <h4 class="text-sm mt-2"><i class="fas fa-user"></i>  Reviews: </h4>
-                                  <h4 class="text-sm mt-2"><i class="fas fa-calendar"></i>  Release date: </h4> 
-                                </div>
-                              </div> -->
-                        </div>
-
-                        <div id="slide2" class="hidden duration-700 ease-in-out" data-carousel-item>
-                          <!-- <div class="flex-row justify-center mb-16 w-full">
-                                <img id="icon" src="./images/dummy/img23.jpg" alt="" />
-                                <div class="flex-col">
-                                  <h4 class="text-lg">Title:</h4>
-                                  <h4 class="text-sm"><i class="fas fa-star"></i>  Ratings: / 10</h4>
-                                  <h4 class="text-sm"><i class="fas fa-user"></i>  Reviews: </h4>
-                                  <h4 class="text-sm"><i class="fas fa-calendar"></i>  Release date: </h4> 
-                                </div>
-                            </div> -->
-                        </div>
-
-                        <div id="slide3" class="hidden duration-700 ease-in-out" data-carousel-item>
-                          <!-- <div class="flex-row justify-center mb-16 w-full">
-                                <img id="icon" src="./images/dummy/img23.jpg" alt="" />
-                                <div class="flex-col">
-                                  <h4 class="text-lg">Title:</h4>
-                                  <h4 class="text-sm"><i class="fas fa-star"></i>  Ratings: / 10</h4>
-                                  <h4 class="text-sm"><i class="fas fa-user"></i>  Reviews: </h4>
-                                  <h4 class="text-sm"><i class="fas fa-calendar"></i>  Release date: </h4> 
-                                </div>
-                            </div> -->
-                        </div>
-
-                        <div id="slide4" class="hidden duration-700 ease-in-out" data-carousel-item>
-                          <!-- <div class="flex-row justify-center mb-16 w-full">
-                                <img id="icon" src="./images/dummy/img23.jpg" alt="" />
-                                <div class="flex-col">
-                                  <h4 class="text-lg">Title:</h4>
-                                  <h4 class="text-sm"><i class="fas fa-star"></i>  Ratings: / 10</h4>
-                                  <h4 class="text-sm"><i class="fas fa-user"></i>  Reviews: </h4>
-                                  <h4 class="text-sm"><i class="fas fa-calendar"></i>  Release date: </h4> 
-                                </div>
-                            </div> -->
-                        </div>
-
-                        <div id="slide5" class="hidden duration-700 ease-in-out" data-carousel-item>
-                          <!-- <div class="flex-row justify-center mb-16 w-full">
-                                <img id="icon" src="./images/dummy/img23.jpg" alt="" />
-                                <div class="flex-col">
-                                  <h4 class="text-lg">Title:</h4>
-                                  <h4 class="text-sm"><i class="fas fa-star"></i>  Ratings: / 10</h4>
-                                  <h4 class="text-sm"><i class="fas fa-user"></i>  Reviews: </h4>
-                                  <h4 class="text-sm"><i class="fas fa-calendar"></i>  Release date: </h4> 
-                                </div>
-                            </div> -->
-                        </div>
-
-                        <div id="slide6" class="hidden duration-700 ease-in-out" data-carousel-item>
-                          <!-- <div class="flex-row justify-center mb-16 w-full">
-                                <img id="icon" src="./images/dummy/img23.jpg" alt="" />
-                                <div class="flex-col">
-                                  <h4 class="text-lg">Title:</h4>
-                                  <h4 class="text-sm"><i class="fas fa-star"></i>  Ratings: / 10</h4>
-                                  <h4 class="text-sm"><i class="fas fa-user"></i>  Reviews: </h4>
-                                  <h4 class="text-sm"><i class="fas fa-calendar"></i>  Release date: </h4> 
-                                </div>
-                            </div> -->
-                        </div>
-
-                        <div id="slide7" class="hidden duration-700 ease-in-out" data-carousel-item>
-                          <!-- <div class="flex-row justify-center mb-16 w-full">
-                                <img id="icon" src="./images/dummy/img23.jpg" alt="" />
-                                <div class="flex-col">
-                                  <h4 class="text-lg">Title:</h4>
-                                  <h4 class="text-sm"><i class="fas fa-star"></i>  Ratings: / 10</h4>
-                                  <h4 class="text-sm"><i class="fas fa-user"></i>  Reviews: </h4>
-                                  <h4 class="text-sm"><i class="fas fa-calendar"></i>  Release date: </h4> 
-                                </div>
-                            </div> -->
-                        </div>
-
-                        <div id="slide8" class="hidden duration-700 ease-in-out" data-carousel-item>
-                          <!-- <div class="flex-row justify-center mb-16 w-full">
-                                <img id="icon" src="./images/dummy/img23.jpg" alt="" />
-                                <div class="flex-col">
-                                  <h4 class="text-lg">Title:</h4>
-                                  <h4 class="text-sm"><i class="fas fa-star"></i>  Ratings: / 10</h4>
-                                  <h4 class="text-sm"><i class="fas fa-user"></i>  Reviews: </h4>
-                                  <h4 class="text-sm"><i class="fas fa-calendar"></i>  Release date: </h4> 
-                                </div>
-                            </div> -->
-                        </div>
-
-                        <div id="slide9" class="hidden duration-700 ease-in-out" data-carousel-item>
-                          <!-- <div class="flex-row justify-center mb-16 w-full">
-                                <img id="icon" src="./images/dummy/img23.jpg" alt="" />
-                                <div class="flex-col">
-                                  <h4 class="text-lg">Title:</h4>
-                                  <h4 class="text-sm"><i class="fas fa-star"></i>  Ratings: / 10</h4>
-                                  <h4 class="text-sm"><i class="fas fa-user"></i>  Reviews: </h4>
-                                  <h4 class="text-sm"><i class="fas fa-calendar"></i>  Release date: </h4> 
-                                </div>
-                            </div> -->
-                        </div>
-                        <div id="slide10" class="hidden duration-700 ease-in-out" data-carousel-item>
-                          <!-- <div class="flex-row justify-center mb-16 w-full">
-                                <img id="icon" src="./images/dummy/img23.jpg" alt="" />
-                                <div class="flex-col">
-                                  <h4 class="text-lg">Title:</h4>
-                                  <h4 class="text-sm"><i class="fas fa-star"></i>  Ratings: / 10</h4>
-                                  <h4 class="text-sm"><i class="fas fa-user"></i>  Reviews: </h4>
-                                  <h4 class="text-sm"><i class="fas fa-calendar"></i>  Release date: </h4> 
-                                </div>
-                            </div> -->
-                        </div>
-
-                      </div>
-
-                      <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
-                          data-carousel-slide-to="0"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
-                          data-carousel-slide-to="1"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
-                          data-carousel-slide-to="2"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
-                          data-carousel-slide-to="3"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
-                          data-carousel-slide-to="4"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 6"
-                          data-carousel-slide-to="5"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 7"
-                          data-carousel-slide-to="6"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 8"
-                          data-carousel-slide-to="7"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 9"
-                          data-carousel-slide-to="8"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 10"
-                          data-carousel-slide-to="9"></button>
-                      </div>
-
-                      <button type="button"
-                        class="absolute bottom-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                        data-carousel-prev>
-                        <span
-                          class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                          <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
-                            </path>
-                          </svg>
-                          <span class="sr-only">Previous</span>
-                        </span>
-                      </button>
-                      <button type="button"
-                        class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                        data-carousel-next>
-                        <span
-                          class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                          <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
-                            </path>
-                          </svg>
-                          <span class="sr-only">Next</span>
-                        </span>
-                      </button>
-
-                    </div>
+            <div class="flex-shrink max-w-full w-full lg:w-1/3 lg:pl-8 lg:pt-14 lg:pb-8 order-first lg:order-last">
+              <div class="w-full bg-gray-50 h-full">
+                <!-- <div class="text-sm py-6 sticky">
+                  <div class="w-full text-center">
+                    <a class="uppercase" href="#">Advertisement</a>
+                    <a href="#">
+                      <img class="mx-auto" src="./images/dummy/250.jpg" alt="advertisement area">
+                    </a>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
         </div>
-      </div>
       </div>
 
       <!-- block science news -->
@@ -1193,9 +1018,16 @@
               </div>
             </div>
             <!-- right advertisement change to local news or weather -->
-            <div class="flex-shrink max-w-full w-full lg:w-1/3 lg:pl-8 lg:pb-8 order-first lg:order-last">
+            <div class="flex-shrink max-w-full w-full lg:w-1/3 lg:pl-8 lg:pt-14 lg:pb-8 order-first lg:order-last">
               <div class="w-full bg-gray-50 h-full">
-
+                <!-- <div class="text-sm py-6 sticky">
+                  <div class="w-full text-center">
+                    <a class="uppercase" href="#">Advertisement</a>
+                    <a href="#">
+                      <img class="mx-auto" src="./images/dummy/250.jpg" alt="advertisement area">
+                    </a>
+                  </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -1318,7 +1150,7 @@
               </div>
             </div>
             <!-- right advertisement change to local news or weather -->
-            <div class="flex-shrink max-w-full w-full lg:w-1/3 lg:pl-8 lg:pb-8 order-first lg:order-last">
+            <div class="flex-shrink max-w-full w-full lg:w-1/3 lg:pl-8 lg:pt-14 lg:pb-8 order-first lg:order-last">
               <div class="w-full bg-gray-50 h-full">
                 <div class="text-sm py-6 sticky">
                   <div class="w-full text-center">
@@ -1693,7 +1525,7 @@
         <div class="row">
           <div class="col-12 col-md text-center">
             <p class="d-block my-3">
-              Copyright © COGY™
+            <p class="hover:underline hover:decoration-red-700">Copyright © COGY™
               | All Rights Reserved.
             </p>
           </div>
@@ -1714,7 +1546,6 @@
   <!-- end footer -->
   <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
   <script src="./js/weather.js"></script>
-  <script src="./js/sports.js"></script>
   <script src="./js/script.js"></script>
 </body>
 
