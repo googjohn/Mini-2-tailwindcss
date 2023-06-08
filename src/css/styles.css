@@ -97,7 +97,6 @@ div.border-b2m-white {
   background-color: var(--cat-world-clr);
 }
 
-
 /* weather */
 .weather {
   /* min-height: 100vh; */
@@ -117,7 +116,6 @@ div.border-b2m-white {
   transition: background-image 0.3s ease;
   font-family: "Poppins", sans-serif;
   border-radius: 20px;
-
 }
 .sidebar {
   width: 100%;
@@ -168,7 +166,7 @@ div.border-b2m-white {
   max-width: 200px;
   height: 100px;
   text-align: center;
-  margin: 10px auto 40px ;
+  margin: 10px auto 40px;
 }
 .weather-icon #icon {
   max-width: 80%;
@@ -223,8 +221,8 @@ nav ul li .active {
   transition: 250ms all ease;
 }
 
-li:hover{
-  opacity: .8;
+li:hover {
+  opacity: 0.8;
   color: #ffffff;
 }
 
@@ -233,13 +231,13 @@ li:hover{
   padding: 5px 10px;
   /* background: rgba(255, 255, 255, 0.1); */
   background-color: transparent;
-  border-radius: 50px ;
+  border-radius: 50px;
   text-align: center;
   border: 1px solid #fff;
   margin: auto;
 }
 
-#forecast-full-btn:hover{
+#forecast-full-btn:hover {
   background: rgba(255, 255, 255, 0.1);
 }
 
@@ -256,15 +254,21 @@ li:hover{
   color: #9e1010d0;
 }
 
-#trend-news img, #business-news img, #entertainment-news img, #sports-news img, #technology-news img, #science-news img, #local-news img {
+#trend-news img,
+#business-news img,
+#entertainment-news img,
+#sports-news img,
+#technology-news img,
+#science-news img,
+#local-news img {
   /* min-height: 200px; */
- height: 200px;
+  height: 200px;
   /* border-radius: 5px; */
 }
 
 /* local news fix */
 #local-news article {
-margin-bottom: 2px;
+  margin-bottom: 2px;
 }
 #local-news article > div {
   margin-left: 2px;
@@ -272,13 +276,13 @@ margin-bottom: 2px;
 
 /* forex */
 #forex {
-  background-color: #97D9E1;
-background-image: linear-gradient(315deg, #97dae1a9 0%, #d9afd9a8 100%);
+  background-color: #97d9e1;
+  background-image: linear-gradient(315deg, #97dae1a9 0%, #d9afd9a8 100%);
   border-radius: 20px;
 }
 
 #forex li {
-  background:rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 8px;
   padding: 5px 10px;
   margin-bottom: 5px;
@@ -300,13 +304,12 @@ background-image: linear-gradient(315deg, #97dae1a9 0%, #d9afd9a8 100%);
   padding: 5px 10px;
   /* background: rgba(255, 255, 255, 0.1); */
   background-color: transparent;
-  border-radius: 50px ;
+  border-radius: 50px;
   text-align: center;
   border: 1px solid #fff;
   margin: auto;
 }
 
-.see-market-btn:hover{
+.see-market-btn:hover {
   background: rgba(255, 255, 255, 0.1);
 }
-

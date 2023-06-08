@@ -964,7 +964,8 @@ function init() {
       displayTechnologyNews();
       displayMovie();
       displayForex();
-      // setInterval(displayForex, 5000);
+      displayFacts();
+      setInterval(displayForex, 5000);
       break;
     case "/src/business.html":
       businessCategoryPage();
@@ -974,6 +975,7 @@ function init() {
       break;
     case "/src/entertainment.html":
       entertainmentCategoryPage();
+      displayMovie();
       break;
     case "/src/sports.html":
       sportsCategoryPage();
@@ -1196,6 +1198,37 @@ async function sportsCategoryPage() {
     });
   } catch (error) {
     console.error("An error occurred:", error.message);
+  }
+}
+
+async function displayFacts() {
+  try {
+    const response = await fetch(
+      `https://api.api-ninjas.com/v1/facts?limit=1`,
+      {
+        method: "GET",
+        headers: { "X-Api-Key": "C1Nh+zDoiwjU1GLVoF7ewg==WuJ4Erl8GSwmENqu" },
+        contentType: "application/json",
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Request failed");
+    }
+    const result = await response.json();
+    console.log(result);
+    const div = document.createElement("div");
+    div.classList = "w-full text-center";
+
+    div.innerHTML = `
+      <a href="#">
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Did you know?</h5>
+      </a>
+      <p class="mb-3 text-xl font-normal text-gray-700 dark:text-gray-400">${result[0].fact}</p>
+    `;
+    document.querySelector("#facts").appendChild(div);
+  } catch (error) {
+    console.error("Error:", error.message);
   }
 }
 
