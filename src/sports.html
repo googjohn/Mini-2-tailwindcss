@@ -28,25 +28,39 @@
 <body>
   <div id="sports-c" class="w-1/2 h-full mx-auto">
     <div id="top-sport-heading" class="relative flex flex-col justify-between">
-      <a href="https://www.nba.com/"><img class="h-full" src="./images/nba-logo.png" alt="nba lgo"><span
-          class="text-2xl text-white inline-block">NBA</span></a>
+      <div>
+        <a href="https://www.nba.com/"><img class="h-full" src="./images/nba-logo.png" alt="nba lgo"><span
+            class="text-2xl text-white inline-block">NBA</span></a>
+      </div>
       <div id="sport-navbar">
-        <button class="active">Games</button>
-        <button>News</button>
-        <button>Standings</button>
-        <button>Stats</button>
-        <button>Players</button>
+        <div class="grid">
+          <button class="grid-button active">Games</button>
+          <button class="grid-button">News</button>
+          <button class="grid-button">Standings</button>
+          <button class="grid-button">Stats</button>
+          <button class="grid-button">Players</button>
+        </div>
+
       </div>
     </div>
     <div id="sport-card">
-      <!-- <ul class="sport-card">
-        <li>
+      <div id="tab-content ">
 
-        </li>
-      </ul> -->
-      <div class="see-more-games-btn">See more games</div>
+      </div>
 
+      <!-- <div class="sports-card grid-cols-2">
+        <div class="border">
+
+        </div>
+        <div class="border">
+
+
+        </div> -->
     </div>
+
+
+    <div class="see-more-games-btn">See more games</div>
+  </div>
   </div>
 
   <div class="spinner"></div>

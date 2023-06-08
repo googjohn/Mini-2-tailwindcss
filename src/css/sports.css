@@ -24,7 +24,7 @@
 }
 
 #sport-card {
-  height: 300px;
+  /* height: 300px; */
     /* background-color: #97D9E1;
   background-image: linear-gradient(315deg, #97dae1a9 0%, #d9afd9a8 100%); */
   background-color: #fbfbbc;
@@ -35,7 +35,7 @@
 
 #top-sport-heading {
   background: #0575e6;
-  height: 100px;
+  height: 120px;
   padding: 10px 0 0 0;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -44,12 +44,16 @@
 #top-sport-heading img{
   height: 40px;
   width: 80px;
-  display: inline-block;
+  display: inline;
+}
 
+#top-sport-heading a {
+  display: inline;
 }
 
 #top-sport-heading span{
   vertical-align: middle;
+  display: inline;
 }
 
 
@@ -58,13 +62,14 @@
 
 }
 
-#sport-navbar {
+#sport-navbar .grid{
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   color: #fff;
+  box-shadow: 0 3px 4px gray;
 }
 
-#sport-navbar button {
+#sport-navbar button{
   padding: 10px;
   text-transform: uppercase;
 }
@@ -77,4 +82,6 @@
 
 #sport-navbar button.active {
   border-bottom: 3px solid #fff;
+  background-color: rgba(6, 98, 189, 0.8);
 }
+
