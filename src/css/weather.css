@@ -336,9 +336,19 @@ li:hover{
 .overlay * {
   z-index: 5;
 }
-
-.weather-list li {
+/* #weather-news-list {
+  overflow: hidden;
+  height: 400px;
+} */
+#weather-news-list p {
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.2);
   border: none;
+  list-style: none;
 }
+
+ #weather-news-list a:hover{
+  background: rgba(255, 255, 255, .2);
+  border-radius: 10px;
+}
+

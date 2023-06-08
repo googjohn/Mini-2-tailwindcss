@@ -245,15 +245,15 @@ li:hover{
 
 /* ================ { forex } ================== */
 .colored-colon {
-  color: rgb(255, 255, 255);
+  color: rgb(41, 39, 39);
 }
 
 .text-up {
-  color: #24ee24d0;
+  color: #0da50dd0;
 }
 
 .text-down {
-  color: #f30d0dd0;
+  color: #9e1010d0;
 }
 
 #trend-news img, #business-news img, #entertainment-news img, #sports-news img, #technology-news img, #science-news img, #local-news img {
@@ -262,8 +262,6 @@ li:hover{
   /* border-radius: 5px; */
 }
 
-
-
 /* local news fix */
 #local-news article {
 margin-bottom: 2px;
@@ -271,3 +269,44 @@ margin-bottom: 2px;
 #local-news article > div {
   margin-left: 2px;
 }
+
+/* forex */
+#forex {
+  background-color: #97D9E1;
+background-image: linear-gradient(315deg, #97dae1a9 0%, #d9afd9a8 100%);
+  border-radius: 20px;
+}
+
+#forex li {
+  background:rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+
+  font-size: 14px;
+}
+
+#forex li:hover {
+  color: #000;
+}
+
+#forex span {
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+
+.see-market-btn {
+  width: 200px;
+  padding: 5px 10px;
+  /* background: rgba(255, 255, 255, 0.1); */
+  background-color: transparent;
+  border-radius: 50px ;
+  text-align: center;
+  border: 1px solid #fff;
+  margin: auto;
+}
+
+.see-market-btn:hover{
+  background: rgba(255, 255, 255, 0.1);
+}
+

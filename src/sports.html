@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini 2 News API</title>
+  <!-- favicon -->
+  <link rel="icon" href="./images/favicon.ico" />
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&amp;display=swap" rel="stylesheet" />
+  <!-- Country Flag -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.7.0/css/flag-icons.min.css"
+    integrity="sha512-s/Nra58/et4CDKSnhUiPrce+8M5tdK1Ps0+9dKe4I9JH/g0QGzsPAdf1fLeBsMTMG1zWMBsnzxvPgTOAFUHwLQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- css -->
+  <link href="../dist/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/spinner.css">
+  <link rel="stylesheet" href="./css/sports.css">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+  <div id="sports-c" class="w-1/2 h-full mx-auto">
+    <div id="top-sport-heading" class="relative flex flex-col justify-between">
+      <a href="https://www.nba.com/"><img class="h-full" src="./images/nba-logo.png" alt="nba lgo"><span
+          class="text-2xl text-white inline-block">NBA</span></a>
+      <div id="sport-navbar">
+        <button class="active">Games</button>
+        <button>News</button>
+        <button>Standings</button>
+        <button>Stats</button>
+        <button>Players</button>
+      </div>
+    </div>
+    <div id="sport-card">
+      <!-- <ul class="sport-card">
+        <li>
+
+        </li>
+      </ul> -->
+      <div class="see-more-games-btn">See more games</div>
+
+    </div>
+  </div>
+
+  <div class="spinner"></div>
+  <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
+  <script src="./js/sports.js"></script>
+</body>
+
+</html>

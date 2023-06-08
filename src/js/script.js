@@ -217,10 +217,11 @@ async function carouselNews() {
   }
 }
 
-// // ========== { display local from gnews.io} ========== \\
+
+// ========== { display local from gnews.io} ========== \\
 async function displayLocalNews() {
   try {
-    global.api.apiKeys = global.apiKey_10;
+    global.api.apiKeys = global.apiKey_2;
     global.maxfetch = "4";
     fetchAPIDataForLocal("local").then(function (data) {
       localarticles = data.articles.slice(0, 4);
@@ -228,10 +229,11 @@ async function displayLocalNews() {
 
       localarticles.forEach((articles) => {
         const div = document.createElement("article");
-        div.classList = "max-w-full w-full";
+        div.classList =
+          "max-w-full w-full";
 
         div.innerHTML = `
-        <div class="overlay relative hover-img max-h-48 overflow-hidden">
+        <div class="overlay relative hover-img h-48 overflow-hidden">
                 
                   <a href="${articles.url}">
                     <img class="max-w-full w-full mx-auto h-auto" src="${articles.image}"
@@ -253,7 +255,7 @@ async function displayLocalNews() {
   }
 }
 
-// // ========== { display TrendNews from gnews.io} ========== \\
+// ========== { display TrendNews from gnews.io} ========== \\
 async function displayTrendingNews() {
   try {
     global.api.apiKeys = global.apiKey_3;
@@ -270,23 +272,15 @@ async function displayTrendingNews() {
         div.innerHTML = `
                         <div class="flex-row sm:block hover-img">
                           <a href="${articles.url}">
-                            <img class="max-w-full w-full mx-auto" src="${
-                              articles.image
-                            }" alt="alt title">
+                            <img class="max-w-full w-full mx-auto" src="${articles.image}" alt="alt title">
                           </a>
                           <div class="py-0 sm:py-3 pl-3 sm:pl-0">
                             <h3 class="text-lg font-bold leading-tight mb-2">
                               <a href="${articles.url}">${articles.title}</a>
                             </h3>
-                            <p class="hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(
-                              0,
-                              100
-                            )}...</p>
+                            <p class="hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
                             <span
-                                class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(
-                                  0,
-                                  10
-                                )}</span>
+                                class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span>
                           </div>
                           </div>
                         
@@ -298,7 +292,7 @@ async function displayTrendingNews() {
     console.error("An error occurred:", error.message);
   }
 }
-// // ========== { display BusinessNews from gnews.io} ========== \\
+// ========== { display BusinessNews from gnews.io} ========== \\
 async function displayBusinessNews() {
   try {
     global.api.apiKeys = global.apiKey_4;
@@ -315,23 +309,15 @@ async function displayBusinessNews() {
         div.innerHTML = `
                         <div class="flex-row sm:block hover-img">
                           <a href="${articles.url}">
-                            <img class="max-w-full w-full mx-auto" src="${
-                              articles.image
-                            }" alt="alt title">
+                            <img class="max-w-full w-full mx-auto" src="${articles.image}" alt="alt title">
                           </a>
                           <div class="py-0 sm:py-3 pl-3 sm:pl-0">
                             <h3 class="text-lg font-bold leading-tight mb-2">
                               <a href="${articles.url}">${articles.title}</a>
                             </h3>
-                            <p class="hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(
-                              0,
-                              100
-                            )}...</p>
+                            <p class="hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
                             <span
-                                class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(
-                                  0,
-                                  10
-                                )}</span>
+                                class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span>
                           </div>
                           </div>
                         
@@ -344,7 +330,7 @@ async function displayBusinessNews() {
   }
 }
 
-// // ========== { display EntertainmentNews from gnews.io} ========== \\
+// ========== { display EntertainmentNews from gnews.io} ========== \\
 async function displayEntertainmentNews() {
   try {
     global.api.apiKeys = global.apiKey_5;
@@ -361,23 +347,15 @@ async function displayEntertainmentNews() {
         div.innerHTML = `
                         <div class="flex-row sm:block hover-img">
                           <a href="${articles.url}">
-                            <img class="max-w-full w-full mx-auto" src="${
-                              articles.image
-                            }" alt="alt title">
+                            <img class="max-w-full w-full mx-auto" src="${articles.image}" alt="alt title">
                           </a>
                           <div class="py-0 sm:py-3 pl-3 sm:pl-0">
                             <h3 class="text-lg font-bold leading-tight mb-2">
                               <a href="${articles.url}">${articles.title}</a>
                             </h3>
-                            <p class="hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(
-                              0,
-                              100
-                            )}...</p>
+                            <p class="hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
                             <span
-                                class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(
-                                  0,
-                                  10
-                                )}</span>
+                                class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span>
                           </div>
                           </div>
                         
@@ -390,7 +368,7 @@ async function displayEntertainmentNews() {
   }
 }
 
-// // ========== { display EntertainmentNews from gnews.io} ========== \\
+// ========== { display EntertainmentNews from gnews.io} ========== \\
 async function displaySportsNews() {
   try {
     global.api.apiKeys = global.apiKey_6;
@@ -407,23 +385,15 @@ async function displaySportsNews() {
         div.innerHTML = `
                         <div class="flex-row sm:block hover-img">
                           <a href="${articles.url}">
-                            <img class="max-w-full w-full mx-auto" src="${
-                              articles.image
-                            }" alt="alt title">
+                            <img class="max-w-full w-full mx-auto" src="${articles.image}" alt="alt title">
                           </a>
                           <div class="py-0 sm:py-3 pl-3 sm:pl-0">
                             <h3 class="text-lg font-bold leading-tight mb-2">
                               <a href="${articles.url}">${articles.title}</a>
                             </h3>
-                            <p class="hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(
-                              0,
-                              100
-                            )}...</p>
+                            <p class="hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
                             <span
-                                class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(
-                                  0,
-                                  10
-                                )}</span>
+                                class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span>
                           </div>
                           </div>
                         
@@ -436,7 +406,7 @@ async function displaySportsNews() {
   }
 }
 
-// // ========== { display EntertainmentNews from gnews.io} ========== \\
+// ========== { display EntertainmentNews from gnews.io} ========== \\
 async function displayScienceNews() {
   try {
     global.api.apiKeys = global.apiKey_7;
@@ -453,23 +423,15 @@ async function displayScienceNews() {
         div.innerHTML = `
                         <div class="flex-row sm:block hover-img">
                           <a href="${articles.url}">
-                            <img class="max-w-full w-full mx-auto" src="${
-                              articles.image
-                            }" alt="alt title">
+                            <img class="max-w-full w-full mx-auto" src="${articles.image}" alt="alt title">
                           </a>
                           <div class="py-0 sm:py-3 pl-3 sm:pl-0">
                             <h3 class="text-lg font-bold leading-tight mb-2">
                               <a href="${articles.url}">${articles.title}</a>
                             </h3>
-                            <p class="hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(
-                              0,
-                              100
-                            )}...</p>
+                            <p class="hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
                             <span
-                                class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(
-                                  0,
-                                  10
-                                )}</span>
+                                class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span>
                           </div>
                           </div>
                         
@@ -482,7 +444,7 @@ async function displayScienceNews() {
   }
 }
 
-// // ========== { display EntertainmentNews from gnews.io} ========== \\
+// ========== { display EntertainmentNews from gnews.io} ========== \\
 async function displayTechnologyNews() {
   try {
     global.api.apiKeys = global.apiKey_8;
@@ -499,23 +461,15 @@ async function displayTechnologyNews() {
         div.innerHTML = `
                         <div class="flex-row sm:block hover-img">
                           <a href="${articles.url}">
-                            <img class="max-w-full w-full mx-auto" src="${
-                              articles.image
-                            }" alt="alt title">
+                            <img class="max-w-full w-full mx-auto" src="${articles.image}" alt="alt title">
                           </a>
                           <div class="py-0 sm:py-3 pl-3 sm:pl-0">
                             <h3 class="text-lg font-bold leading-tight mb-2">
                               <a href="${articles.url}">${articles.title}</a>
                             </h3>
-                            <p class="hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(
-                              0,
-                              100
-                            )}...</p>
+                            <p class="hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
                             <span
-                                class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(
-                                  0,
-                                  10
-                                )}</span>
+                                class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span>
                           </div>
                           </div>
                         
@@ -528,9 +482,7 @@ async function displayTechnologyNews() {
   }
 }
 
-// ========== { function to categorize} ========== \\
-
-// // ========== { display FOREX from FastForex} ========== \\
+// ========== { display FOREX from FastForex} ========== \\
 async function displayForex() {
   try {
     //getting the date -1 ====================================================
@@ -620,47 +572,38 @@ async function displayForex() {
       CAD = "text-down";
     }
 
-    const div = document.createElement("div");
-    div.classList = "rounded-lg";
+    const ul = document.createElement("ul");
+    ul.classList = "p-4";
 
-    div.innerHTML = `
-    <ul class="py-2">
-        <li class="my-1 rounded-2xl border px-4 py-3 bg-gray-700 hover:bg-gray-500">
-          <h5 class="text-xl ${PHP} mb-2"><span class="fi fi-ph"></span><span class="colored-colon"> : </span> ${data.results.PHP} PHP </h5>
+    ul.innerHTML = `
+        <li class="flex justify-between items-center">
+          <div class="text-medium font-medium px-1 py-2"> <span class="fi fi-ph"></span> USD/PHP <span>United States Dollar/Philippine Peso</span></div><div class="px-3 ${PHP}"> 
+          ${data.results.PHP} PHP </div>
         </li>
-        <li class="my-1 rounded-2xl border px-4 py-3 bg-gray-700 hover:bg-gray-500">
-          <h5 class="text-xl ${EUR} mb-2"><span class="fi fi-eu"></span><span class="colored-colon"> : </span> ${data.results.EUR} EUR </h5>
+        <li class="flex justify-between items-center">
+          <div class="text-medium font-medium px-1 py-2"> <span class="fi fi-eu"></span> USD/EUR <span>United States Dollar/Euro</span></div><div class="px-3 ${EUR}"> 
+          ${data.results.EUR} EUR </div>
         </li>
-        <li class="my-1 rounded-2xl border px-4 py-3 bg-gray-700 hover:bg-gray-500">
-          <h5 class="text-xl ${AUD} mb-2"><span class="fi fi-au"></span><span class="colored-colon"> : </span> ${data.results.AUD} AUD </h5>
+        <li class="flex justify-between items-center">
+          <div class="text-medium font-medium px-1 py-2"> <span class="fi fi-au"></span> USD/AUD <span>United States Dollar/Australian Dollar</span></div><div class="px-3 ${AUD}"> 
+          ${data.results.AUD} AUD </div>
         </li>
-        <li class="my-1 rounded-2xl border px-4 py-3 bg-gray-700 hover:bg-gray-500">
-          <h5 class="text-xl ${AED} mb-2"><span class="fi fi-ae"></span><span class="colored-colon"> : </span> ${data.results.AED} AED </h5>
+        <li class="flex justify-between items-center">
+          <div class="text-medium font-medium px-1 py-2"> <span class="fi fi-jp"></span> USD/JPY <span>United States Dollar/Japanese Yen</span></div><div class="px-3 ${JPY}"> 
+          ${data.results.JPY} JPY </div>
         </li>
-        <li class="my-1 rounded-2xl border px-4 py-3 bg-gray-700 hover:bg-gray-500">
-          <h5 class="text-xl ${NZD} mb-2"><span class="fi fi-nz"></span><span class="colored-colon"> : </span> ${data.results.NZD} NZD </h5>
+        <li class="flex justify-between items-center">
+          <div class="text-medium font-medium px-1 py-2"> <span class="fi fi-ca"></span> USD/CAD <span>United States Dollar/Canadian Dollar</span></div><div class="px-3 ${CAD}"> 
+          ${data.results.CAD} CAD </div>
         </li>
-        <li class="my-1 rounded-2xl border px-4 py-3 bg-gray-700 hover:bg-gray-500">
-          <h5 class="text-xl ${CNY} mb-2"><span class="fi fi-cn"></span><span class="colored-colon"> : </span> ${data.results.CNY} CNY </h5>
-        </li>
-        <li class="my-1 rounded-2xl border px-4 py-3 bg-gray-700 hover:bg-gray-500">
-          <h5 class="text-xl ${HKD} mb-2"><span class="fi fi-hk"></span><span class="colored-colon"> : </span> ${data.results.HKD} HKD </h5>
-        </li>
-        <li class="my-1 rounded-2xl border px-4 py-3 bg-gray-700 hover:bg-gray-500">
-          <h5 class="text-xl ${JPY} mb-2"><span class="fi fi-jp"></span><span class="colored-colon"> : </span> ${data.results.JPY} JPY </h5>
-        </li>
-        <li class="my-1 rounded-2xl border px-4 py-3 bg-gray-700 hover:bg-gray-500">
-          <h5 class="text-xl ${KRW} mb-2"><span class="fi fi-kr"></span><span class="colored-colon"> : </span> ${data.results.KRW} KRW </h5>
-        </li>
-        <li class="my-1 rounded-2xl border px-4 py-3 bg-gray-700 hover:bg-gray-500">
-          <h5 class="text-xl ${CAD} mb-2"><span class="fi fi-ca"></span><span class="colored-colon"> : </span> ${data.results.CAD} CAD </h5>
-        </ul>
+        <div class="see-market-btn font-medium cursor-pointer text-gray-800">See more market data</div>
     `;
-    document.querySelector("#forex").appendChild(div);
+    document.querySelector("#forex").appendChild(ul);
   } catch (error) {
     console.error("An error occurred:", error.message);
   }
 }
+
 
 // ========== { back to top button } ========== \\
 let btn = document.getElementById("back-to-top");
@@ -742,6 +685,8 @@ function getDayTime() {
   document.getElementById("time-now").innerHTML = timeNow;
 }
 setInterval(getDayTime, 1000);
+// ========== { END display dynamic date } ========== \\
+
 
 // ========== { utilities } ========== \\
 function showSpinner() {
@@ -752,19 +697,20 @@ function hideSpinner() {
   document.querySelector(".spinner").classList.remove("show");
 }
 
+
 // ========== { Initialize functions } ========== \\
 function init() {
   switch (global.currentPage) {
     case "/":
     case "/src/index.html":
-      // carouselNews();
-      // displayLocalNews();
-      // displayTrendingNews();
-      // displayBusinessNews();
-      // displayEntertainmentNews();
-      // displaySportsNews();
-      // displayScienceNews();
-      // displayTechnologyNews();
+      carouselNews();
+      displayLocalNews();
+      displayTrendingNews();
+      displayBusinessNews();
+      displayEntertainmentNews();
+      displaySportsNews();
+      displayScienceNews();
+      displayTechnologyNews();
       displayForex();
       break;
     case "/business.html":
@@ -805,4 +751,8 @@ seeForecast.addEventListener("click", function () {
   }
 });
 
+
 document.addEventListener("DOMContentLoaded", init);
+
+
+
