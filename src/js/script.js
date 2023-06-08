@@ -76,7 +76,7 @@ async function fetchAPIDataForLocal(endpoint) {
 // ========== { carousel news} ========== \\
 async function carouselNews() {
   try {
-    global.api.apiKeys = global.apiKey_1;
+    global.api.apiKeys = global.apiKey_6;
     global.maxfetch = "10";
     fetchAPIData("general").then(function (data) {
       carouselarticles = data.articles;
@@ -221,7 +221,7 @@ async function carouselNews() {
 // // ========== { display local from gnews.io} ========== \\
 async function displayLocalNews() {
   try {
-    global.api.apiKeys = global.apiKey_10;
+    global.api.apiKeys = global.apiKey_2;
     global.maxfetch = "4";
     fetchAPIDataForLocal("local").then(function (data) {
       localarticles = data.articles.slice(0, 4);
@@ -267,7 +267,7 @@ async function displayTrendingNews() {
       trendarticles.forEach((articles) => {
         const div = document.createElement("div");
         div.classList =
-          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100";
+          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100 bg-white dark:bg-gray-800 text-black dark:text-white";
 
         div.innerHTML = `
                         <div class="flex-row sm:block hover-img">
@@ -278,7 +278,7 @@ async function displayTrendingNews() {
                             <h3 class="text-lg font-bold leading-tight mb-2">
                               <a href="${articles.url}">${articles.title}</a>
                             </h3>
-                            <p class="hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
+                            <p class="hidden md:block  leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
                             <span
                                 class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span>
                           </div>
@@ -304,7 +304,7 @@ async function displayBusinessNews() {
       businessarticles.forEach((articles) => {
         const div = document.createElement("div");
         div.classList =
-          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100";
+          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100 bg-white dark:bg-gray-800 text-black dark:text-white";
 
         div.innerHTML = `
                         <div class="flex-row sm:block hover-img">
@@ -315,7 +315,7 @@ async function displayBusinessNews() {
                             <h3 class="text-lg font-bold leading-tight mb-2">
                               <a href="${articles.url}">${articles.title}</a>
                             </h3>
-                            <p class="hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
+                            <p class="hidden md:block  leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
                             <span
                                 class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span>
                           </div>
@@ -342,7 +342,7 @@ async function displayEntertainmentNews() {
       entertainmentarticles.forEach((articles) => {
         const div = document.createElement("div");
         div.classList =
-          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100";
+          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100 bg-white dark:bg-gray-800 text-black dark:text-white";
 
         div.innerHTML = `
                         <div class="flex-row sm:block hover-img">
@@ -353,7 +353,7 @@ async function displayEntertainmentNews() {
                             <h3 class="text-lg font-bold leading-tight mb-2">
                               <a href="${articles.url}">${articles.title}</a>
                             </h3>
-                            <p class="hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
+                            <p class="hidden md:block  leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
                             <span
                                 class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span>
                           </div>
@@ -380,7 +380,7 @@ async function displaySportsNews() {
       sportsarticles.forEach((articles) => {
         const div = document.createElement("div");
         div.classList =
-          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100";
+          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100 bg-white dark:bg-gray-800 text-black dark:text-white";
 
         div.innerHTML = `
                         <div class="flex-row sm:block hover-img">
@@ -391,7 +391,7 @@ async function displaySportsNews() {
                             <h3 class="text-lg font-bold leading-tight mb-2">
                               <a href="${articles.url}">${articles.title}</a>
                             </h3>
-                            <p class="hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
+                            <p class="hidden md:block leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
                             <span
                                 class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span>
                           </div>
@@ -418,7 +418,7 @@ async function displayScienceNews() {
       sciencearticles.forEach((articles) => {
         const div = document.createElement("div");
         div.classList =
-          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100";
+          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100 bg-white dark:bg-gray-800 text-black dark:text-white";
 
         div.innerHTML = `
                         <div class="flex-row sm:block hover-img">
@@ -429,7 +429,7 @@ async function displayScienceNews() {
                             <h3 class="text-lg font-bold leading-tight mb-2">
                               <a href="${articles.url}">${articles.title}</a>
                             </h3>
-                            <p class="hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
+                            <p class="hidden md:block leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
                             <span
                                 class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span>
                           </div>
@@ -444,7 +444,7 @@ async function displayScienceNews() {
   }
 }
 
-// // ========== { display EntertainmentNews from gnews.io} ========== \\
+// // ========== { display TechnologyNews from gnews.io} ========== \\
 async function displayTechnologyNews() {
   try {
     global.api.apiKeys = global.apiKey_8;
@@ -456,7 +456,7 @@ async function displayTechnologyNews() {
       technologyarticles.forEach((articles) => {
         const div = document.createElement("div");
         div.classList =
-          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100";
+          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100 bg-white dark:bg-gray-800 text-black dark:text-white";
 
         div.innerHTML = `
                         <div class="flex-row sm:block hover-img">
@@ -467,7 +467,7 @@ async function displayTechnologyNews() {
                             <h3 class="text-lg font-bold leading-tight mb-2">
                               <a href="${articles.url}">${articles.title}</a>
                             </h3>
-                            <p class="hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
+                            <p class="hidden md:block leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
                             <span
                                 class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span>
                           </div>
@@ -480,10 +480,145 @@ async function displayTechnologyNews() {
   } catch (error) {
     console.error("An error occurred:", error.message);
   }
+  // ========== { function to categorize} ========== \\
+}
+// // ========== { display BusinessCategoryPage from gnews.io} ========== \\
+async function businessCategoryPage() {
+  try {
+    global.api.apiKeys = global.apiKey_9;
+    global.api.maxfetch = "10";
+    fetchAPIData("business").then(function (data) {
+      businessarticles = data.articles;
+      console.log(businessarticles);
+
+      businessarticles.forEach((articles) => {
+        const div = document.createElement("div");
+        div.classList =
+          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100 bg-white dark:bg-gray-800 text-black dark:text-white";
+        div.innerHTML = `
+        <div class="flex-row sm:block hover-img">
+          <a href="${articles.url}">
+            <img class="max-w-full w-full mx-auto" src="${articles.image}" alt="alt title">
+          </a>
+        <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+          <h3 class="text-lg font-bold leading-tight mb-2">
+            <a href="${articles.url}">${articles.title}</a>
+          </h3>
+            <p class="hidden md:block leading-tight mb-1">${articles.description}</p>
+            <a class="text-gray-500" href="${articles.url}"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt}</span></a>
+        </div>
+        </div>
+        `;
+        document.querySelector("#business-news").appendChild(div);
+      });
+    });
+  } catch (error) {
+    console.error("An error occurred:", error.message);
+  }
+}
+// // ========== { display EntertainmentCategoryPage from gnews.io} ========== \\
+async function entertainmentCategoryPage() {
+  try {
+    global.api.apiKeys = global.apiKey_9;
+    global.api.maxfetch = "10";
+    fetchAPIData("entertainment").then(function (data) {
+      entertainmentarticles = data.articles;
+      console.log(entertainmentarticles);
+
+      entertainmentarticles.forEach((articles) => {
+        const div = document.createElement("div");
+        div.classList =
+          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100 bg-white dark:bg-gray-800 text-black dark:text-white";
+        div.innerHTML = `
+        <div class="flex-row sm:block hover-img">
+          <a href="${articles.url}">
+            <img class="max-w-full w-full mx-auto" src="${articles.image}" alt="alt title">
+          </a>
+        <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+          <h3 class="text-lg font-bold leading-tight mb-2">
+            <a href="${articles.url}">${articles.title}</a>
+          </h3>
+            <p class="hidden md:block leading-tight mb-1">${articles.description}</p>
+            <a class="text-gray-500" href="${articles.url}"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt}</span></a>
+        </div>
+        </div>
+        `;
+        document.querySelector("#entertainment-news").appendChild(div);
+      });
+    });
+  } catch (error) {
+    console.error("An error occurred:", error.message);
+  }
 }
 
-// ========== { function to categorize} ========== \\
+// // ========== { display sciTechCategoryPage from gnews.io} ========== \\
+async function scitechCategoryPage() {
+  try {
+    global.api.apiKeys = global.apiKey_9;
+    global.api.maxfetch = "10";
+    fetchAPIData("technology").then(function (data) {
+      scitecharticles = data.articles;
+      console.log(scitecharticles);
 
+      scitecharticles.forEach((articles) => {
+        const div = document.createElement("div");
+        div.classList =
+          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100 bg-white dark:bg-gray-800 text-black dark:text-white";
+        div.innerHTML = `
+        <div class="flex-row sm:block hover-img">
+          <a href="${articles.url}">
+            <img class="max-w-full w-full mx-auto" src="${articles.image}" alt="alt title">
+          </a>
+        <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+          <h3 class="text-lg font-bold leading-tight mb-2">
+            <a href="${articles.url}">${articles.title}</a>
+          </h3>
+            <p class="hidden md:block leading-tight mb-1">${articles.description}</p>
+            <a class="text-gray-500" href="${articles.url}"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt}</span></a>
+        </div>
+        </div>
+        `;
+        document.querySelector("#scitech-news").appendChild(div);
+      });
+    });
+  } catch (error) {
+    console.error("An error occurred:", error.message);
+  }
+}
+// // ========== { display sportsCategoryPage from gnews.io} ========== \\
+async function sportsCategoryPage() {
+  try {
+    global.api.apiKeys = global.apiKey_2;
+    global.api.maxfetch = "10";
+    fetchAPIData("sports").then(function (data) {
+      sportsarticles = data.articles;
+      console.log(sportsarticles);
+
+      sportsarticles.forEach((articles) => {
+        const div = document.createElement("div");
+        div.classList =
+          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100 bg-white dark:bg-gray-800 text-black dark:text-white";
+        div.innerHTML = `
+        <div class="flex-row sm:block hover-img">
+          <a href="${articles.url}">
+            <img class="max-w-full w-full mx-auto" src="${articles.image}" alt="alt title">
+          </a>
+        <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+          <h3 class="text-lg font-bold leading-tight mb-2">
+            <a href="${articles.url}">${articles.title}</a>
+          </h3>
+            <p class="hidden md:block leading-tight mb-1">${articles.description}</p>
+            <a class="text-gray-500" href="${articles.url}"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt}</span></a>
+        </div>
+        </div>
+        `;
+        document.querySelector("#sports-news").appendChild(div);
+      });
+    });
+  } catch (error) {
+    console.error("An error occurred:", error.message);
+  }
+}
 
 
 // // ========== { display FOREX from FastForex} ========== \\
@@ -724,20 +859,18 @@ function init() {
       displayTechnologyNews();
       displayForex();
       break;
-    case "/business.html":
-      // businesspage();
+    case "/src/business.html":
+      // businessCategoryPage();
+      // displayForex();
       break;
-    case "/technology.html":
-      // technologypage();
+    case "/src/scitech.html":
+      // scitechCategoryPage();
       break;
-    case "/science.html":
-      // sciencepage();
+    case "/src/entertainment.html":
+      // entertainmentCategoryPage();
       break;
-    case "/entertainment.html":
-      // entertainmentpage();
-      break;
-    case "/sports.html":
-      // sportspage();
+    case "/src/sports.html":
+      sportsCategoryPage();
       break;
     case "/health.html":
       // healthpage();
