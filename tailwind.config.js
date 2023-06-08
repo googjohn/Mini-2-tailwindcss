@@ -9,4 +9,8 @@ module.exports = {
     require('flowbite/plugin')
   ],
 }
-
+// tailwind.config.js
+module.exports = {
+  darkMode: 'class',
+  // ...
+}
