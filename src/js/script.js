@@ -867,14 +867,14 @@ function init() {
   switch (global.currentPage) {
     case "/":
     case "/src/index.html":
-      carouselNews();
-      displayLocalNews();
-      displayTrendingNews();
-      displayBusinessNews();
-      displayEntertainmentNews();
-      displaySportsNews();
-      displayScienceNews();
-      displayTechnologyNews();
+      // carouselNews();
+      // displayLocalNews();
+      // displayTrendingNews();
+      // displayBusinessNews();
+      // displayEntertainmentNews();
+      // displaySportsNews();
+      // displayScienceNews();
+      // displayTechnologyNews();
       displayMovie();
       displayForex();
       // setInterval(displayForex, 5000);
