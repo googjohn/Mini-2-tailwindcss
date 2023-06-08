@@ -35,6 +35,17 @@ global.apiKey_8 = "26fd80a7289d79b300b99af28392c8c7";
 global.apiKey_9 = "d7dfd99147ac538715d80f39a0277163";
 global.apiKey_10 = "1321923f82f3680d72f02d2147d154b6";
 
+global.apiKey_11 = "36b7d60e3aa710516f138835973345e5";
+global.apiKey_12 = "1382e204787b970f3b304a0a0e7a3cd1";
+global.apiKey_13 = "00699591f08ddb241b7952693e0a09e4";
+global.apiKey_14 = "eef7eda04c20226e8230017f41d9bd0b";
+global.apiKey_15 = "0bc2dbb5459b76180ca5ce9eda5c06d6";
+global.apiKey_16 = "60d69a4c8da5a75c4e5f61a40b689562";
+global.apiKey_17 = "36637b64a142c041f31b44f7d6ed948a";
+global.apiKey_18 = "938eb01487792b76892a22a07cb25b4b";
+global.apiKey_19 = "1a6bba83f9ccf329e711dd1c0de6ff0a";
+global.apiKey_20 = "053a3fcc1281cccf0c88f55d60373e34";
+
 // ========== { fetch data from gnews.io} ========== \\
 async function fetchAPIData(endpoint) {
   const API_KEY = global.api.apiKeys;
@@ -76,8 +87,8 @@ async function fetchAPIDataForLocal(endpoint) {
 // ========== { carousel news} ========== \\
 async function carouselNews() {
   try {
-    global.api.apiKeys = global.apiKey_1;
-    global.maxfetch = "5";
+    global.api.apiKeys = global.apiKey_11;
+    global.maxfetch = "10";
     fetchAPIData("general").then(function (data) {
       carouselarticles = data.articles;
       console.log(carouselarticles);
@@ -130,7 +141,7 @@ async function carouselNews() {
 // // ========== { display local from gnews.io} ========== \\
 async function displayLocalNews() {
   try {
-    global.api.apiKeys = global.apiKey_9;
+    global.api.apiKeys = global.apiKey_12;
     global.maxfetch = "4";
     fetchAPIDataForLocal("local").then(function (data) {
       localarticles = data.articles;
@@ -164,7 +175,7 @@ async function displayLocalNews() {
 // // ========== { display TrendNews from gnews.io} ========== \\
 async function displayTrendingNews() {
   try {
-    global.api.apiKeys = global.apiKey_3;
+    global.api.apiKeys = global.apiKey_13;
     global.maxfetch = "3";
     fetchAPIData("general").then(function (data) {
       trendarticles = data.articles;
@@ -917,9 +928,9 @@ function init() {
   switch (global.currentPage) {
     case "/":
     case "/src/index.html":
-      // carouselNews();
-      // displayLocalNews();
-      // displayTrendingNews();
+      carouselNews();
+      displayLocalNews();
+      displayTrendingNews();
       // displayBusinessNews();
       // displayEntertainmentNews();
       // displaySportsNews();
