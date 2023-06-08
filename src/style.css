@@ -359,7 +359,7 @@ iframe,
 embed,
 object {
   display: block; /* 1 */
-  vertical-align: middle; /* 2 */
+  /* vertical-align: middle; 2 */
 }
 
 /*
@@ -1220,7 +1220,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
-// Theme css
+/* // Theme css */
 /*! purgecss start ignore */
 /*utility*/
 .text-shadow-white {
@@ -1246,8 +1246,35 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 /*navbar*/
 .navbar > li.active > a, .navbar > li:hover > a {
-	border-color: #ce2626;
+	border-bottom-color: yellow;
 }
+
+.navbar .active-red {
+  border-bottom-color: red;
+}
+
+.navbar .active-yellow {
+  border-bottom-color: yellow;
+}
+
+.navbar .active-blue {
+  border-bottom-color: blue;
+}
+.navbar .active-green {
+  border-bottom-color: green;
+}
+
+.navbar .active-purple {
+  border-bottom-color: purple;
+}
+
+.navbar .active-orange {
+  border-bottom-color: orange;
+}
+.navbar .active-pink  {
+  border-bottom-color: pink;
+}
+
 /*Dropdown*/
 .dropdown-menu {
 	display: none;
@@ -1286,7 +1313,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   vertical-align: middle;
   margin-left: .4rem; 
   margin-top: .2rem;
-  float: right;
+  float: none;
 }
 .dropdown > a:after {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3e%3cpolyline points='112 184 256 328 400 184' fill='none' stroke='%23555555' stroke-linecap='round' stroke-linejoin='round' stroke-width='48px'/%3e%3c/svg%3e"); 
@@ -1354,7 +1381,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: auto;
 }
 
-// splidejs
+/* // splidejs */
 .splide__container {
     box-sizing: border-box;
     position: relative
