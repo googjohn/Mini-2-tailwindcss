@@ -764,6 +764,62 @@ async function displayFacts() {
   }
 }
 
+//==================={ START SEARCH }=========================\\
+async function searchpage() {
+  try {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    global.search.term = urlParams.get("search-term");
+    searchAPIData().then(function (data) {
+      searcharticles = data.articles;
+      console.log(searcharticles);
+
+      searcharticles.forEach((results) => {
+        const div = document.createElement("div");
+        div.classList =
+          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100";
+        div.innerHTML = `
+          <a href="${results.url}">
+            <img class="max-w-full w-full mx-auto" src="${results.image}" alt="alt title">
+          </a>
+        <div class="py-0 sm:py-3 pl-3 sm:pl-0">
+          <h3 class="text-lg font-bold leading-tight mb-2">
+            <a href="${results.url}">${results.title}</a>
+          </h3>
+            <p class="hidden md:block text-gray-600 leading-tight mb-1">${results.description}</p>
+            <a class="text-gray-500" href="${results.url}"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${results.publishedAt}</span></a>
+        </div>
+        `;
+
+        document.querySelector("#search-news").appendChild(div);
+      });
+    });
+    document.querySelector("#search-term").value = "";
+    // const results = await searchAPIData();
+    // console.log(results[0].articles.title);
+  } catch (error) {
+    console.error("An error occurred:", error.message);
+  }
+}
+
+async function searchAPIData() {
+  const apiKey6 = "d7dfd99147ac538715d80f39a0277163";
+
+  showSpinner();
+
+  const response = await fetch(
+    `https://gnews.io/api/v4/search?q=${global.search.term}&apikey=${apiKey6}`
+  );
+
+  const data = await response.json();
+
+  hideSpinner();
+
+  return data;
+}
+//==================={ END SEARCH }=========================\\
+
 // ========== { back to top button } ========== \\
 let btn = document.getElementById("back-to-top");
 window.onscroll = () => {
@@ -889,8 +945,8 @@ function init() {
     case "/health.html":
       // healthpage();
       break;
-    case "/search.html":
-      // searchpage();
+    case "/src/search.html":
+      searchpage();
       break;
   }
 }
