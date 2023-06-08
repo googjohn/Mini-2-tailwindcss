@@ -215,7 +215,7 @@ div.border-b2m-white {
   margin-top: 10px;
 }
 
-nav ul li .active {
+#weather-header nav ul li .active {
   font-weight: 800;
   font-size: 30px;
   transition: 250ms all ease;

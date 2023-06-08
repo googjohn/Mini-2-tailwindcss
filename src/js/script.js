@@ -97,79 +97,67 @@ async function carouselNews() {
       const div3 = document.createElement("div");
       // const div4 = document.createElement("div");
       div1.innerHTML = `
-                  <a href="${
-                    carouselarticles[0].url
-                  }"><img class="max-w-full w-full h-full" src="${
-        carouselarticles[0].image
-      }" alt=""></a>
+                  <a href="${carouselarticles[0].url
+        }"><img class="max-w-full w-full h-full" src="${carouselarticles[0].image
+        }" alt=""></a>
                     <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
                       <a href="${carouselarticles[0].url}">
-                        <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">${
-                          carouselarticles[0].title
-                        }</h2>
+                        <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">${carouselarticles[0].title
+        }</h2>
                       </a>
-                      <p class="text-gray-200 hidden sm:inline-block">${
-                        carouselarticles[0].description
-                      }</p>
+                      <p class="text-gray-200 hidden sm:inline-block">${carouselarticles[0].description
+        }</p>
                       <div class="pt-2">
                         <div class="text-gray-200">
                           <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
                           <span class="text-xl">${carouselarticles[0].publishedAt.slice(
-                            0,
-                            10
-                          )}</span>
+          0,
+          10
+        )}</span>
                         </div>
                       </div>
                     </div>
                   `;
       div2.innerHTML = `
-                  <a href="${
-                    carouselarticles[1].url
-                  }"><img class="max-w-full w-full h-auto" src="${
-        carouselarticles[1].image
-      }" alt=""></a>
+                  <a href="${carouselarticles[1].url
+        }"><img class="max-w-full w-full h-auto" src="${carouselarticles[1].image
+        }" alt=""></a>
                     <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
                       <a href="${carouselarticles[1].url}">
-                        <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">${
-                          carouselarticles[1].title
-                        }</h2>
+                        <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">${carouselarticles[1].title
+        }</h2>
                       </a>
-                      <p class="text-gray-200 hidden sm:inline-block">${
-                        carouselarticles[1].description
-                      }</p>
+                      <p class="text-gray-200 hidden sm:inline-block">${carouselarticles[1].description
+        }</p>
                       <div class="pt-2">
                         <div class="text-gray-200">
                           <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
                           <span class="text-xl">${carouselarticles[0].publishedAt.slice(
-                            0,
-                            10
-                          )}</span>
+          0,
+          10
+        )}</span>
                         </div>
                       </div>
                     </div>
                   `;
       div3.innerHTML = `
-                  <a href="${
-                    carouselarticles[2].url
-                  }"><img class="max-w-full w-full h-auto" src="${
-        carouselarticles[2].image
-      }" alt=""></a>
+                  <a href="${carouselarticles[2].url
+        }"><img class="max-w-full w-full h-auto" src="${carouselarticles[2].image
+        }" alt=""></a>
                     <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
                       <a href="${carouselarticles[2].url}">
-                        <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">${
-                          carouselarticles[2].title
-                        }</h2>
+                        <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">${carouselarticles[2].title
+        }</h2>
                       </a>
-                      <p class="text-gray-200 hidden sm:inline-block">${
-                        carouselarticles[2].description
-                      }</p>
+                      <p class="text-gray-200 hidden sm:inline-block">${carouselarticles[2].description
+        }</p>
                       <div class="pt-2">
                         <div class="text-gray-200">
                           <div class="inline-block h-3.5 italic border-l-4 border-red-600 mr-1"></div>
                           <span class="text-xl">${carouselarticles[2].publishedAt.slice(
-                            0,
-                            10
-                          )}</span>
+          0,
+          10
+        )}</span>
                         </div>
                       </div>
                     </div>
@@ -314,23 +302,22 @@ async function displayTrendingNews() {
         div.innerHTML = `
                         <div class="flex-row sm:block hover-img">
                           <a href="${articles.url}">
-                            <img class="max-w-full w-full mx-auto" src="${
-                              articles.image
-                            }" alt="alt title">
+                            <img class="max-w-full w-full mx-auto" src="${articles.image
+          }" alt="alt title">
                           </a>
                           <div class="py-0 sm:py-3 pl-3 sm:pl-0">
                             <h3 class="px-2 text-lg font-bold leading-tight mb-2">
                               <a href="${articles.url}">${articles.title}</a>
                             </h3>
                             <p class="px-2 hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(
-                              0,
-                              100
-                            )}...</p>
+            0,
+            100
+          )}...</p>
                             <span
                                 class="px-2 inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(
-                                  0,
-                                  10
-                                )}</span>
+            0,
+            10
+          )}</span>
                           </div>
                           </div>
                         
@@ -359,23 +346,22 @@ async function displayBusinessNews() {
         div.innerHTML = `
                         <div class="flex-row sm:block hover-img bg-white h-full">
                           <a href="${articles.url}">
-                            <img class="max-w-full w-full mx-auto" src="${
-                              articles.image
-                            }" alt="alt title">
+                            <img class="max-w-full w-full mx-auto" src="${articles.image
+          }" alt="alt title">
                           </a>
                           <div class="py-0 sm:py-3  sm:pl-0">
                             <h3 class="px-2 text-lg font-bold leading-tight mb-2">
                               <a href="${articles.url}">${articles.title}</a>
                             </h3>
                             <p class="px-2 hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(
-                              0,
-                              100
-                            )}...</p>
+            0,
+            100
+          )}...</p>
                             <span
                                 class="px-2 inline-block h-3 border-l-2 border-red-600 mr-2 "></span>${articles.publishedAt.slice(
-                                  0,
-                                  10
-                                )}</span>
+            0,
+            10
+          )}</span>
                           </div>
                           </div>
                         
@@ -405,23 +391,22 @@ async function displayEntertainmentNews() {
         div.innerHTML = `
                         <div class="flex-row sm:block hover-img">
                           <a href="${articles.url}">
-                            <img class="max-w-full w-full mx-auto" src="${
-                              articles.image
-                            }" alt="alt title">
+                            <img class="max-w-full w-full mx-auto" src="${articles.image
+          }" alt="alt title">
                           </a>
                           <div class="py-0 sm:py-3 pl-3 sm:pl-0">
                             <h3 class="px-2 text-lg font-bold leading-tight mb-2">
                               <a href="${articles.url}">${articles.title}</a>
                             </h3>
                             <p class="px-2 hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(
-                              0,
-                              100
-                            )}...</p>
+            0,
+            100
+          )}...</p>
                             <span
                                 class="px-2 inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(
-                                  0,
-                                  10
-                                )}</span>
+            0,
+            10
+          )}</span>
                           </div>
                           </div>
                         
@@ -451,23 +436,22 @@ async function displaySportsNews() {
         div.innerHTML = `
                         <div class="flex-row sm:block hover-img bg-white h-full">
                           <a href="${articles.url}">
-                            <img class="max-w-full w-full mx-auto" src="${
-                              articles.image
-                            }" alt="alt title">
+                            <img class="max-w-full w-full mx-auto" src="${articles.image
+          }" alt="alt title">
                           </a>
                           <div class="py-0 sm:py-3 px-3 sm:pl-0">
                             <h3 class="px-2 text-lg font-bold leading-tight mb-2">
                               <a href="${articles.url}">${articles.title}</a>
                             </h3>
                             <p class="px-2 hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(
-                              0,
-                              100
-                            )}...</p>
+            0,
+            100
+          )}...</p>
                             <span
                                 class="px-2 inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(
-                                  0,
-                                  10
-                                )}</span>
+            0,
+            10
+          )}</span>
                           </div>
                           </div>
                         
@@ -497,23 +481,22 @@ async function displayScienceNews() {
         div.innerHTML = `
                         <div class="flex-row sm:block hover-img">
                           <a href="${articles.url}">
-                            <img class="max-w-full w-full mx-auto" src="${
-                              articles.image
-                            }" alt="alt title">
+                            <img class="max-w-full w-full mx-auto" src="${articles.image
+          }" alt="alt title">
                           </a>
                           <div class="py-0 sm:py-3 pl-3 sm:pl-0">
                             <h3 class="px-2 text-lg font-bold leading-tight mb-2">
                               <a href="${articles.url}">${articles.title}</a>
                             </h3>
                             <p class="px-2 hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(
-                              0,
-                              100
-                            )}...</p>
+            0,
+            100
+          )}...</p>
                             <span
                                 class="px-2 inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(
-                                  0,
-                                  10
-                                )}</span>
+            0,
+            10
+          )}</span>
                           </div>
                           </div>
                         
@@ -543,23 +526,22 @@ async function displayTechnologyNews() {
         div.innerHTML = `
                         <div class="flex-row sm:block hover-img">
                           <a href="${articles.url}">
-                            <img class="max-w-full w-full mx-auto" src="${
-                              articles.image
-                            }" alt="alt title">
+                            <img class="max-w-full w-full mx-auto" src="${articles.image
+          }" alt="alt title">
                           </a>
                           <div class="py-0 sm:py-3 pl-3 sm:pl-0">
                             <h3 class="px-2 text-lg font-bold leading-tight mb-2">
                               <a href="${articles.url}">${articles.title}</a>
                             </h3>
                             <p class="px-2 hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(
-                              0,
-                              100
-                            )}...</p>
+            0,
+            100
+          )}...</p>
                             <span
                                 class="px-2 inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(
-                                  0,
-                                  10
-                                )}</span>
+            0,
+            10
+          )}</span>
                           </div>
                           </div>
                         
@@ -931,10 +913,10 @@ function getDayTime() {
   document.getElementById("date-today").innerHTML = dateToday;
 
   // display time now
-  let ampm = hour >= 12 ? "PM" : "AM";
-  hour = hour % 12;
-  hour = hour ? hour : 12;
-  let timeNow = hours + ":" + minutes + ":" + seconds + " " + ampm;
+  let ampm = hours >= 12 ? "PM" : "AM";
+  hours = hours % 12;
+  hours = hours ? hours : 12;
+  let timeNow = hours + ":" + minutes + " " + ampm;
   document.getElementById("time-now").innerHTML = timeNow;
 }
 setInterval(getDayTime, 1000);
@@ -956,16 +938,16 @@ function init() {
     case "/src/index.html":
       carouselNews();
       displayLocalNews();
-      displayTrendingNews();
-      displayBusinessNews();
-      displayEntertainmentNews();
-      displaySportsNews();
-      displayScienceNews();
-      displayTechnologyNews();
-      displayMovie();
+      // displayTrendingNews();
+      // displayBusinessNews();
+      // displayEntertainmentNews();
+      // displaySportsNews();
+      // displayScienceNews();
+      // displayTechnologyNews();
+      // displayMovie();
       displayForex();
       displayFacts();
-      setInterval(displayForex, 5000);
+      // setInterval(displayForex, 5000);
       break;
     case "/src/business.html":
       businessCategoryPage();
