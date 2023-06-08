@@ -275,12 +275,12 @@ async function displayTrendingNews() {
                             <img class="max-w-full w-full mx-auto" src="${articles.image}" alt="alt title">
                           </a>
                           <div class="py-0 sm:py-3 pl-3 sm:pl-0">
-                            <h3 class="text-lg font-bold leading-tight mb-2">
+                            <h3 class="px-2 text-lg font-bold leading-tight mb-2">
                               <a href="${articles.url}">${articles.title}</a>
                             </h3>
-                            <p class="hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
+                            <p class="px-2 hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
                             <span
-                                class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span>
+                                class="px-2 inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span>
                           </div>
                           </div>
                         
@@ -307,17 +307,17 @@ async function displayBusinessNews() {
           "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100";
 
         div.innerHTML = `
-                        <div class="flex-row sm:block hover-img">
+                        <div class="flex-row sm:block hover-img bg-white h-full">
                           <a href="${articles.url}">
                             <img class="max-w-full w-full mx-auto" src="${articles.image}" alt="alt title">
                           </a>
-                          <div class="py-0 sm:py-3 pl-3 sm:pl-0">
-                            <h3 class="text-lg font-bold leading-tight mb-2">
+                          <div class="py-0 sm:py-3  sm:pl-0">
+                            <h3 class="px-2 text-lg font-bold leading-tight mb-2">
                               <a href="${articles.url}">${articles.title}</a>
                             </h3>
-                            <p class="hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
+                            <p class="px-2 hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
                             <span
-                                class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span>
+                                class="px-2 inline-block h-3 border-l-2 border-red-600 mr-2 "></span>${articles.publishedAt.slice(0, 10)}</span>
                           </div>
                           </div>
                         
@@ -350,12 +350,12 @@ async function displayEntertainmentNews() {
                             <img class="max-w-full w-full mx-auto" src="${articles.image}" alt="alt title">
                           </a>
                           <div class="py-0 sm:py-3 pl-3 sm:pl-0">
-                            <h3 class="text-lg font-bold leading-tight mb-2">
+                            <h3 class="px-2 text-lg font-bold leading-tight mb-2">
                               <a href="${articles.url}">${articles.title}</a>
                             </h3>
-                            <p class="hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
+                            <p class="px-2 hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
                             <span
-                                class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span>
+                                class="px-2 inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span>
                           </div>
                           </div>
                         
@@ -383,17 +383,17 @@ async function displaySportsNews() {
           "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100";
 
         div.innerHTML = `
-                        <div class="flex-row sm:block hover-img">
+                        <div class="flex-row sm:block hover-img bg-white h-full">
                           <a href="${articles.url}">
                             <img class="max-w-full w-full mx-auto" src="${articles.image}" alt="alt title">
                           </a>
-                          <div class="py-0 sm:py-3 pl-3 sm:pl-0">
-                            <h3 class="text-lg font-bold leading-tight mb-2">
+                          <div class="py-0 sm:py-3 px-3 sm:pl-0">
+                            <h3 class="px-2 text-lg font-bold leading-tight mb-2">
                               <a href="${articles.url}">${articles.title}</a>
                             </h3>
-                            <p class="hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
+                            <p class="px-2 hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
                             <span
-                                class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span>
+                                class="px-2 inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span>
                           </div>
                           </div>
                         
@@ -426,12 +426,12 @@ async function displayScienceNews() {
                             <img class="max-w-full w-full mx-auto" src="${articles.image}" alt="alt title">
                           </a>
                           <div class="py-0 sm:py-3 pl-3 sm:pl-0">
-                            <h3 class="text-lg font-bold leading-tight mb-2">
+                            <h3 class="px-2 text-lg font-bold leading-tight mb-2">
                               <a href="${articles.url}">${articles.title}</a>
                             </h3>
-                            <p class="hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
+                            <p class="px-2 hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
                             <span
-                                class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span>
+                                class="px-2 inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span>
                           </div>
                           </div>
                         
@@ -464,12 +464,12 @@ async function displayTechnologyNews() {
                             <img class="max-w-full w-full mx-auto" src="${articles.image}" alt="alt title">
                           </a>
                           <div class="py-0 sm:py-3 pl-3 sm:pl-0">
-                            <h3 class="text-lg font-bold leading-tight mb-2">
+                            <h3 class="px-2 text-lg font-bold leading-tight mb-2">
                               <a href="${articles.url}">${articles.title}</a>
                             </h3>
-                            <p class="hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
+                            <p class="px-2 hidden md:block text-gray-600 leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
                             <span
-                                class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span>
+                                class="px-2 inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span>
                           </div>
                           </div>
                         
