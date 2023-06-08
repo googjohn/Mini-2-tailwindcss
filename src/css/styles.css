@@ -124,7 +124,7 @@ div.border-b2m-white {
   /* max-width: 300px; */
   min-width: 250px;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.315);
+  /* background: rgba(255, 255, 255, 0.315); */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
