@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TDG | Welcome </title>
+  <title>Mini 2 News API</title>
   <!-- favicon -->
   <link rel="icon" href="./images/favicon.ico" />
   <!-- fontawesome -->
@@ -22,45 +22,54 @@
   <link href="../dist/output.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/spinner.css">
   <link rel="stylesheet" href="./css/styles.css">
+  <script>
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark')
+    }
+</script>
 </head>
-
-<body class="text-gray-700">
+<!-- bg-white dark:bg-gray-800 text-black dark:text-white -->
+<body class="bg-white dark:bg-gray-800 text-black dark:text-white">
   <!-- =============== { HEADER } =============== -->
-  <header id="navbar" class="bg-black sticky top-0 z-50 h-20">
-    <nav>
-      <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
+  <header id="navbar" class="bg-white text-black dark:bg-black  dark:text-white sticky top-0 z-50 h-20">
+    <nav class="bg-white dark:bg-gray-800 text-black dark:text-white">
+      <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2 bg-white dark:bg-gray-800 text-black dark:text-white">
         <!-- navbar menu -->
-        <div class="flex justify-between">
+        <div class="flex justify-between bg-white dark:bg-gray-800 text-black dark:text-white">
           <a href="#" class="flex"><img class="h-20" src="./images/tdg-logo-2.png" alt="The Daily Gazette" /></a>
-          <div class="flex flex-row">
-            <ul class="navbar hidden lg:flex lg:flex-row overflow-hidden text-gray-400 text-base items-center">
+          <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-dark dark:hover:bg-gray-700 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+           </button>
+          <div class="flex flex-row bg-white dark:bg-gray-800 text-black dark:text-white">
+            <ul class="navbar hidden lg:flex lg:flex-row overflow-hidden text-dark text-base items-center">
               <li class="relative border-l border-gray-600 px-6 active">
-                <a class="block text-white font-medium py-3 hover:border-red-700 border-b-2 border-transparent"
+                <a class="block text-dark font-medium py-3 hover:border-red-700 border-b-2 border-transparent"
                   href="index.html">Home</a>
               </li>
               <li class="relative border-l-0 border-gray-600 px-6">
-                <a class="block text-white font-medium py-3 hover:border-red-700 border-b-2 border-transparent"
+                <a class="block text-dark font-medium py-3 hover:border-red-700 border-b-2 border-transparent"
                   href="business.html">Business</a>
               </li>
               <li class="relative border-l-0 border-gray-600 px-6">
-                <a class="block text-white font-medium py-3 hover:border-red-700 border-b-2 border-transparent"
+                <a class="block text-dark font-medium py-3 hover:border-red-700 border-b-2 border-transparent"
                   href="sports.html">Sports</a>
               </li>
               <li class="relative border-l-0 border-gray-600 px-6">
-                <a class="block text-white font-medium py-3 hover:border-red-700 border-b-2 border-transparent"
+                <a class="block text-dark font-medium py-3 hover:border-red-700 border-b-2 border-transparent"
                   href="scitech.html">Sci&Tech</a>
               </li>
               <li class="relative border-l-0 border-gray-600 px-6">
-                <a class="block text-white font-medium py-3 hover:border-red-700 border-b-2 border-transparent"
+                <a class="block text-dark font-medium py-3 hover:border-red-700 border-b-2 border-transparent"
                   href="entertainment.html">Entertainment</a>
               </li>
-              <li class="relative border-l-0 border-gray-600 px-6">
-                <a class="block text-white font-medium py-3 hover:border-red-700 border-b-2 border-transparent"
-                  href="lifestyle.html">Lifestyle</a>
-              </li>
+             
 
               <li class="relative border-l-0 border-gray-600 px-6">
-                <a class="block text-white font-medium py-3 hover:border-red-700 border-b-2 border-transparent"
+                <a class="block text-dark font-medium py-3 hover:border-red-700 border-b-2 border-transparent"
                   href="contact.html">Contact</a>
               </li>
               <!-- search form -->
@@ -68,7 +77,7 @@
                 <label for="simple-search" class="sr-only">Search</label>
                 <div class="relative w-full">
                   <input type="text" id="simple-search"
-                    class="bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-red-500 focus:border-red-500 block w-full pl-4 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500"
+                    class="bg-gray-500 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-red-500 focus:border-red-500 block w-full pl-4 p-2 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-dark dark:focus:ring-red-500 dark:focus:border-red-500"
                     placeholder="Search" required />
                 </div>
                 <button type="submit"
@@ -109,9 +118,9 @@
           </div>
 
           <!-- date and time -->
-          <div id="day-time">
-            <h2 id="date-today" class="text-xl text-gray-500 font-medium"></h2>
-            <h2 id="time-now" class="text-xl text-end text-gray-500 font-medium"></h2>
+          <div id="day-time" class="bg-white dark:bg-gray-800 text-black dark:text-white">
+            <h2 id="date-today" class="text-xl font-medium"></h2>
+            <h2 id="time-now" class="text-xl text-end font-medium"></h2>
           </div>
         </div>
 
@@ -127,111 +136,133 @@
 
                 <!-- headline carousel wrapper -->
                 <div class="relative h-56 overflow-hidden md:h-96">
- 
-                  <div id="carousel1" class="overlay hidden duration-700 ease-linear" data-carousel-item="active">
-                    <!-- <div>
-                        <a href="#"><img class="max-w-full w-full h-auto" src="./images/dummy/img1.jpg" alt=""></a>
-                      <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
-                        <div>
-                          <a href="#">
-                            <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">1Amazon Shoppers Are Ditching
-                              Designer Belts for This Best-Selling</h2>
-                          </a>
-                          <p class="text-gray-200 hidden sm:inline-block">This is a wider card with supporting text below as
-                            a natural lead-in to additional content.This very helpfull for generate default content..</p>
-                          <div class="pt-2">
-                            <div class="text-gray-200">
-                              <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
-                            <span class="text-xl">Category</span>
-                            </div>
-                          </div>
+
+
+                  <div id="#carousel1" class="overlay hidden duration-700 ease-linear" data-carousel-item="active">
+                    <!-- <div> 
+                    
+                    <!-- <a href="#"><img class="max-w-full w-full h-auto" src="./images/dummy/img1.jpg" alt=""></a>
+                    <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
+                      <a href="#">
+                        <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">1Amazon Shoppers Are Ditching
+                          Designer Belts for This Best-Selling</h2>
+                      </a>
+                      <p class="text-gray-200 hidden sm:inline-block">This is a wider card with supporting text below as
+                        a natural lead-in to additional content.This very helpfull for generate default content..</p>
+                      <div class="pt-2">
+                        <div class="text-gray-200">
+                          <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
+                          <span class="text-xl">Category</span>
                         </div>
                       </div>
-                    </div> -->
+                    </div> 
+                  </div>-->
                   </div>
 
-                 
-                  <div id="carousel2" class="overlay hidden duration-700 ease-linear" data-carousel-item="active">
+
+                  <div id="carousel2" class="overlay hidden duration-700 ease-linear" data-carousel-item>
+
                     <!-- <div>
-                        <a href="#"><img class="max-w-full w-full h-auto" src="./images/dummy/img1.jpg" alt=""></a>
-                      <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
-                        <div>
-                          <a href="#">
-                            <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">1Amazon Shoppers Are Ditching
-                              Designer Belts for This Best-Selling</h2>
-                          </a>
-                          <p class="text-gray-200 hidden sm:inline-block">This is a wider card with supporting text below as
-                            a natural lead-in to additional content.This very helpfull for generate default content..</p>
-                          <div class="pt-2">
-                            <div class="text-gray-200">
-                              <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
-                            <span class="text-xl">Category</span>
-                            </div>
-                          </div>
+                    <a href="#"><img class="max-w-full w-full h-auto" src="./images/dummy/img20.jpg" alt=""></a>
+                    <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
+                      <a href="#">
+                        <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">2Amazon Shoppers Are Ditching
+                          Designer Belts for This Best-Selling</h2>
+                      </a>
+                      <p class="text-gray-200 hidden sm:inline-block">This is a wider card with supporting text below as
+                        a natural lead-in to additional content.This very helpfull for generate default content..</p>
+                      <div class="pt-2">
+                        <div class="text-gray-200">
+                          <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
+                          <span class="text-xl">Category</span>
                         </div>
                       </div>
-                    </div> -->
+                    </div>
+                  </div> -->
                   </div>
 
-                  
-                  <div id="carousel3" class="overlay hidden duration-700 ease-linear" data-carousel-item="active">
+                  <div id="carousel3" class="overlay hidden duration-700 ease-linear" data-carousel-item>
+
                     <!-- <div>
-                        <a href="#"><img class="max-w-full w-full h-auto" src="./images/dummy/img1.jpg" alt=""></a>
-                      <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
-                        <div>
-                          <a href="#">
-                            <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">1Amazon Shoppers Are Ditching
-                              Designer Belts for This Best-Selling</h2>
-                          </a>
-                          <p class="text-gray-200 hidden sm:inline-block">This is a wider card with supporting text below as
-                            a natural lead-in to additional content.This very helpfull for generate default content..</p>
-                          <div class="pt-2">
-                            <div class="text-gray-200">
-                              <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
-                            <span class="text-xl">Category</span>
-                            </div>
-                          </div>
+                    <!-- <a href="#"><img class="max-w-full w-full h-auto" src="./images/dummy/img20.jpg" alt=""></a>
+                    <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
+                      <a href="#">
+                        <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">2Amazon Shoppers Are Ditching
+                          Designer Belts for This Best-Selling</h2>
+                      </a>
+                      <p class="text-gray-200 hidden sm:inline-block">This is a wider card with supporting text below as
+                        a natural lead-in to additional content.This very helpfull for generate default content..</p>
+                      <div class="pt-2">
+                        <div class="text-gray-200">
+                          <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
+                          <span class="text-xl">Category</span>
                         </div>
                       </div>
-                    </div> -->
+                    </div>
+                  </div> -->
                   </div>
 
+                  <!-- <div id="carousel4" class="overlay hidden duration-700 ease-linear" data-carousel-item></div> -->
+                  <!-- <div></div> -->
                 </div>
-              </div>
 
-              <!-- carousel slider controls -->
-              <!-- <button type="button"
-                class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                data-carousel-prev>
-                <span
-                  class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                  <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                  </svg>
-                  <span class="sr-only">Previous</span>
-                </span>
-              </button> -->
-              <!-- <button type="button"
-                class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                data-carousel-next>
-                <span
-                  class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                  <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                  <span class="sr-only">Next</span>
-                </span>
-              </button> -->
+                <!-- <div class="overlay hidden duration-700 ease-linear" data-carousel-item>
+                    <div id="carousel4"></div> -->
+                <!-- <a href="#"><img class="max-w-full w-full h-auto" src="./images/dummy/img2.jpg" alt=""></a>
+                    <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
+                      <a href="#">
+                        <h2 class="text-3xl font-bold capitalize text-gray-200 mb-3">3Amazon Shoppers Are Ditching
+                          Designer Belts for This Best-Selling</h2>
+                      </a>
+                      <p class="text-gray-200 hidden sm:inline-block">This is a wider card with supporting text below as
+                        a natural lead-in to additional content.This very helpfull for generate default content..</p>
+                      <div class="pt-2">
+                        <div class="text-gray-200">
+                          <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
+                          <span class="text-xl">Category</span>
+                        </div>
+                      </div>
+                    </div> -->
+                <!-- </div> -->
+
+
+
+                <!-- carousel slider controls -->
+                <button type="button"
+                  class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                  data-carousel-prev>
+                  <span
+                    class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
+                      stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                      </path>
+                    </svg>
+                    <span class="sr-only">Previous</span>
+                  </span>
+                </button>
+                <button type="button"
+                  class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                  data-carousel-next>
+                  <span
+                    class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
+                      stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span class="sr-only">Next</span>
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
-
-          <!-- box business news -->
+          <!-- box local news -->
           <div class=" max-w-full w-full lg:w-1/2">
-            <div id="carousel4" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 grid-rows-2 gap-1">
-              <!-- <article class="business-news max-w-full w-full">
+            <div id="local-news"
+              class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 grid-rows-2 gap-4">
+              <!-- <article class="max-w-full w-full">
                 <div class="overlay relative hover-img max-h-48 overflow-hidden">
+                
                   <a href="#">
                     <img class="max-w-full w-full mx-auto h-auto" src="../src/images/dummy/img2.jpg"
                       alt="Image description">
@@ -248,76 +279,20 @@
                     </div>
                   </div>
                 </div>
-              </article>
-              <article class="business-news max-w-full w-full">
-                <div class="overlay relative hover-img max-h-48 overflow-hidden">
-                  <a href="#">
-                    <img class="max-w-full w-full mx-auto h-auto" src="../src/images/dummy/img2.jpg"
-                      alt="Image description">
-                  </a>
-                  <div class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
-                    <a href="#">
-                      <h2 class="text-lg font-bold capitalize leading-tight text-white mb-1">5News
-                        magazines are becoming obsolete, replaced by gadgets</h2>
-                    </a>
-                    <div class="pt-1">
-                      <div class="text-gray-100">
-                        <div class="inline-block h-3 border-l-2 border-red-600 mr-2"></div>Techno
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-              <article class="business-news max-w-full w-full">
-                <div class="overlay relative hover-img max-h-48 overflow-hidden">
-                  <a href="#">
-                    <img class="max-w-full w-full mx-auto h-auto" src="../src/images/dummy/img2.jpg"
-                      alt="Image description">
-                  </a>
-                  <div class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
-                    <a href="#">
-                      <h2 class="text-lg font-bold capitalize leading-tight text-white mb-1">6News
-                        magazines are becoming obsolete, replaced by gadgets</h2>
-                    </a>
-                    <div class="pt-1">
-                      <div class="text-gray-100">
-                        <div class="inline-block h-3 border-l-2 border-red-600 mr-2"></div>Techno
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-              <article class="business-news max-w-full w-full">
-                <div class="overlay relative hover-img max-h-48 overflow-hidden">
-                  <a href="#">
-                    <img class="max-w-full w-full mx-auto h-auto" src="../src/images/dummy/img2.jpg"
-                      alt="Image description">
-                  </a>
-                  <div class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
-                    <a href="#">
-                      <h2 class="text-lg font-bold capitalize leading-tight text-white mb-1">7News
-                        magazines are becoming obsolete, replaced by gadgets</h2>
-                    </a>
-                    <div class="pt-1">
-                      <div class="text-gray-100">
-                        <div class="inline-block h-3 border-l-2 border-red-600 mr-2"></div>Techno
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </article> -->
             </div>
           </div>
         </div>
+      </div>
 
       <!-- block trending news -->
-      <div class="bg-white">
+      <div class="bg-white dark:bg-gray-800 text-black dark:text-white">
         <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
           <div class="flex flex-row flex-wrap">
             <!-- Left -->
             <div class="flex-shrink max-w-full w-full lg:w-2/3 overflow-hidden">
-              <div class="w-full py-3 mb-4 border-b2m">
-                <h2 class="text-gray-800 text-3xl font-bold ">
+              <div class="w-full py-3 mb-4 border-b2m bg-white dark:bg-gray-800 text-black dark:text-white">
+                <h2 class=" text-3xl font-bold ">
                   <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span><a href="#">Trending</a>
                 </h2>
               </div>
@@ -429,7 +404,7 @@
             <!-- right advertisement change to local news or weather -->
             <div class="flex-shrink max-w-full w-full lg:w-1/3 lg:pl-8 lg:pb-8 order-first lg:order-last">
               <div class="w-full py-3 mb-4 border-b2m">
-                <h2 class="text-gray-800 text-3xl font-bold ">
+                <h2 class="text-3xl font-bold ">
                   <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span>Weather
                 </h2>
               </div>
@@ -500,13 +475,13 @@
       </div>
       </div>
       <!-- block sports news -->
-      <div class="bg-gray-200">
+      <div class="bg-white dark:bg-gray-800 text-black dark:text-white">
         <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
           <div class="flex flex-row flex-wrap">
             <!-- Left -->
             <div class="flex-shrink max-w-full w-full lg:w-2/3 overflow-hidden">
               <div class="w-full py-3 mb-4 border-b2m">
-                <h2 class="text-gray-800 text-3xl font-bold ">
+                <h2 class=" text-3xl font-bold ">
                   <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span><a href="#">Sports</a>
                 </h2>
               </div>
@@ -632,13 +607,13 @@
         </div>
       </div>
       <!-- block business news -->
-      <div class="bg-gray-200">
+      <div class="bg-white dark:bg-gray-800 text-black dark:text-white">
         <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
           <div class="flex flex-row flex-wrap">
             <!-- Left -->
             <div class="flex-shrink max-w-full w-full lg:w-2/3 overflow-hidden">
               <div class="w-full py-3 mb-4 border-b2m">
-                <h2 class="text-gray-800 text-3xl font-bold ">
+                <h2 class="text-3xl font-bold ">
                   <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span><a href="#">Business</a>
                 </h2>
               </div>
@@ -754,14 +729,14 @@
                   <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span>Foreign Exchange
                 </h2>
               </div>
-              <div class="bg-gray-100">
+              <div class="bg-gray-100 py-8">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-gray-200">
                   <div class="text-center">
                     <!-- <h2 class="text-3xl font-bold text-gray-800 mb-4">Foreign Exchange Rates</h2> -->
                     <p class="text-xl text-gray-800"><span class="fi fi-us"></span> US Dollar Base </p>
                   </div>
                   <div id="forex"
-                    class="w-full grid md:grid-cols-1 justify-center">
+                    class="w-full grid leading-3 hover:bg-gray-700 md:grid-cols-1 lg:grid-cols-4 gap-8 mt-8 justify-center">
                     <div class="bg-black rounded-lg shadow-lg">
                       <!-- <div class="p-6">
           <h5 class="text-xl text-white mb-2"><span class="fi fi-ph"></span><span class="colored-colon"> : </span> 0.85 Peso </h5>
@@ -803,13 +778,13 @@
         </div>
       </div>
       <!-- block entertainment news -->
-      <div class="bg-white">
+      <div class="bg-white dark:bg-gray-800 text-black dark:text-white">
         <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
           <div class="flex flex-row flex-wrap">
             <!-- Left -->
             <div class="flex-shrink max-w-full w-full lg:w-2/3 overflow-hidden">
               <div class="w-full py-3 mb-4 border-b2m">
-                <h2 class="text-gray-800 text-3xl font-bold ">
+                <h2 class="text-3xl font-bold ">
                   <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span><a href="#">Entertainment</a>
                 </h2>
               </div>
@@ -918,186 +893,31 @@
                   </div> -->
               </div>
             </div>
-            <!-- start sidebar movie carousel -->
-            <div class="flex-shrink max-w-full w-full lg:w-1/3 lg:pl-8 lg:pb-8 order-first lg:order-last">
-              <div class="w-full py-3 mb-4 border-b2m">
-                <h2 class="text-gray-800 text-3xl font-bold ">
-                  <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span>Now Playing
-                </h2>
-              </div>
-              <div class="w-full bg-gray-50">
-                <div class="weather text-white">
-                  <div class="sidebar">
-                    <div id="default-carousel" class="relative w-full" data-carousel="slide">
-                      <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-
-                          <div id="slide1" class="hidden duration-700 ease-in-out" data-carousel-item>
-                              <!-- <div class="flex-row justify-center mb-16 w-full">
-                                <img id="icon" src="./images/dummy/img23.jpg" alt="" />
-                                <div class="flex-col">
-                                  <h4 class="text-lg mt-2">Title:</h4>
-                                  <h4 class="text-sm mt-2"><i class="fas fa-star"></i>  Ratings: / 10</h4>
-                                  <h4 class="text-sm mt-2"><i class="fas fa-user"></i>  Reviews: </h4>
-                                  <h4 class="text-sm mt-2"><i class="fas fa-calendar"></i>  Release date: </h4> 
-                                </div>
-                              </div> -->
-                          </div>
-                           
-                          <div id="slide2" class="hidden duration-700 ease-in-out" data-carousel-item>
-                              <!-- <div class="flex-row justify-center mb-16 w-full">
-                                <img id="icon" src="./images/dummy/img23.jpg" alt="" />
-                                <div class="flex-col">
-                                  <h4 class="text-lg">Title:</h4>
-                                  <h4 class="text-sm"><i class="fas fa-star"></i>  Ratings: / 10</h4>
-                                  <h4 class="text-sm"><i class="fas fa-user"></i>  Reviews: </h4>
-                                  <h4 class="text-sm"><i class="fas fa-calendar"></i>  Release date: </h4> 
-                                </div>
-                            </div> -->
-                          </div>
-
-                          <div id="slide3" class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <!-- <div class="flex-row justify-center mb-16 w-full">
-                                <img id="icon" src="./images/dummy/img23.jpg" alt="" />
-                                <div class="flex-col">
-                                  <h4 class="text-lg">Title:</h4>
-                                  <h4 class="text-sm"><i class="fas fa-star"></i>  Ratings: / 10</h4>
-                                  <h4 class="text-sm"><i class="fas fa-user"></i>  Reviews: </h4>
-                                  <h4 class="text-sm"><i class="fas fa-calendar"></i>  Release date: </h4> 
-                                </div>
-                            </div> -->
-                          </div>
-
-                          <div id="slide4" class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <!-- <div class="flex-row justify-center mb-16 w-full">
-                                <img id="icon" src="./images/dummy/img23.jpg" alt="" />
-                                <div class="flex-col">
-                                  <h4 class="text-lg">Title:</h4>
-                                  <h4 class="text-sm"><i class="fas fa-star"></i>  Ratings: / 10</h4>
-                                  <h4 class="text-sm"><i class="fas fa-user"></i>  Reviews: </h4>
-                                  <h4 class="text-sm"><i class="fas fa-calendar"></i>  Release date: </h4> 
-                                </div>
-                            </div> -->
-                          </div>
-
-                          <div id="slide5" class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <!-- <div class="flex-row justify-center mb-16 w-full">
-                                <img id="icon" src="./images/dummy/img23.jpg" alt="" />
-                                <div class="flex-col">
-                                  <h4 class="text-lg">Title:</h4>
-                                  <h4 class="text-sm"><i class="fas fa-star"></i>  Ratings: / 10</h4>
-                                  <h4 class="text-sm"><i class="fas fa-user"></i>  Reviews: </h4>
-                                  <h4 class="text-sm"><i class="fas fa-calendar"></i>  Release date: </h4> 
-                                </div>
-                            </div> -->
-                          </div>
-                            
-                          <div id="slide6" class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <!-- <div class="flex-row justify-center mb-16 w-full">
-                                <img id="icon" src="./images/dummy/img23.jpg" alt="" />
-                                <div class="flex-col">
-                                  <h4 class="text-lg">Title:</h4>
-                                  <h4 class="text-sm"><i class="fas fa-star"></i>  Ratings: / 10</h4>
-                                  <h4 class="text-sm"><i class="fas fa-user"></i>  Reviews: </h4>
-                                  <h4 class="text-sm"><i class="fas fa-calendar"></i>  Release date: </h4> 
-                                </div>
-                            </div> -->
-                          </div>
-
-                          <div id="slide7" class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <!-- <div class="flex-row justify-center mb-16 w-full">
-                                <img id="icon" src="./images/dummy/img23.jpg" alt="" />
-                                <div class="flex-col">
-                                  <h4 class="text-lg">Title:</h4>
-                                  <h4 class="text-sm"><i class="fas fa-star"></i>  Ratings: / 10</h4>
-                                  <h4 class="text-sm"><i class="fas fa-user"></i>  Reviews: </h4>
-                                  <h4 class="text-sm"><i class="fas fa-calendar"></i>  Release date: </h4> 
-                                </div>
-                            </div> -->
-                          </div>
-
-                          <div id="slide8" class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <!-- <div class="flex-row justify-center mb-16 w-full">
-                                <img id="icon" src="./images/dummy/img23.jpg" alt="" />
-                                <div class="flex-col">
-                                  <h4 class="text-lg">Title:</h4>
-                                  <h4 class="text-sm"><i class="fas fa-star"></i>  Ratings: / 10</h4>
-                                  <h4 class="text-sm"><i class="fas fa-user"></i>  Reviews: </h4>
-                                  <h4 class="text-sm"><i class="fas fa-calendar"></i>  Release date: </h4> 
-                                </div>
-                            </div> -->
-                          </div>
-
-                          <div id="slide9" class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <!-- <div class="flex-row justify-center mb-16 w-full">
-                                <img id="icon" src="./images/dummy/img23.jpg" alt="" />
-                                <div class="flex-col">
-                                  <h4 class="text-lg">Title:</h4>
-                                  <h4 class="text-sm"><i class="fas fa-star"></i>  Ratings: / 10</h4>
-                                  <h4 class="text-sm"><i class="fas fa-user"></i>  Reviews: </h4>
-                                  <h4 class="text-sm"><i class="fas fa-calendar"></i>  Release date: </h4> 
-                                </div>
-                            </div> -->
-                          </div>
-                          <div id="slide10" class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <!-- <div class="flex-row justify-center mb-16 w-full">
-                                <img id="icon" src="./images/dummy/img23.jpg" alt="" />
-                                <div class="flex-col">
-                                  <h4 class="text-lg">Title:</h4>
-                                  <h4 class="text-sm"><i class="fas fa-star"></i>  Ratings: / 10</h4>
-                                  <h4 class="text-sm"><i class="fas fa-user"></i>  Reviews: </h4>
-                                  <h4 class="text-sm"><i class="fas fa-calendar"></i>  Release date: </h4> 
-                                </div>
-                            </div> -->
-                          </div>
-                            
-                        </div>  
-
-                      <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 6" data-carousel-slide-to="5"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 7" data-carousel-slide-to="6"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 8" data-carousel-slide-to="7"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 9" data-carousel-slide-to="8"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 10" data-carousel-slide-to="9"></button>
-                      </div>
-
-                      <button type="button" class="absolute bottom-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                          <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                              <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                              <span class="sr-only">Previous</span>
-                          </span>
-                      </button>
-                      <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                          <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                              <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                              <span class="sr-only">Next</span>
-                          </span>
-                      </button>
-
-                    </div>
-                    </div>
+            <!-- right advertisement change to local news or weather -->
+            <div class="flex-shrink max-w-full w-full lg:w-1/3 lg:pl-8 lg:pt-14 lg:pb-8 order-first lg:order-last">
+              <div class="w-full bg-gray-50 h-full">
+                <!-- <div class="text-sm py-6 sticky">
+                  <div class="w-full text-center">
+                    <a class="uppercase" href="#">Advertisement</a>
+                    <a href="#">
+                      <img class="mx-auto" src="./images/dummy/250.jpg" alt="advertisement area">
+                    </a>
                   </div>
-                </div>
+                </div> -->
               </div>
-            
-             <!-- end sidebar movie carousel -->
-
+            </div>
           </div>
         </div>
       </div>
 
       <!-- block science news -->
-      <div class="bg-white">
+      <div class="bg-white dark:bg-gray-800 text-black dark:text-white">
         <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
           <div class="flex flex-row flex-wrap">
             <!-- Left -->
             <div class="flex-shrink max-w-full w-full lg:w-2/3 overflow-hidden">
               <div class="w-full py-3 mb-4 border-b2m">
-                <h2 class="text-gray-800 text-3xl font-bold ">
+                <h2 class="text-3xl font-bold ">
                   <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span><a href="#">Science</a>
                 </h2>
               </div>
@@ -1209,33 +1029,27 @@
             <!-- right advertisement change to local news or weather -->
             <div class="flex-shrink max-w-full w-full lg:w-1/3 lg:pl-8 lg:pt-14 lg:pb-8 order-first lg:order-last">
               <div class="w-full bg-gray-50 h-full">
-                <div id="facts" class="text-sm py-6 sticky">
-                  <!-- <div class="w-full text-center">
+                <!-- <div class="text-sm py-6 sticky">
+                  <div class="w-full text-center">
+                    <a class="uppercase" href="#">Advertisement</a>
                     <a href="#">
-                      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
-                        technology acquisitions 2021</h5>
+                      <img class="mx-auto" src="./images/dummy/250.jpg" alt="advertisement area">
                     </a>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
-                      technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                    <a href="#"
-                      class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                      Next Quotes
-                    </a>
-                  </div> -->
-                </div>
+                  </div>
+                </div> -->
               </div>
             </div>
           </div>
         </div>
       </div>
       <!-- block technology news -->
-      <div class="bg-white">
+      <div class="bg-white dark:bg-gray-800 text-black dark:text-white">
         <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
           <div class="flex flex-row flex-wrap">
             <!-- Left -->
             <div class="flex-shrink max-w-full w-full lg:w-2/3 overflow-hidden">
               <div class="w-full py-3 mb-4 border-b2m">
-                <h2 class="text-gray-800 text-3xl font-bold ">
+                <h2 class=" text-3xl font-bold ">
                   <span class="inline-block h-5 border-l-4 border-red-600 mr-2"></span><a href="#">Technology</a>
                 </h2>
               </div>
@@ -1345,6 +1159,24 @@
               </div>
             </div>
             <!-- right advertisement change to local news or weather -->
+            <div class="flex-shrink max-w-full w-full lg:w-1/3 lg:pl-8 lg:pt-14 lg:pb-8 order-first lg:order-last">
+              <div class="w-full bg-gray-50 h-full">
+                <div class="text-sm py-6 sticky">
+                  <div class="w-full text-center">
+                    <a href="#">
+                      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
+                        technology acquisitions 2021</h5>
+                    </a>
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
+                      technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                    <a href="#"
+                      class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                      Next Quotes
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1480,7 +1312,7 @@
   </div>
 
   <!-- =============== footer =============== -->
-  <footer class="bg-black text-gray-400">
+  <footer class="bg-white dark:bg-gray-800 text-black dark:text-white">
 
     <!--Footer content-->
     <div id="footer-content" class="relative pt-8 xl:pt-16 pb-6 xl:pb-12">
@@ -1494,7 +1326,7 @@
                   Daily Gazette</span> -->
               </a>
             </div>
-            <h4 class="text-base leading-normal mb-3 uppercase text-gray-100">
+            <h4 class="text-base leading-normal mb-3 uppercase ">
               About Us
             </h4>
             <p>
@@ -1503,13 +1335,13 @@
               international events.
             </p>
             <ul class="space-x-3 mt-6 mb-6 Lg:mb-0">
-              <h4 class="text-base leading-normal mb-3 uppercase text-gray-100">
+              <h4 class="text-base leading-normal mb-3 uppercase">
                 Follow Us
               </h4>
 
               <!--facebook-->
               <li class="inline-block">
-                <a target="_blank" class="hover:text-gray-100" rel="noopener noreferrer" href="https://facebook.com"
+                <a target="_blank" class="hover:text-gray-500" rel="noopener noreferrer" href="https://facebook.com"
                   title="Facebook">
                   <i class="fab fa-facebook fa-2x"></i>
 
@@ -1518,7 +1350,7 @@
 
               <!--twitter-->
               <li class="inline-block">
-                <a target="_blank" class="hover:text-gray-100" rel="noopener noreferrer" href="https://twitter.com"
+                <a target="_blank" class="hover:text-gray-500" rel="noopener noreferrer" href="https://twitter.com"
                   title="Twitter">
                   <i class="fab fa-twitter fa-2x"></i>
 
@@ -1527,7 +1359,7 @@
 
               <!--youtube-->
               <li class="inline-block">
-                <a target="_blank" class="hover:text-gray-100" rel="noopener noreferrer" href="https://youtube.com"
+                <a target="_blank" class="hover:text-gray-500" rel="noopener noreferrer" href="https://youtube.com"
                   title="Youtube">
                   <i class="fab fa-youtube fa-2x"></i>
                 </a>
@@ -1535,7 +1367,7 @@
 
               <!--instagram-->
               <li class="inline-block">
-                <a target="_blank" class="hover:text-gray-100" rel="noopener noreferrer" href="https://instagram.com"
+                <a target="_blank" class="hover:text-gray-500" rel="noopener noreferrer" href="https://instagram.com"
                   title="Instagram">
                   <i class="fab fa-instagram fa-2x"></i>
 
@@ -1544,7 +1376,7 @@
 
               <!--github-->
               <li class="inline-block">
-                <a target="_blank" class="hover:text-gray-100" rel="noopener noreferrer" href="https://github.com"
+                <a target="_blank" class="hover:text-gray-500" rel="noopener noreferrer" href="https://github.com"
                   title="github">
                   <i class="fab fa-github fa-2x"></i>
 
@@ -1553,7 +1385,7 @@
 
               <!--discord-->
               <li class="inline-block">
-                <a target="_blank" class="hover:text-gray-100" rel="noopener noreferrer" href="https://discord.com"
+                <a target="_blank" class="hover:text-gray-500" rel="noopener noreferrer" href="https://discord.com"
                   title="discord">
                   <i class="fab fa-discord fa-2x"></i>
 
@@ -1564,126 +1396,106 @@
           <div class="flex-shrink max-w-full w-full lg:w-3/5 px-3">
             <div class="flex flex-wrap flex-row">
               <div class="flex-shrink max-w-full w-1/2 md:w-1/4 mb-6 lg:mb-0">
-                <h4 class="text-base leading-normal mb-3 uppercase text-gray-100">
+                <h4 class="text-base leading-normal mb-3 uppercase">
                   Resources
                 </h4>
                 <ul>
-                  <li class="py-1 hover:text-white">
+                  <li class="py-1 hover:text-gray-500">
                     <a href="https://gnews.io/" class=""><i class="fa-solid fa-chevron-right"></i>
                       GNews</a>
                   </li>
-                  <li class="py-1 hover:text-white">
+                  <li class="py-1 hover:text-gray-500">
                     <a href="https://tailwindcss.com/" class=""><i class="fa-solid fa-chevron-right"></i> Tailwind
                       Css</a>
                   </li>
-                  <li class="py-1 hover:text-white">
+                  <li class="py-1 hover:text-gray-500">
                     <a href="https://www.visualcrossing.com/" class=""><i class="fa-solid fa-chevron-right"></i>
                       Visual Crossing</a>
                   </li>
-                  <li class="py-1 hover:text-white">
+                  <li class="py-1 hover:text-gray-500">
                     <a href="https://ipinfo.io/" class="">
                       <i class="fa-solid fa-chevron-right"></i> ipinfo.io</a>
                   </li>
-                  <li class="py-1 hover:text-white">
+                  <li class="py-1 hover:text-gray-500">
                     <a href="https://www.thenewsapi.com/" class="">
                       <i class="fa-solid fa-chevron-right"></i> The News Api</a>
                   </li>
-                  <li class="py-1 hover:text-white">
+                  <li class="py-1 hover:text-gray-500">
                     <a href="https://www.newsapi.org/" class="">
                       <i class="fa-solid fa-chevron-right"></i> NewsApi</a>
                   </li>
                 </ul>
               </div>
               <div class="flex-shrink max-w-full w-1/2 md:w-1/4 mb-6 lg:mb-0">
-                <h4 class="text-base leading-normal mb-3 uppercase text-gray-100">
+                <h4 class="text-base leading-normal mb-3 uppercase">
                   Support
                 </h4>
                 <ul>
-                  <li class="py-1 hover:text-white">
+                  <li class="py-1 hover:text-gray-500">
                     <a href="#" class=""><i class="fa-solid fa-chevron-right"></i>
                       Documentation</a>
                   </li>
-                  <li class="py-1 hover:text-white">
+                  <li class="py-1 hover:text-gray-500">
                     <a href="#" class=""><i class="fa-solid fa-chevron-right"></i> Changelog</a>
                   </li>
-                  <li class="py-1 hover:text-white">
+                  <li class="py-1 hover:text-gray-500">
                     <a href="#" class=""><i class="fa-solid fa-chevron-right"></i> Tools</a>
                   </li>
-                  <li class="py-1 hover:text-white">
+                  <li class="py-1 hover:text-gray-500">
                     <a href="https://fontawesome.com/" class=""><i class="fa-solid fa-chevron-right"></i> Icons</a>
                   </li>
                 </ul>
               </div>
               <div class="flex-shrink max-w-full w-1/2 md:w-1/4 mb-6 lg:mb-0">
-                <h4 class="text-base leading-normal mb-3 uppercase text-gray-100">
+                <h4 class="text-base leading-normal mb-3 uppercase">
                   Includes
                 </h4>
                 <ul>
-                  <li class="py-1 hover:text-white">
+                  <li class="py-1 hover:text-gray-500">
                     <a href="#" class=""><i class="fa-solid fa-chevron-right"></i> Utilities</a>
                   </li>
-                  <li class="py-1 hover:text-white">
+                  <li class="py-1 hover:text-gray-500">
                     <a href="#" class=""><i class="fa-solid fa-chevron-right"></i> Components</a>
                   </li>
-                  <li class="py-1 hover:text-white">
+                  <li class="py-1 hover:text-gray-500">
                     <a href="#" class=""><i class="fa-solid fa-chevron-right"></i> Example
                       code</a>
                   </li>
-                  <li class="py-1 hover:text-white">
+                  <li class="py-1 hover:text-gray-500">
                     <a href="#" class=""><i class="fa-solid fa-chevron-right"></i> Updates</a>
                   </li>
                 </ul>
               </div>
               <div class="flex-shrink max-w-full w-1/2 md:w-1/4 mb-6 lg:mb-0">
-                <h4 class="text-base leading-normal mb-3 uppercase text-gray-100">
+                <h4 class="text-base leading-normal mb-3 uppercase">
                   Legal
                 </h4>
                 <ul>
-                  <li class="py-1 hover:text-white">
+                  <li class="py-1 hover:text-gray-500">
                     <a href="#" class=""><i class="fa-solid fa-chevron-right"></i> Privacy
                       Policy</a>
                   </li>
-                  <li class="py-1 hover:text-white">
+                  <li class="py-1 hover:text-gray-500">
                     <a href="#" class=""><i class="fa-solid fa-chevron-right"></i> Terms of
                       Use</a>
                   </li>
-                  <li class="py-1 hover:text-white">
+                  <li class="py-1 hover:text-gray-500">
                     <a href="#" class=""><i class="fa-solid fa-chevron-right"></i> License</a>
                   </li>
-                  <li class="py-1 hover:text-white">
+                  <li class="py-1 hover:text-gray-500">
                     <a href="#" class=""><i class="fa-solid fa-chevron-right"></i> GDPR</a>
                   </li>
                 </ul>
               </div>
               <div class="grow mx-auto flex-shrink max-w-full w-2/6 md:w-1/4 mb-6 mt-6 lg:mb-0">
-                <h4 class="mb-3 text-center text-base leading-normal uppercase text-gray-100">
+                <h4 class="mb-3 text-center text-base leading-normal uppercase">
                   Subscribe to News Letter
                 </h4>
                 <form action="" class="mx-auto w-96">
                   <label for="email-address-icon"
-                    class="block mb-2 text-sm font-medium text-gray-100 dark:text-white">Your Email</label>
+                    class="block mb-2 text-sm font-medium dark:text-white">Your Email</label>
                   <div class="relative">
-                    <!-- <div
-                      class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
-                    > -->
-                    <!-- <i
-                      class="fa-solid fa-envelope text-gray-500 dark:text-gray-400"
-                    ></i> -->
-                    <!-- <svg
-                        aria-hidden="true"
-                        class="w-5 h-5 text-gray-500 dark:text-gray-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
-                        ></path>
-                        <path
-                          d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
-                        ></path>
-                      </svg> -->
-                    <!-- </div> -->
+                  
                     <input type="text" id="email-address-icon"
                       class="mx-auto bg-gray-50 border border-gray-300 text-black text-sm rounded-full focus:ring-red-500 focus:border-red-500 block w-full py-2.5 pl-96 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500"
                       placeholder="youremailadd@here.com" />
@@ -1703,8 +1515,7 @@
           <div class="col-12 col-md text-center">
             <p class="d-block my-3">
             <p class="hover:underline hover:decoration-red-700">Copyright © COGY™
-              | All Rights Reserved.
-            </p>
+              | All Rights Reserved.</p>
           </div>
         </div>
       </div>
