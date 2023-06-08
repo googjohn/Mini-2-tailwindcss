@@ -1,0 +1,80 @@
+/* sports */
+.see-more-games-btn {
+  width: 200px;
+  padding: 5px 10px;
+  /* background: rgba(255, 255, 255, 0.1); */
+  background-color: transparent;
+  border-radius: 50px ;
+  text-align: center;
+  border: 1px solid #fff;
+  margin: auto;
+}
+
+.see-more-games-btn:hover{
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sport-card {
+  background:rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+
+  font-size: 14px;
+}
+
+#sport-card {
+  height: 300px;
+    /* background-color: #97D9E1;
+  background-image: linear-gradient(315deg, #97dae1a9 0%, #d9afd9a8 100%); */
+  background-color: #fbfbbc;
+  background-image: linear-gradient(45deg, #fbfbbc 0%, #f9d5de 100%);
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+#top-sport-heading {
+  background: #0575e6;
+  height: 100px;
+  padding: 10px 0 0 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+#top-sport-heading img{
+  height: 40px;
+  width: 80px;
+  display: inline-block;
+
+}
+
+#top-sport-heading span{
+  vertical-align: middle;
+}
+
+
+#sports-c {
+  margin: 20px auto;
+
+}
+
+#sport-navbar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  color: #fff;
+}
+
+#sport-navbar button {
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+#sport-navbar button:hover {
+  background-color: rgba(6, 98, 189, 0.8);
+  /* border-bottom: 3px solid #fff; */
+  cursor: pointer;
+}
+
+#sport-navbar button.active {
+  border-bottom: 3px solid #fff;
+}

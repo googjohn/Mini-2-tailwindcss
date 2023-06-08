@@ -180,7 +180,7 @@ async function fetchAPIData() {
   // const apiKey = "2d27b969040914f83bf30e7959ad9349";
   // const apiKey = "41a85f1908d54684894de3165492a194";
   const response = await fetch(
-    "https://newsapi.org/v2/everything?q=weather&apiKey=41a85f1908d54684894de3165492a194",
+    // "https://newsapi.org/v2/everything?q=weather&apiKey=41a85f1908d54684894de3165492a194",
     // "https://newsdata.io/api/1/news?apikey=pub_2405886988ac0363340bc1fb9e7cfdbb89493&q=weather,climate"
     // "https://gnews.io/api/v4/search?q=forecast&lang=en&country=us&max=10&apikey=e701311bc9b2249184c539cd496d8466"
   );
@@ -256,7 +256,7 @@ async function displayWeather() {
     console.error("An error occurred:", error.message);
   }
 }
-displayWeather();
+// displayWeather();
 // ================ { function to change weather icons } ================== //
 function getIcon(condition) {
   if (condition === "partly-cloudy-day") {

@@ -221,7 +221,7 @@ async function carouselNews() {
 // ========== { display local from gnews.io} ========== \\
 async function displayLocalNews() {
   try {
-    global.api.apiKeys = global.apiKey_10;
+    global.api.apiKeys = global.apiKey_2;
     global.maxfetch = "4";
     fetchAPIDataForLocal("local").then(function (data) {
       localarticles = data.articles.slice(0, 4);
@@ -596,6 +596,7 @@ async function displayForex() {
           <div class="text-medium font-medium px-1 py-2"> <span class="fi fi-ca"></span> USD/CAD <span>United States Dollar/Canadian Dollar</span></div><div class="px-3 ${CAD}"> 
           ${data.results.CAD} CAD </div>
         </li>
+        <div class="see-market-btn font-medium cursor-pointer text-gray-800">See more market data</div>
     `;
     document.querySelector("#forex").appendChild(ul);
   } catch (error) {
@@ -702,14 +703,14 @@ function init() {
   switch (global.currentPage) {
     case "/":
     case "/src/index.html":
-      // carouselNews();
-      // displayLocalNews();
-      // displayTrendingNews();
-      // displayBusinessNews();
-      // displayEntertainmentNews();
-      // displaySportsNews();
-      // displayScienceNews();
-      // displayTechnologyNews();
+      carouselNews();
+      displayLocalNews();
+      displayTrendingNews();
+      displayBusinessNews();
+      displayEntertainmentNews();
+      displaySportsNews();
+      displayScienceNews();
+      displayTechnologyNews();
       displayForex();
       break;
     case "/business.html":

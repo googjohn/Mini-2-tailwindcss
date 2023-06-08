@@ -273,7 +273,7 @@ margin-bottom: 2px;
 /* forex */
 #forex {
   background-color: #97D9E1;
-background-image: linear-gradient(315deg, #97D9E1 0%, #D9AFD9 100%);
+background-image: linear-gradient(315deg, #97dae1a9 0%, #d9afd9a8 100%);
   border-radius: 20px;
 }
 
@@ -294,3 +294,19 @@ background-image: linear-gradient(315deg, #97D9E1 0%, #D9AFD9 100%);
   margin-bottom: 5px;
   font-size: 12px;
 }
+
+.see-market-btn {
+  width: 200px;
+  padding: 5px 10px;
+  /* background: rgba(255, 255, 255, 0.1); */
+  background-color: transparent;
+  border-radius: 50px ;
+  text-align: center;
+  border: 1px solid #fff;
+  margin: auto;
+}
+
+.see-market-btn:hover{
+  background: rgba(255, 255, 255, 0.1);
+}
+
