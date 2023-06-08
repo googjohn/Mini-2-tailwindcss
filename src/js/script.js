@@ -95,7 +95,7 @@ async function carouselNews() {
                       <div class="pt-2">
                         <div class="text-gray-200">
                           <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
-                          <span class="text-xl">${carouselarticles[0].publishedAt}</span>
+                          <span class="text-xl">${carouselarticles[0].publishedAt.slice(0, 10)}</span>
                         </div>
                       </div>
                     </div>
@@ -110,7 +110,7 @@ async function carouselNews() {
                       <div class="pt-2">
                         <div class="text-gray-200">
                           <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
-                          <span class="text-xl">${carouselarticles[0].publishedAt}</span>
+                          <span class="text-xl">${carouselarticles[0].publishedAt.slice(0, 10)}</span>
                         </div>
                       </div>
                     </div>
@@ -124,8 +124,8 @@ async function carouselNews() {
                       <p class="text-gray-200 hidden sm:inline-block">${carouselarticles[2].description}</p>
                       <div class="pt-2">
                         <div class="text-gray-200">
-                          <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
-                          <span class="text-xl">Category</span>
+                          <div class="inline-block h-3.5 italic border-l-4 border-red-600 mr-1"></div>
+                          <span class="text-xl">${carouselarticles[2].publishedAt.slice(0, 10)}</span>
                         </div>
                       </div>
                     </div>
@@ -530,29 +530,29 @@ async function displayForex() {
       AUD = "text-down";
     }
     //AED
-    if (data.results.AED >= data2.results.AED) {
-      AED = "text-up";
-    } else {
-      AED = "text-down";
-    }
+    // if (data.results.AED >= data2.results.AED) {
+    //   AED = "text-up";
+    // } else {
+    //   AED = "text-down";
+    // }
     //NZD
-    if (data.results.NZD >= data2.results.NZD) {
-      NZD = "text-up";
-    } else {
-      NZD = "text-down";
-    }
+    // if (data.results.NZD >= data2.results.NZD) {
+    //   NZD = "text-up";
+    // } else {
+    //   NZD = "text-down";
+    // }
     //CNY
-    if (data.results.CNY >= data2.results.CNY) {
-      CNY = "text-up";
-    } else {
-      CNY = "text-down";
-    }
+    // if (data.results.CNY >= data2.results.CNY) {
+    //   CNY = "text-up";
+    // } else {
+    //   CNY = "text-down";
+    // }
     //HKD
-    if (data.results.HKD >= data2.results.HKD) {
-      HKD = "text-up";
-    } else {
-      HKD = "text-down";
-    }
+    // if (data.results.HKD >= data2.results.HKD) {
+    //   HKD = "text-up";
+    // } else {
+    //   HKD = "text-down";
+    // }
     //JPY
     if (data.results.JPY >= data2.results.JPY) {
       JPY = "text-up";
@@ -560,11 +560,11 @@ async function displayForex() {
       JPY = "text-down";
     }
     //KRW
-    if (data.results.KRW >= data2.results.KRW) {
-      KRW = "text-up";
-    } else {
-      KRW = "text-down";
-    }
+    // if (data.results.KRW >= data2.results.KRW) {
+    //   KRW = "text-up";
+    // } else {
+    //   KRW = "text-down";
+    // }
     //CAD
     if (data.results.CAD >= data2.results.CAD) {
       CAD = "text-up";
@@ -703,15 +703,16 @@ function init() {
   switch (global.currentPage) {
     case "/":
     case "/src/index.html":
-      carouselNews();
-      displayLocalNews();
-      displayTrendingNews();
-      displayBusinessNews();
-      displayEntertainmentNews();
-      displaySportsNews();
-      displayScienceNews();
-      displayTechnologyNews();
+      // carouselNews();
+      // displayLocalNews();
+      // displayTrendingNews();
+      // displayBusinessNews();
+      // displayEntertainmentNews();
+      // displaySportsNews();
+      // displayScienceNews();
+      // displayTechnologyNews();
       displayForex();
+      // setInterval(displayForex, 5000);
       break;
     case "/business.html":
       // businesspage();
