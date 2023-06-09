@@ -262,17 +262,22 @@ li:hover {
 #science-news img,
 #local-news img {
   /* min-height: 200px; */
-  height: 200px;
+  height: 191px;
   /* border-radius: 5px; */
 }
 
 /* local news fix */
 #local-news article {
   margin-bottom: 2px;
+
 }
 #local-news article > div {
   margin-left: 2px;
 }
+#local-news article > div:hover, #headline-carousel > div:hover, #trend-news > div:hover, #entertainment-news > div:hover, #sports-news > div:hover, #technology-news > div:hover, #science-news > div:hover{
+  opacity: .8;
+}
+
 
 /* forex */
 #forex {
@@ -313,3 +318,4 @@ li:hover {
 .see-market-btn:hover {
   background: rgba(255, 255, 255, 0.1);
 }
+

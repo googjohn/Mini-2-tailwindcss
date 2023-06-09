@@ -109,11 +109,8 @@ async function carouselNews() {
         }</p>
                       <div class="pt-2">
                         <div class="text-gray-200">
-                          <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
-                          <span class="text-xl">${carouselarticles[0].publishedAt.slice(
-          0,
-          10
-        )}</span>
+                         
+                          
                         </div>
                       </div>
                     </div>
@@ -131,11 +128,8 @@ async function carouselNews() {
         }</p>
                       <div class="pt-2">
                         <div class="text-gray-200">
-                          <div class="inline-block h-3.5 border-l-4 border-red-600 mr-1"></div>
-                          <span class="text-xl">${carouselarticles[0].publishedAt.slice(
-          0,
-          10
-        )}</span>
+                          
+                         
                         </div>
                       </div>
                     </div>
@@ -153,11 +147,8 @@ async function carouselNews() {
         }</p>
                       <div class="pt-2">
                         <div class="text-gray-200">
-                          <div class="inline-block h-3.5 italic border-l-4 border-red-600 mr-1"></div>
-                          <span class="text-xl">${carouselarticles[2].publishedAt.slice(
-          0,
-          10
-        )}</span>
+                          
+                         
                         </div>
                       </div>
                     </div>
@@ -313,11 +304,7 @@ async function displayTrendingNews() {
             0,
             100
           )}...</p>
-                            <span
-                                class="px-2 inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(
-            0,
-            10
-          )}</span>
+                            
                           </div>
                           </div>
                         
@@ -357,11 +344,7 @@ async function displayBusinessNews() {
             0,
             100
           )}...</p>
-                            <span
-                                class="px-2 inline-block h-3 border-l-2 border-red-600 mr-2 "></span>${articles.publishedAt.slice(
-            0,
-            10
-          )}</span>
+                        
                           </div>
                           </div>
                         
@@ -402,11 +385,7 @@ async function displayEntertainmentNews() {
             0,
             100
           )}...</p>
-                            <span
-                                class="px-2 inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(
-            0,
-            10
-          )}</span>
+                           
                           </div>
                           </div>
                         
@@ -447,11 +426,7 @@ async function displaySportsNews() {
             0,
             100
           )}...</p>
-                            <span
-                                class="px-2 inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(
-            0,
-            10
-          )}</span>
+                         
                           </div>
                           </div>
                         
@@ -492,11 +467,7 @@ async function displayScienceNews() {
             0,
             100
           )}...</p>
-                            <span
-                                class="px-2 inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(
-            0,
-            10
-          )}</span>
+                          
                           </div>
                           </div>
                         
@@ -537,11 +508,7 @@ async function displayTechnologyNews() {
             0,
             100
           )}...</p>
-                            <span
-                                class="px-2 inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(
-            0,
-            10
-          )}</span>
+                         
                           </div>
                           </div>
                         
@@ -668,7 +635,7 @@ async function displayForex() {
           <div class="text-medium font-medium px-1 py-2"> <span class="fi fi-ca"></span> USD/CAD <span>United States Dollar/Canadian Dollar</span></div><div class="px-3 ${CAD}"> 
           ${data.results.CAD} CAD </div>
         </li>
-        <div class="see-market-btn font-medium cursor-pointer text-gray-800">See more market data</div>
+        
     `;
     document.querySelector("#forex").appendChild(ul);
   } catch (error) {
@@ -676,7 +643,7 @@ async function displayForex() {
   }
 }
 
-// ========== { display now showing on Cinemas } ========== \\
+// ========== { display now showing in Cinemas } ========== \\
 async function displayMovie() {
   try {
     const url =
@@ -700,11 +667,10 @@ async function displayMovie() {
       <div class="flex justify-center w-full">
       <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[0].poster_path}" alt="" />
       </div>
-      <div class="flex-col">
+      <div class="flex-col text-center">
         <h4 class="text-base mt-1">Title: ${data.results[0].title}</h4>
         <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[0].vote_average} / 10</h4>
-        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[0].popularity}</h4>
-        <h4 class="text-base mt-1">Release date: ${data.results[0].release_date}</h4> 
+        
       </div>
     </div>
     `;
@@ -713,11 +679,10 @@ async function displayMovie() {
       <div class="flex justify-center w-full">
       <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[1].poster_path}" alt="" />
       </div>
-      <div class="flex-col">
+      <div class="flex-col text-center">
         <h4 class="text-base mt-1">Title: ${data.results[1].title}</h4>
         <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[1].vote_average} / 10</h4>
-        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[1].popularity}</h4>
-        <h4 class="text-base mt-1">Release date: ${data.results[1].release_date}</h4> 
+        
       </div>
     </div>
     `;
@@ -726,11 +691,10 @@ async function displayMovie() {
       <div class="flex justify-center w-full">
       <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[2].poster_path}" alt="" />
       </div>
-      <div class="flex-col">
+      <div class="flex-col text-center">
         <h4 class="text-base mt-1">Title: ${data.results[2].title}</h4>
         <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[2].vote_average} / 10</h4>
-        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[2].popularity}</h4>
-        <h4 class="text-base mt-1">Release date: ${data.results[2].release_date}</h4> 
+       
       </div>
     </div>
     `;
@@ -739,11 +703,10 @@ async function displayMovie() {
       <div class="flex justify-center w-full">
       <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[3].poster_path}" alt="" />
       </div>
-      <div class="flex-col">
+      <div class="flex-col text-center">
         <h4 class="text-base mt-1">Title: ${data.results[3].title}</h4>
         <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[3].vote_average} / 10</h4>
-        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[3].popularity}</h4>
-        <h4 class="text-base mt-1">Release date: ${data.results[3].release_date}</h4> 
+        
       </div>
     </div>
     `;
@@ -752,11 +715,10 @@ async function displayMovie() {
       <div class="flex justify-center w-full">
       <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[4].poster_path}" alt="" />
       </div>
-      <div class="flex-col">
+      <div class="flex-col text-center">
         <h4 class="text-base mt-1">Title: ${data.results[4].title}</h4>
         <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[4].vote_average} / 10</h4>
-        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[4].popularity}</h4>
-        <h4 class="text-base mt-1">Release date: ${data.results[4].release_date}</h4> 
+       
       </div>
     </div>
     `;
@@ -765,11 +727,10 @@ async function displayMovie() {
       <div class="flex justify-center w-full">
       <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[5].poster_path}" alt="" />
       </div>
-      <div class="flex-col">
+      <div class="flex-col text-center">
         <h4 class="text-base mt-1">Title: ${data.results[5].title}</h4>
         <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[5].vote_average} / 10</h4>
-        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[5].popularity}</h4>
-        <h4 class="text-base mt-1">Release date: ${data.results[5].release_date}</h4> 
+        
       </div>
     </div>
     `;
@@ -778,11 +739,10 @@ async function displayMovie() {
       <div class="flex justify-center w-full">
       <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[6].poster_path}" alt="" />
       </div>
-      <div class="flex-col">
+      <div class="flex-col text-center">
         <h4 class="text-base mt-1">Title: ${data.results[6].title}</h4>
         <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[6].vote_average} / 10</h4>
-        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[6].popularity}</h4>
-        <h4 class="text-base mt-1">Release date: ${data.results[6].release_date}</h4> 
+       
       </div>
     </div>
     `;
@@ -791,11 +751,10 @@ async function displayMovie() {
       <div class="flex justify-center w-full">
       <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[7].poster_path}" alt="" />
       </div>
-      <div class="flex-col">
+      <div class="flex-col text-center">
         <h4 class="text-base mt-1">Title: ${data.results[7].title}</h4>
         <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[7].vote_average} / 10</h4>
-        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[7].popularity}</h4>
-        <h4 class="text-base mt-1">Release date: ${data.results[7].release_date}</h4> 
+       
       </div>
     </div>
     `;
@@ -804,11 +763,10 @@ async function displayMovie() {
       <div class="flex justify-center w-full">
       <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[8].poster_path}" alt="" />
       </div>
-      <div class="flex-col">
+      <div class="flex-col text-center">
         <h4 class="text-base mt-1">Title: ${data.results[8].title}</h4>
         <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[8].vote_average} / 10</h4>
-        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[8].popularity}</h4>
-        <h4 class="text-base mt-1">Release date: ${data.results[8].release_date}</h4> 
+       
       </div>
     </div>
     `;
@@ -817,11 +775,10 @@ async function displayMovie() {
       <div class="flex justify-center w-full">
       <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[9].poster_path}" alt="" />
       </div>
-      <div class="flex-col">
+      <div class="flex-col text-center">
         <h4 class="text-base mt-1">Title: ${data.results[9].title}</h4>
         <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[9].vote_average} / 10</h4>
-        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[9].popularity}</h4>
-        <h4 class="text-base mt-1">Release date: ${data.results[9].release_date}</h4> 
+       
       </div>
     </div>
     `;
@@ -938,16 +895,15 @@ function init() {
     case "/src/index.html":
       carouselNews();
       displayLocalNews();
-      // displayTrendingNews();
-      // displayBusinessNews();
-      // displayEntertainmentNews();
-      // displaySportsNews();
-      // displayScienceNews();
-      // displayTechnologyNews();
-      // displayMovie();
+      displayTrendingNews();
+      displayBusinessNews();
+      displayEntertainmentNews();
+      displaySportsNews();
+      displayScienceNews();
+      displayTechnologyNews();
+      displayMovie();
       displayForex();
       displayFacts();
-      // setInterval(displayForex, 5000);
       break;
     case "/src/business.html":
       businessCategoryPage();
@@ -1009,8 +965,8 @@ async function searchpage() {
           <h3 class="text-lg font-bold leading-tight mb-2">
             <a href="${results.url}">${results.title}</a>
           </h3>
-            <p class="hidden md:block text-gray-600 leading-tight mb-1">${results.description}</p>
-            <a class="text-gray-500" href="${results.url}"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${results.publishedAt}</span></a>
+            <p class="hidden md:block text-gray-600 leading-tight mb-1">${results.description.slice(0, 100)}...</p>
+            
         </div>
         </div>
         `;
@@ -1065,8 +1021,8 @@ async function businessCategoryPage() {
           <h3 class="text-lg font-bold leading-tight mb-2">
             <a href="${articles.url}">${articles.title}</a>
           </h3>
-            <p class="hidden md:block leading-tight mb-1">${articles.description}</p>
-            <a class="text-gray-500" href="${articles.url}"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt}</span></a>
+            <p class="hidden md:block leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
+            
         </div>
         </div>
         `;
@@ -1100,8 +1056,8 @@ async function entertainmentCategoryPage() {
           <h3 class="text-lg font-bold leading-tight mb-2">
             <a href="${articles.url}">${articles.title}</a>
           </h3>
-            <p class="hidden md:block leading-tight mb-1">${articles.description}</p>
-            <a class="text-gray-500" href="${articles.url}"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt}</span></a>
+            <p class="hidden md:block leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
+            
         </div>
         </div>
         `;
@@ -1135,8 +1091,8 @@ async function scitechCategoryPage() {
           <h3 class="text-lg font-bold leading-tight mb-2">
             <a href="${articles.url}">${articles.title}</a>
           </h3>
-            <p class="hidden md:block leading-tight mb-1">${articles.description}</p>
-            <a class="text-gray-500" href="${articles.url}"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt}</span></a>
+            <p class="hidden md:block leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
+            
         </div>
         </div>
         `;
@@ -1170,8 +1126,8 @@ async function sportsCategoryPage() {
           <h3 class="text-lg font-bold leading-tight mb-2">
             <a href="${articles.url}">${articles.title}</a>
           </h3>
-            <p class="hidden md:block leading-tight mb-1">${articles.description}</p>
-            <a class="text-gray-500" href="${articles.url}"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt}</span></a>
+            <p class="hidden md:block leading-tight mb-1">${articles.description.slice(0, 100)}...</p>
+            
         </div>
         </div>
         `;
@@ -1214,4 +1170,48 @@ async function displayFacts() {
   }
 }
 
+// darkmode
+var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+// Change the icons inside the button based on previous settings
+if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  themeToggleLightIcon.classList.remove('hidden');
+} else {
+  themeToggleDarkIcon.classList.remove('hidden');
+}
+
+var themeToggleBtn = document.getElementById('theme-toggle');
+
+themeToggleBtn.addEventListener('click', function () {
+
+  // toggle icons inside button
+  themeToggleDarkIcon.classList.toggle('hidden');
+  themeToggleLightIcon.classList.toggle('hidden');
+
+  // if set via local storage previously
+  if (localStorage.getItem('color-theme')) {
+    if (localStorage.getItem('color-theme') === 'light') {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('color-theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('color-theme', 'light');
+    }
+
+    // if NOT set via local storage previously
+  } else {
+    if (document.documentElement.classList.contains('dark')) {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('color-theme', 'light');
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('color-theme', 'dark');
+    }
+  }
+
+});
+
 document.addEventListener("DOMContentLoaded", init);
+
+

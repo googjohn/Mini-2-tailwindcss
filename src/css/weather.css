@@ -352,3 +352,13 @@ li:hover{
   border-radius: 10px;
 }
 
+.weather-card:hover {
+  opacity: .8;
+}
+
+.weather-card:first-of-type {
+grid-column: span 2;
+}
+.weather-card:last-of-type {
+grid-column: span 2;
+}

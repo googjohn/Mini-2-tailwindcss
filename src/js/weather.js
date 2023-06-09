@@ -180,7 +180,7 @@ async function fetchAPIData() {
   // const apiKey = "2d27b969040914f83bf30e7959ad9349";
   // const apiKey = "41a85f1908d54684894de3165492a194";
   const response = await fetch(
-    // "https://newsapi.org/v2/everything?q=weather&apiKey=41a85f1908d54684894de3165492a194",
+    "https://newsapi.org/v2/everything?q=weather&apiKey=41a85f1908d54684894de3165492a194",
     // "https://newsdata.io/api/1/news?apikey=pub_2405886988ac0363340bc1fb9e7cfdbb89493&q=weather,climate"
     // "https://gnews.io/api/v4/search?q=forecast&lang=en&country=us&max=10&apikey=e701311bc9b2249184c539cd496d8466"
   );
@@ -210,7 +210,7 @@ async function displayWeather() {
       localarticles = data.articles;
       console.log(localarticles);
 
-      localarticles.slice(20, 30).forEach((articles) => {
+      localarticles.slice(21, 31).forEach((articles) => {
         const div = document.createElement("div");
         div.classList =
           "weather-card";
@@ -236,7 +236,7 @@ async function displayWeather() {
         document.querySelector(".weather-news-card").appendChild(div);
       });
 
-      localarticles.slice(0, 12).forEach((articles) => {
+      localarticles.slice(0, 18).forEach((articles) => {
         const p = document.createElement("p");
         p.classList =
           "weather-list my-2 rounded-2xl border";
@@ -256,7 +256,7 @@ async function displayWeather() {
     console.error("An error occurred:", error.message);
   }
 }
-// displayWeather();
+displayWeather();
 // ================ { function to change weather icons } ================== //
 function getIcon(condition) {
   if (condition === "partly-cloudy-day") {
