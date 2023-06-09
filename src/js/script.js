@@ -925,7 +925,7 @@ function hideSpinner() {
 function init() {
   switch (global.currentPage) {
     case "/":
-    case "/src/index.html":
+    case "/index.html":
       carouselNews();
       displayLocalNews();
       displayTrendingNews();
