@@ -700,11 +700,10 @@ async function displayMovie() {
       <div class="flex justify-center w-full">
       <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[0].poster_path}" alt="" />
       </div>
-      <div class="flex-col">
+      <div class="flex-col text-center">
         <h4 class="text-base mt-1">Title: ${data.results[0].title}</h4>
         <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[0].vote_average} / 10</h4>
-        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[0].popularity}</h4>
-        <h4 class="text-base mt-1">Release date: ${data.results[0].release_date}</h4> 
+        
       </div>
     </div>
     `;
@@ -713,11 +712,10 @@ async function displayMovie() {
       <div class="flex justify-center w-full">
       <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[1].poster_path}" alt="" />
       </div>
-      <div class="flex-col">
+      <div class="flex-col text-center">
         <h4 class="text-base mt-1">Title: ${data.results[1].title}</h4>
         <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[1].vote_average} / 10</h4>
-        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[1].popularity}</h4>
-        <h4 class="text-base mt-1">Release date: ${data.results[1].release_date}</h4> 
+        
       </div>
     </div>
     `;
@@ -726,11 +724,10 @@ async function displayMovie() {
       <div class="flex justify-center w-full">
       <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[2].poster_path}" alt="" />
       </div>
-      <div class="flex-col">
+      <div class="flex-col text-center">
         <h4 class="text-base mt-1">Title: ${data.results[2].title}</h4>
         <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[2].vote_average} / 10</h4>
-        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[2].popularity}</h4>
-        <h4 class="text-base mt-1">Release date: ${data.results[2].release_date}</h4> 
+        
       </div>
     </div>
     `;
@@ -739,11 +736,10 @@ async function displayMovie() {
       <div class="flex justify-center w-full">
       <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[3].poster_path}" alt="" />
       </div>
-      <div class="flex-col">
+      <div class="flex-col text-center">
         <h4 class="text-base mt-1">Title: ${data.results[3].title}</h4>
         <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[3].vote_average} / 10</h4>
-        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[3].popularity}</h4>
-        <h4 class="text-base mt-1">Release date: ${data.results[3].release_date}</h4> 
+       
       </div>
     </div>
     `;
@@ -752,11 +748,10 @@ async function displayMovie() {
       <div class="flex justify-center w-full">
       <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[4].poster_path}" alt="" />
       </div>
-      <div class="flex-col">
+      <div class="flex-col text-center">
         <h4 class="text-base mt-1">Title: ${data.results[4].title}</h4>
         <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[4].vote_average} / 10</h4>
-        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[4].popularity}</h4>
-        <h4 class="text-base mt-1">Release date: ${data.results[4].release_date}</h4> 
+       
       </div>
     </div>
     `;
@@ -765,11 +760,10 @@ async function displayMovie() {
       <div class="flex justify-center w-full">
       <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[5].poster_path}" alt="" />
       </div>
-      <div class="flex-col">
+      <div class="flex-col text-center">
         <h4 class="text-base mt-1">Title: ${data.results[5].title}</h4>
         <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[5].vote_average} / 10</h4>
-        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[5].popularity}</h4>
-        <h4 class="text-base mt-1">Release date: ${data.results[5].release_date}</h4> 
+        
       </div>
     </div>
     `;
@@ -778,11 +772,10 @@ async function displayMovie() {
       <div class="flex justify-center w-full">
       <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[6].poster_path}" alt="" />
       </div>
-      <div class="flex-col">
+      <div class="flex-col text-center">
         <h4 class="text-base mt-1">Title: ${data.results[6].title}</h4>
         <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[6].vote_average} / 10</h4>
-        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[6].popularity}</h4>
-        <h4 class="text-base mt-1">Release date: ${data.results[6].release_date}</h4> 
+       
       </div>
     </div>
     `;
@@ -791,11 +784,10 @@ async function displayMovie() {
       <div class="flex justify-center w-full">
       <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[7].poster_path}" alt="" />
       </div>
-      <div class="flex-col">
+      <div class="flex-col text-center">
         <h4 class="text-base mt-1">Title: ${data.results[7].title}</h4>
         <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[7].vote_average} / 10</h4>
-        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[7].popularity}</h4>
-        <h4 class="text-base mt-1">Release date: ${data.results[7].release_date}</h4> 
+       
       </div>
     </div>
     `;
@@ -804,11 +796,10 @@ async function displayMovie() {
       <div class="flex justify-center w-full">
       <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[8].poster_path}" alt="" />
       </div>
-      <div class="flex-col">
+      <div class="flex-col text-center">
         <h4 class="text-base mt-1">Title: ${data.results[8].title}</h4>
         <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[8].vote_average} / 10</h4>
-        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[8].popularity}</h4>
-        <h4 class="text-base mt-1">Release date: ${data.results[8].release_date}</h4> 
+       
       </div>
     </div>
     `;
@@ -817,11 +808,10 @@ async function displayMovie() {
       <div class="flex justify-center w-full">
       <img class="w-1/2" id="icon" src="https://image.tmdb.org/t/p/w500${data.results[9].poster_path}" alt="" />
       </div>
-      <div class="flex-col">
+      <div class="flex-col text-center">
         <h4 class="text-base mt-1">Title: ${data.results[9].title}</h4>
         <h4 class="text-base mt-1">Ratings: <i class="fas fa-star"></i> ${data.results[9].vote_average} / 10</h4>
-        <h4 class="text-base mt-1">Reviews: <i class="fas fa-user"></i> ${data.results[9].popularity}</h4>
-        <h4 class="text-base mt-1">Release date: ${data.results[9].release_date}</h4> 
+        
       </div>
     </div>
     `;
@@ -938,16 +928,15 @@ function init() {
     case "/src/index.html":
       carouselNews();
       displayLocalNews();
-      // displayTrendingNews();
-      // displayBusinessNews();
-      // displayEntertainmentNews();
-      // displaySportsNews();
-      // displayScienceNews();
-      // displayTechnologyNews();
-      // displayMovie();
+      displayTrendingNews();
+      displayBusinessNews();
+      displayEntertainmentNews();
+      displaySportsNews();
+      displayScienceNews();
+      displayTechnologyNews();
+      displayMovie();
       displayForex();
       displayFacts();
-      // setInterval(displayForex, 5000);
       break;
     case "/src/business.html":
       businessCategoryPage();
@@ -1213,5 +1202,47 @@ async function displayFacts() {
     console.error("Error:", error.message);
   }
 }
+
+// darkmode
+var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+// Change the icons inside the button based on previous settings
+if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  themeToggleLightIcon.classList.remove('hidden');
+} else {
+  themeToggleDarkIcon.classList.remove('hidden');
+}
+
+var themeToggleBtn = document.getElementById('theme-toggle');
+
+themeToggleBtn.addEventListener('click', function () {
+
+  // toggle icons inside button
+  themeToggleDarkIcon.classList.toggle('hidden');
+  themeToggleLightIcon.classList.toggle('hidden');
+
+  // if set via local storage previously
+  if (localStorage.getItem('color-theme')) {
+    if (localStorage.getItem('color-theme') === 'light') {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('color-theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('color-theme', 'light');
+    }
+
+    // if NOT set via local storage previously
+  } else {
+    if (document.documentElement.classList.contains('dark')) {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('color-theme', 'light');
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('color-theme', 'dark');
+    }
+  }
+
+});
 
 document.addEventListener("DOMContentLoaded", init);

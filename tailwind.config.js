@@ -7,3 +7,7 @@ module.exports = {
   },
   plugins: [require("flowbite/plugin")],
 };
+
+module.exports = {
+  darkMode: 'class',
+}
