@@ -260,7 +260,7 @@ async function displayLocalNews() {
 
       localarticles.forEach((articles) => {
         const div = document.createElement("article");
-        div.classList = "max-w-full w-full";
+        div.classList = "max-w-full w-full bg-white dark:bg-gray-800 text-black dark:text-white";
 
         div.innerHTML = `
         <div class="overlay relative hover-img h-48 overflow-hidden">
@@ -297,7 +297,7 @@ async function displayTrendingNews() {
       trendarticles.forEach((articles) => {
         const div = document.createElement("div");
         div.classList =
-          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100";
+          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100 bg-white dark:bg-gray-800 text-black dark:text-white";
 
         div.innerHTML = `
                         <div class="flex-row sm:block hover-img">
@@ -341,10 +341,10 @@ async function displayBusinessNews() {
       businessarticles.forEach((articles) => {
         const div = document.createElement("div");
         div.classList =
-          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100";
+          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100 bg-white dark:bg-gray-800 text-black dark:text-white";
 
         div.innerHTML = `
-                        <div class="flex-row sm:block hover-img bg-white h-full">
+                        <div class="flex-row sm:block hover-img bg-dark h-full">
                           <a href="${articles.url}">
                             <img class="max-w-full w-full mx-auto" src="${articles.image
           }" alt="alt title">
@@ -386,7 +386,7 @@ async function displayEntertainmentNews() {
       entertainmentarticles.forEach((articles) => {
         const div = document.createElement("div");
         div.classList =
-          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100";
+          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100 bg-white dark:bg-gray-800 text-black dark:text-white";
 
         div.innerHTML = `
                         <div class="flex-row sm:block hover-img">
@@ -431,10 +431,10 @@ async function displaySportsNews() {
       sportsarticles.forEach((articles) => {
         const div = document.createElement("div");
         div.classList =
-          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100";
+          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100 bg-white dark:bg-gray-800 text-black dark:text-white";
 
         div.innerHTML = `
-                        <div class="flex-row sm:block hover-img bg-white h-full">
+                        <div class="flex-row sm:block hover-img bg-dark h-full">
                           <a href="${articles.url}">
                             <img class="max-w-full w-full mx-auto" src="${articles.image
           }" alt="alt title">
@@ -476,7 +476,7 @@ async function displayScienceNews() {
       sciencearticles.forEach((articles) => {
         const div = document.createElement("div");
         div.classList =
-          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100";
+          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100 bg-white dark:bg-gray-800 text-black dark:text-white";
 
         div.innerHTML = `
                         <div class="flex-row sm:block hover-img">
@@ -521,7 +521,7 @@ async function displayTechnologyNews() {
       technologyarticles.forEach((articles) => {
         const div = document.createElement("div");
         div.classList =
-          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100";
+          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100 bg-white dark:bg-gray-800 text-black dark:text-white";
 
         div.innerHTML = `
                         <div class="flex-row sm:block hover-img">
@@ -988,7 +988,7 @@ async function searchpage() {
       searcharticles.forEach((results) => {
         const div = document.createElement("div");
         div.classList =
-          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100";
+          "flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100 bg-white dark:bg-gray-800 text-black dark:text-white";
         div.innerHTML = `
         <div class="flex-row sm:block hover-img">
           <a href="${results.url}">
