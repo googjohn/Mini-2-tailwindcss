@@ -87,8 +87,8 @@ async function fetchAPIDataForLocal(endpoint) {
 // ========== { carousel news} ========== \\
 async function carouselNews() {
   try {
-    global.api.apiKeys = global.apiKey_11;
-    global.maxfetch = "10";
+    global.api.apiKeys = global.apiKey_1;
+    global.maxfetch = "3";
     fetchAPIData("general").then(function (data) {
       carouselarticles = data.articles;
       console.log(carouselarticles);
@@ -252,7 +252,7 @@ async function carouselNews() {
 // ========== { display local from gnews.io} ========== \\
 async function displayLocalNews() {
   try {
-    global.api.apiKeys = global.apiKey_12;
+    global.api.apiKeys = global.apiKey_2;
     global.maxfetch = "4";
     fetchAPIDataForLocal("local").then(function (data) {
       localarticles = data.articles.slice(0, 4);
@@ -999,7 +999,7 @@ async function searchpage() {
             <a href="${results.url}">${results.title}</a>
           </h3>
             <p class="hidden md:block text-gray-600 leading-tight mb-1">${results.description}</p>
-            <a class="text-gray-500" href="${results.url}"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${results.publishedAt}</span></a>
+            <a class="text-gray-500" href="${results.url}"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${results.publishedAt.slice(0, 10)}</span></a>
         </div>
         </div>
         `;
@@ -1036,7 +1036,7 @@ async function searchAPIData() {
 async function businessCategoryPage() {
   try {
     global.api.apiKeys = global.apiKey_20;
-    global.api.maxfetch = "10";
+    global.api.maxfetch = "9";
     fetchAPIData("business").then(function (data) {
       businessarticles = data.articles;
       console.log(businessarticles);
@@ -1055,7 +1055,7 @@ async function businessCategoryPage() {
             <a href="${articles.url}">${articles.title}</a>
           </h3>
             <p class="hidden md:block leading-tight mb-1">${articles.description}</p>
-            <a class="text-gray-500" href="${articles.url}"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt}</span></a>
+            <a class="text-gray-500" href="${articles.url}"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span></a>
         </div>
         </div>
         `;
@@ -1071,7 +1071,7 @@ async function businessCategoryPage() {
 async function entertainmentCategoryPage() {
   try {
     global.api.apiKeys = global.apiKey_19;
-    global.api.maxfetch = "10";
+    global.api.maxfetch = "9";
     fetchAPIData("entertainment").then(function (data) {
       entertainmentarticles = data.articles;
       console.log(entertainmentarticles);
@@ -1090,7 +1090,7 @@ async function entertainmentCategoryPage() {
             <a href="${articles.url}">${articles.title}</a>
           </h3>
             <p class="hidden md:block leading-tight mb-1">${articles.description}</p>
-            <a class="text-gray-500" href="${articles.url}"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt}</span></a>
+            <a class="text-gray-500" href="${articles.url}"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span></a>
         </div>
         </div>
         `;
@@ -1106,7 +1106,7 @@ async function entertainmentCategoryPage() {
 async function scitechCategoryPage() {
   try {
     global.api.apiKeys = global.apiKey_18;
-    global.api.maxfetch = "10";
+    global.api.maxfetch = "9";
     fetchAPIData("technology").then(function (data) {
       scitecharticles = data.articles;
       console.log(scitecharticles);
@@ -1125,7 +1125,7 @@ async function scitechCategoryPage() {
             <a href="${articles.url}">${articles.title}</a>
           </h3>
             <p class="hidden md:block leading-tight mb-1">${articles.description}</p>
-            <a class="text-gray-500" href="${articles.url}"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt}</span></a>
+            <a class="text-gray-500" href="${articles.url}"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span></a>
         </div>
         </div>
         `;
@@ -1141,7 +1141,7 @@ async function scitechCategoryPage() {
 async function sportsCategoryPage() {
   try {
     global.api.apiKeys = global.apiKey_17;
-    global.api.maxfetch = "10";
+    global.api.maxfetch = "9";
     fetchAPIData("sports").then(function (data) {
       sportsarticles = data.articles;
       console.log(sportsarticles);
@@ -1160,7 +1160,7 @@ async function sportsCategoryPage() {
             <a href="${articles.url}">${articles.title}</a>
           </h3>
             <p class="hidden md:block leading-tight mb-1">${articles.description}</p>
-            <a class="text-gray-500" href="${articles.url}"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt}</span></a>
+            <a class="text-gray-500" href="${articles.url}"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>${articles.publishedAt.slice(0, 10)}</span></a>
         </div>
         </div>
         `;

@@ -590,27 +590,55 @@
                 </h2>
               </div>
               <div class="w-full h-full">
-                <div id="sports-c" class="mx-auto">
+                <div id="sports-c" class="h-full mx-auto">
                   <div id="top-sport-heading" class="relative flex flex-col justify-between">
-                    <a href="https://www.nba.com/"><img class="h-full" src="./images/nba-logo.png" alt="nba lgo"><span
-                        class="text-2xl text-white inline-block">NBA</span></a>
+                    <div>
+                      <a href="https://www.nba.com/"><img class="h-full" src="./src/images/nba-logo.png"
+                          alt="nba lgo"><span class="text-2xl text-white inline-block">NBA</span></a>
+                    </div>
                     <div id="sport-navbar">
-                      <button class="active">Games</button>
-                      <button>News</button>
-                      <button>Standings</button>
-                      <button>Stats</button>
-                      <button>Players</button>
+                      <div class="grid">
+                        <button class="grid-button active">Games</button>
+                        <button class="grid-button">News</button>
+                        <button class="grid-button">Standings</button>
+                        <button class="grid-button">Stats</button>
+                        <button class="grid-button">Players</button>
+                      </div>
+
                     </div>
                   </div>
                   <div id="sport-card">
-                    <!-- <ul class="sport-card">
-                      <li>
-              
-                      </li>
-                    </ul> -->
-                    <div class="see-more-games-btn">See more games</div>
+                    <div id="tab-content">
 
+                      <!-- <div class="game leading-3">
+                        <div class="team">${game1.HomeTeam}</div>
+                        <div class="team">${game1.AwayTeam}</div>
+                        <div class="time">${game1.DateTime}</div>
+                      </div>
+                      <div class="game">
+                        <div class="team">${game2.HomeTeam}</div>
+                        <div class="team">${game2.AwayTeam}</div>
+                        <div class="time">${game2.DateTime}</div>
+                      </div> -->
+
+
+                    </div>
+
+
+                    <div class="pseudo-footer">
+                      <p>All times are in Philippine Standard Time</p>
+                    </div>
                   </div>
+                  <!-- <div class="sports-card grid-cols-2">
+                      <div class="border">
+              
+                      </div>
+                      <div class="border">
+              
+              
+                      </div> -->
+
+
                 </div>
               </div>
             </div>
@@ -1675,7 +1703,7 @@
                     <!-- </div> -->
                     <input type="text" id="email-address-icon"
                       class="mx-auto bg-gray-50 border border-gray-300 text-black text-sm rounded-full focus:ring-red-500 focus:border-red-500 block w-full py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500"
-                      placeholder="subscibe@here.com" />
+                      placeholder="youremailaddhere.com" />
                 </form>
               </div>
             </div>
